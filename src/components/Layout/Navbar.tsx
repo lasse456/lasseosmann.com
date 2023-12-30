@@ -200,7 +200,7 @@ export default function Navbar({ page }: { page: PAGES }) {
       </nav>
 
       {menuClicked ? (
-        <section className="fixed top-[125px] w-[100%] h-[100%] bg-white px-[10px] py-[59px] border-t-[1px] smaller:hidden">
+        <section className="fixed top-[125px] w-[100%] py-[100px] bg-white px-[10px] border-t-[1px] smaller:hidden">
           <div className="flex flex-col gap-[20px]">
             <Link
               onClick={() => setMenuClicked(false)}
@@ -222,7 +222,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         <div
           onMouseLeave={() => setSolutionsHovered(false)}
           onMouseEnter={() => setSolutionsHovered(true)}
-          className="bg-white fixed top-[125px] w-full py-[40px] border-t-[1px] shadow-md"
+          className="bg-white fixed top-[125px] w-full py-[40px] border-t-[1px] shadow-md xl:hidden"
         >
           <div className="w-[90%] mx-auto grid grid-cols-2 gap-x-[40px] max-w-main">
             <div className="grid grid-cols-2">
@@ -281,7 +281,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         <div
           onMouseLeave={() => setAboutHovered(false)}
           onMouseEnter={() => setAboutHovered(true)}
-          className="bg-white fixed top-[125px] w-full py-[40px] border-t-[1px] shadow-md"
+          className="bg-white fixed top-[125px] w-full py-[40px] border-t-[1px] shadow-mcd xl:hidden"
         >
           <div className=" w-[90%] mx-auto grid grid-cols-2 gap-x-[40px] max-w-main">
             <div className="grid grid-cols-2">

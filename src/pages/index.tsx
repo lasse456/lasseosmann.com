@@ -6,12 +6,12 @@ import Link from "next/link";
 export default function Index() {
   return (
     <Layout page={PAGES.HOME}>
-      <section className="mt-[100px] h-[85vh] justify-center bg-main flex flex-col bg-[linear-gradient(rgba(5,29,64,0.80),rgba(5,29,64,0.80)),url(/herobg.jpg)] bg-cover bg-center">
+      <section className="mt-[100px] h-[85vh] justify-center bg-main flex flex-col bg-[linear-gradient(rgba(5,29,64,0.80),rgba(5,29,64,0.80)),url(/herobg.jpg)] bg-cover bg-center xl:h-[100%] xl:py-[100px]">
         <div className="w-[90%] mx-auto max-w-main bottom-0">
-          <h1 className="text-white text-[80px] mb-[30px] text-mainFont w-[80%] leading-[90px]">
+          <h1 className="text-white text-[80px] mb-[30px] text-mainFont w-[80%] leading-[90px] xl:text-[60px] xl:leading-[70px] mid:text-[45px] mid:leading-[55px]">
             Vi udvikler brugbar software til virksomheder
           </h1>
-          <p className="text-white w-[60%] text-[18px] font-[300] mb-[40px]">
+          <p className="text-white w-[60%] text-[18px] font-[300] mb-[40px] xl:text-[16px] xl:leading-[26px] mid:text-[16px] mid:leading-[26px]">
             Hos Gazella Team fokuserer vi på at udvikle unikke softwareløsninger
             til virksomheder af alle størrelser. Vi udvikler alt fra statiske
             hjemmesider til funktionelle web applikationer, og vi lægger særligt

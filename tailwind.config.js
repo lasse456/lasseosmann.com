@@ -34,6 +34,7 @@ module.exports = {
         // => @media (max-width: 1279px) { ... }
 
         lg: { max: "1023px" },
+        leg: { max: "1023px" },
         // => @media (max-width: 1023px) { ... }
 
         mid: { max: "867px" },
