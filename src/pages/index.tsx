@@ -29,7 +29,7 @@ export default function Index() {
               className="bg-white p-[10px] px-[16px] rounded-[50px] text-main text-[16px] font-[600]"
               href={"/cases"}
             >
-              Kunde casess
+              Kunde cases
             </Link>
           </div>
         </div>
