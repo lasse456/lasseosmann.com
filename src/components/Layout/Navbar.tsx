@@ -229,7 +229,7 @@ export default function Navbar({ page }: { page: PAGES }) {
               {solutionsData.map((v) => (
                 <Link
                   className="hover:bg-gray-100 p-[30px] rounded-[10px] transition-all"
-                  key={v}
+                  key={1}
                   href={v.link}
                 >
                   <h1 className="text-[20px] font-[600] mb-[14px]">
@@ -288,7 +288,7 @@ export default function Navbar({ page }: { page: PAGES }) {
               {aboutData.map((v) => (
                 <Link
                   className="hover:bg-gray-100 p-[30px] rounded-[10px] transition-all"
-                  key={v}
+                  key={1}
                   href={v.link}
                 >
                   <h1 className="text-[20px] font-[600] mb-[14px]">
