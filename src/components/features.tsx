@@ -5,7 +5,7 @@ export default function Features(props: any) {
         <h1 className="text-[30px] leading-[35px]">The all in one solution</h1>
 
         <div className="grid grid-cols-2 gap-[40px] gap-y-[60px]">
-          {props.Obj.map((v) => (
+          {props.Obj.map((v: any) => (
             <FeatureCard key={v} Obj={v} />
           ))}
         </div>
