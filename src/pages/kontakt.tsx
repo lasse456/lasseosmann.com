@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { PAGES } from "@/components/Layout/Navbar";
+import Calembed from "@/components/calembed";
 
 export default function Kontakt() {
   return (
@@ -21,6 +22,7 @@ export default function Kontakt() {
             <h1 className="text-[20px] text-main">kontakt@gazellateam.com</h1>
           </div>
         </div>
+        <Calembed />
       </section>
     </Layout>
   );

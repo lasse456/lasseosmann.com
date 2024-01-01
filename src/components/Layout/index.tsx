@@ -3,7 +3,6 @@ import Cta from "./Cta";
 import Meta from "./Meta";
 import Navbar, { PAGES } from "./Navbar";
 import Script from "next/script";
-import Head from "next/head";
 
 export default function Layout({
   page,

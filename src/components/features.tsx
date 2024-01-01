@@ -19,8 +19,8 @@ export default function Features(props: any) {
 const FeatureCard = (props: any) => {
   return (
     <div>
-      <h2 className="text-[24px] font-[700] mb-[14px]">{props.Obj.heading}</h2>
-      <p className="text-[18px]">{props.Obj.description}</p>
+      <h2 className="text-[24px] font-[600] mb-[14px]">{props.Obj.heading}</h2>
+      <p className="text-[18px] text-gray-600">{props.Obj.description}</p>
     </div>
   );
 };
