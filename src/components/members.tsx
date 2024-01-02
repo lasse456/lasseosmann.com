@@ -7,7 +7,7 @@ const memberData = [
   {
     name: "Simon Maribo",
     position: "Co-Founder & Head of Backend",
-    imageUrl: "/lasseosmann.jpg",
+    imageUrl: "/simonmaribo.jpg",
   },
   {
     name: "Simon Maribo",
