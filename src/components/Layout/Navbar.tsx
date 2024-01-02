@@ -298,7 +298,10 @@ export default function Navbar({ page }: { page: PAGES }) {
                 </Link>
               ))}
             </div>
-            <img className="h-[100%] object-cover" src="/flyout.jpg"></img>
+            <img
+              className="h-[100%] object-cover rounded-[10px]"
+              src="/flyout.jpg"
+            ></img>
           </div>
         </div>
       ) : (
