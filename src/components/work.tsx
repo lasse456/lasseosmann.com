@@ -35,7 +35,7 @@ const WorkCard = (props: any) => {
   return (
     <div>
       <img
-        className="h-[300px] w-full object-cover object-top small:object-top"
+        className="h-[300px] w-full object-cover object-top small:h-[400px]"
         src={props.Obj.imageUrl}
       ></img>
       <div className="border-[1px] p-[40px]">
