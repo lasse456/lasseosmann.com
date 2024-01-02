@@ -4,7 +4,6 @@ export default function MyApp() {
   return (
     <div className="w-[90%] mx-auto">
       <Cal
-        namespace="45-minutters-uforpligtende-snak-om-dit-projekt"
         calLink="lasseosmann/45-minutters-uforpligtende-snak-om-dit-projekt"
         style={{
           width: "100%",
