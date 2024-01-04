@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Reveal } from "./Layout/Reveal";
+import { Reveal } from "./Animations/Reveal";
 
 const workData = [
   {
@@ -23,34 +23,23 @@ const workData = [
 export default function Work() {
   return (
     <section className="py-[60px] border-b-[1px]">
-      <Reveal>
-        <div className="w-[90%] mx-auto grid grid-cols-2 gap-x-[40px] gap-y-[40px] max-w-main small:grid-cols-1">
-          {workData.map((v) => (
-            <WorkCard Obj={v} key={v} />
-          ))}
-        </div>
-      </Reveal>
+      <div className="w-[90%] z-[1] mx-auto grid grid-cols-1 gap-x-[40px] gap-y-[40px] max-w-main small:grid-cols-1">
+        {workData.map((v) => (
+          <WorkCard Obj={v} key={v} />
+        ))}
+      </div>
     </section>
   );
 }
 
 const WorkCard = (props: any) => {
   return (
-    <div>
-      <img
-        className="h-[300px] w-full object-cover object-top small:h-[400px]"
-        src={props.Obj.imageUrl}
-      ></img>
-      <div className="border-[1px] p-[40px]">
-        <p className="mb-[20px]">{props.Obj.company}</p>
-        <h1 className="text-[24px] font-[500] w-[70%] mb-[16px]">
-          {props.Obj.heading}
-        </h1>
-        <p className="text-gray-600 mb-[30px]">{props.Obj.description}</p>
-        <Link className="font-[600] text-main" href={props.Obj.url}>
-          Se det færdige produkt &#8594;
-        </Link>
+    <Reveal>
+      <div className="bg-main h-[400px]">
+        <div className="w-[86%] mx-auto">
+          <h1>hey</h1>
+        </div>
       </div>
-    </div>
+    </Reveal>
   );
 };

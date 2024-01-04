@@ -1,4 +1,4 @@
-import { Reveal } from "./Layout/Reveal";
+import { Reveal } from "./Animations/Reveal";
 
 export default function Description(props: any) {
   return (

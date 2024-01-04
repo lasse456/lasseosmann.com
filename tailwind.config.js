@@ -14,7 +14,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        flyout: "box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;",
+        navigation: "box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;",
         navbar: "box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;",
       },
       fontFamily: {
@@ -47,6 +47,10 @@ module.exports = {
       },
       maxWidth: {
         main: "1300px",
+      },
+      gridTemplateColumns: {
+        contact: "40% 1fr",
+        footer: "16% 1fr",
       },
     },
   },

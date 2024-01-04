@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Reveal } from "./Layout/Reveal";
+import { Reveal } from "./Animations/Reveal";
 
 const memberData = [
   {
