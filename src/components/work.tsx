@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "./Layout/Reveal";
 
 const workData = [
   {
@@ -22,11 +23,13 @@ const workData = [
 export default function Work() {
   return (
     <section className="py-[60px] border-b-[1px]">
-      <div className="w-[90%] mx-auto grid grid-cols-2 gap-x-[40px] gap-y-[40px] max-w-main small:grid-cols-1">
-        {workData.map((v) => (
-          <WorkCard Obj={v} key={v} />
-        ))}
-      </div>
+      <Reveal>
+        <div className="w-[90%] mx-auto grid grid-cols-2 gap-x-[40px] gap-y-[40px] max-w-main small:grid-cols-1">
+          {workData.map((v) => (
+            <WorkCard Obj={v} key={v} />
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 }

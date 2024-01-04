@@ -2,22 +2,55 @@ import Layout from "@/components/Layout";
 import { PAGES } from "@/components/Layout/Navbar";
 import Mission from "@/components/mission";
 import Link from "next/link";
+import { motion, useScroll } from "framer-motion";
+import { Reveal } from "@/components/Layout/Reveal";
 
 export default function Index() {
   return (
     <Layout page={PAGES.HOME}>
-      <section className="mt-[100px] py-[140px] justify-center flex flex-col">
-        <div className="w-[90%] mx-auto max-w-main bottom-0">
-          <h1 className="text-[84px] text-main mb-[30px] text-mainFont w-[80%] leading-[90px] xl:text-[60px] xl:leading-[70px] mid:text-[45px] mid:leading-[55px]">
-            Vi udvikler brugbar software til virksomheder
-          </h1>
-          <p className=" w-[60%] text-[18px] font-[300] mb-[40px] xl:text-[16px] xl:leading-[26px] mid:text-[16px] mid:leading-[26px] mid:w-[100%]">
-            Hos Gazella Team fokuserer vi på at udvikle unikke softwareløsninger
-            til virksomheder af alle størrelser. Vi udvikler alt fra statiske
-            hjemmesider til funktionelle web applikationer, og vi lægger særligt
-            vægt i, at hver løsning tilpasses den enkelte kundes behov
-          </p>
-        </div>
+      <section className="py-[100px] pt-[180px]">
+        <Reveal>
+          <div className="w-[90%] mx-auto max-w-main">
+            <h1 className="text-[70px] w-[75%] leading-[80px] font-[600] text-main mb-[20px]">
+              Vi udvikler brugbar software til projekter og virksomheder
+            </h1>
+            <p className="text-[20px] w-[60%] mb-[40px]">
+              We bring together public and commercial healthcare organizations,
+              offering a 360-degree industry approach to solving your,
+              360-degree
+            </p>
+            <div className="flex gap-[40px]">
+              <div className="flex flex-col gap-[20px]">
+                <div className="flex gap-[14px] items-center">
+                  <img className="w-[30px] object-cover" src="/check.png"></img>
+                  <h1 className="font-[600] text-[18px] text-main">
+                    Tilfredshedsgaranti
+                  </h1>
+                </div>
+                <div className="flex gap-[14px] items-center">
+                  <img className="w-[30px] object-cover" src="/check.png"></img>
+                  <h1 className="font-[600] text-[18px] text-main">
+                    Gratis Support
+                  </h1>
+                </div>
+              </div>
+              <div className="flex flex-col gap-[20px]">
+                <div className="flex gap-[14px] items-center">
+                  <img className="w-[30px] object-cover" src="/check.png"></img>
+                  <h1 className="font-[600] text-[18px] text-main">
+                    Kundefokus
+                  </h1>
+                </div>
+                <div className="flex gap-[14px] items-center">
+                  <img className="w-[30px] object-cover" src="/check.png"></img>
+                  <h1 className="font-[600] text-[18px] text-main">
+                    Rådgivning og sparing
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
     </Layout>
   );

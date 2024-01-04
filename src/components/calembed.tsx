@@ -6,7 +6,7 @@ export default function MyApp() {
       <Cal
         calLink="lasseosmann/45-minutters-uforpligtende-snak-om-dit-projekt"
         style={{
-          width: "90%",
+          width: "100%",
           height: "100%",
           overflow: "scroll",
           zIndex: "1",
