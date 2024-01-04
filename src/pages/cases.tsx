@@ -7,7 +7,7 @@ export default function Cases() {
   return (
     <Layout page={PAGES.CASES}>
       <Hero heading="Kunde Cases" section="Arbejde" />
-      <Description description="We bring together public and commercial healthcare organizations, offering a 360-degree industry approach to solving your most complex challenges. Our comprehensive suite of healthcare advisory, digital, and managed services drives innovation, growth, and resiliency so you can best serve your communities." />
+      <Description description="Hos Gazella Team er kunden altid i fokus. Gennem hele processen fra ide til færdigt produkt, sørger vi for, at kundens vision og krav til projektet overholdes, i takt med at vi efter aftale supplerer med vores faglige viden og forslag til forbedring." />
       <Work />
     </Layout>
   );

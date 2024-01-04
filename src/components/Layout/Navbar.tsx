@@ -88,13 +88,13 @@ export default function Navbar({ page }: { page: PAGES }) {
               </p>
               <Link href={"/cases"}>Cases</Link>
               <Link href={"/team"}>Om os</Link>
-              <Link href={"/ydelser"}>Kontakt</Link>
+              <Link href={"/kontakt"}>Kontakt</Link>
             </div>
           </div>
           <div>
             <Link
               href={"/kontakt"}
-              className="bg-main text-white p-[14px] rounded-[6px] text-[14px]"
+              className="bg-main text-white p-[14px] rounded-[6px] text-[14px] font-[600] px-[20px]"
             >
               kontakt os
             </Link>
