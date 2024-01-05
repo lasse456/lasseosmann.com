@@ -4,6 +4,8 @@ import { useState } from "react";
 import Button from "../button";
 import { Reveal } from "../Animations/Reveal";
 import { Opc } from "../Animations/Opc";
+import Dropper from "../dropper";
+import { useRouter } from "next/router";
 
 export enum PAGES {
   HOME,
@@ -65,12 +67,13 @@ const pages = [
 ];
 
 export default function Navbar({ page }: { page: PAGES }) {
+  const [menuClicked, setMenuClicked] = useState(false);
   const [solutionsClicked, setSolutionsClicked] = useState(false);
   return (
     <>
       <nav className="py-[14px] fixed w-full bg-white shadow-md z-[2]">
         <Opc>
-          <div className="w-[100%] mx-auto max-w-[1400px] flex items-center justify-between">
+          <div className="w-[98%] mx-auto max-w-[1420px] flex items-center justify-between">
             <div className="flex items-center gap-[90px]">
               <Link href={"/"}>
                 {" "}
@@ -81,26 +84,31 @@ export default function Navbar({ page }: { page: PAGES }) {
                 ></img>
               </Link>
 
-              <div className="flex items-center gap-[40px]">
-                <p
-                  className="cursor-pointer"
-                  onClick={() => setSolutionsClicked(true)}
+              <div className="flex items-center gap-[40px] xl:hidden">
+                <Link
+                  onClick={() => setSolutionsClicked(!solutionsClicked)}
+                  href={"#"}
                 >
                   Ydelser
-                </p>
+                </Link>
                 <Link href={"/cases"}>Cases</Link>
                 <Link href={"/team"}>Om os</Link>
                 <Link href={"/kontakt"}>Kontakt</Link>
               </div>
             </div>
-            <div>
+            <div className="xl:hidden">
               <Link
                 href={"/kontakt"}
-                className="bg-main text-white p-[14px] rounded-[6px] text-[14px] font-[600] px-[20px]"
+                className="bg-main text-white p-[14px] rounded-[100px] text-[13px] font-[600] px-[30px]"
               >
                 kontakt os
               </Link>
             </div>
+            <img
+              onClick={() => setMenuClicked(!menuClicked)}
+              className="hidden w-[22px] cursor-pointer xl:inline"
+              src={menuClicked ? "/cross.png" : "/menu.png"}
+            ></img>
           </div>
         </Opc>
       </nav>

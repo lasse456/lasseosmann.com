@@ -7,7 +7,7 @@ export default function Team() {
   return (
     <Layout page={PAGES.TEAM}>
       <Hero heading="Hvem er vi" section="om os" />
-      <Description description="We bring together public and commercial healthcare organizations, offering a 360-degree industry approach to solving your most complex challenges. Our comprehensive suite of healthcare advisory, digital, and managed services drives innovation, growth, and resiliency so you can best serve your communities." />
+      <Description description="Gazella Team udgør et hold af ambitiøse, nytænkende og storsmilende programmøre og designere, som hver dag brænder for at skabe unikke digitale produkter. Vi fokuserer på, at tilpasse hver enkel løsning til det pågældende projekt. Derfor kan du hos os forvente en fast sparingspartner, som leverer til tiden til den aftalte pris." />
       <Members />
     </Layout>
   );

@@ -9,8 +9,8 @@ export default function Footer() {
           <div className="w-[90%] mx-auto max-w-main">
             <div className="flex justify-between border-b-[1px] pb-[60px] mb-[20px]">
               <div className="w-[16%]">
-                <img className="w-[100px] mb-[16px]" src="/logosvg.svg"></img>
-                <p className="mb-[20px]">
+                <img className="w-[100px] mb-[20px]" src="/logosvg.svg"></img>
+                <p className="mb-[20px] text-gray-600">
                   Vi udvikler brugbar software til virksomheder
                 </p>
                 <p className="font-[600]">+45 5069 5272</p>
@@ -18,7 +18,7 @@ export default function Footer() {
               <div className="flex gap-[100px] items-top justify-center">
                 <div>
                   <h1 className="text-[18px] font-[600] mb-[20px]">Ydelser</h1>
-                  <div className="flex flex-col gap-[12px]">
+                  <div className="flex flex-col gap-[12px] text-gray-600">
                     <Link href={"/"}>Web apps</Link>
                     <Link href={"/"}>Hjemmesider</Link>
                     <Link href={"/"}>UI/UX Design</Link>
@@ -27,7 +27,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h1 className="text-[18px] font-[600] mb-[20px]">Arbejde</h1>
-                  <div className="flex flex-col gap-[12px]">
+                  <div className="flex flex-col gap-[12px] text-gray-600">
                     <Link href={"/"}>Kunde cases</Link>
                     <Link href={"/"}>Interne projekter</Link>
                   </div>
@@ -36,10 +36,10 @@ export default function Footer() {
                   <h1 className="text-[18px] font-[600] mb-[20px]">
                     Virsomheden
                   </h1>
-                  <div className="flex flex-col gap-[12px]">
-                    <Link href={"/"}>Teamet</Link>
-                    <Link href={"/"}>Arbejdsprocesser</Link>
-                    <Link href={"/"}>Baggrund</Link>
+                  <div className="flex flex-col gap-[12px] text-gray-600">
+                    <Link href={"/"}>Hvem er vi</Link>
+                    <Link href={"/"}>Anmeldelser</Link>
+                    <Link href={"/"}>Ledige jobs</Link>
                   </div>
                 </div>
               </div>

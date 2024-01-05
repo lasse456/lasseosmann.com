@@ -8,7 +8,7 @@ export default function ContactInfo() {
           <div>
             <h1 className="text-[32px] font-[600] mb-[14px]">Kontakt os</h1>
             <p className="text-gray-600 text-[18px]">
-              Alt start kontakt er uforpligtende
+              Vi glæder os til at høre fra dig
             </p>
           </div>
 
