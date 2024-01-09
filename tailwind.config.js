@@ -52,6 +52,7 @@ module.exports = {
         contact: "40% 1fr",
         footer: "16% 1fr",
         cases: "50% 1fr",
+        menu: "60% 1fr",
       },
     },
   },

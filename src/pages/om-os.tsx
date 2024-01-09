@@ -3,7 +3,7 @@ import { PAGES } from "@/components/Layout/Navbar";
 import Hero from "@/components/Layout/hero";
 import Description from "@/components/description";
 import Members from "@/components/members";
-export default function Team() {
+export default function Omos() {
   return (
     <Layout page={PAGES.TEAM}>
       <Hero heading="Hvem er vi" section="om os" />

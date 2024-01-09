@@ -17,7 +17,9 @@ export default function Footer() {
               </div>
               <div className="flex gap-[100px] items-top justify-center">
                 <div>
-                  <h1 className="text-[18px] font-[600] mb-[20px]">Ydelser</h1>
+                  <h1 className="text-[18px] font-[600] mb-[20px] text-main">
+                    Ydelser
+                  </h1>
                   <div className="flex flex-col gap-[12px] text-gray-600">
                     <Link href={"/"}>Web apps</Link>
                     <Link href={"/"}>Hjemmesider</Link>
@@ -26,14 +28,17 @@ export default function Footer() {
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-[18px] font-[600] mb-[20px]">Arbejde</h1>
+                  <h1 className="text-[18px] font-[600] mb-[20px] text-main">
+                    Arbejde
+                  </h1>
                   <div className="flex flex-col gap-[12px] text-gray-600">
                     <Link href={"/"}>Kunde cases</Link>
                     <Link href={"/"}>Interne projekter</Link>
+                    <Link href={"/"}>Priser</Link>
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-[18px] font-[600] mb-[20px]">
+                  <h1 className="text-[18px] font-[600] mb-[20px] text-main">
                     Virsomheden
                   </h1>
                   <div className="flex flex-col gap-[12px] text-gray-600">

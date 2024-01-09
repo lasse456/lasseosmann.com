@@ -19,7 +19,7 @@ export const Reveal = ({ children }: Props) => {
     <div ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 35 },
+          hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"

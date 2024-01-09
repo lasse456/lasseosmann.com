@@ -19,12 +19,12 @@ export const Opc = ({ children }: Props) => {
     <div ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 1 },
+          hidden: { opacity: 0.5 },
           visible: { opacity: 1 },
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0 }}
+        transition={{ duration: 0.1, delay: 0 }}
       >
         {children}
       </motion.div>

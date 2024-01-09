@@ -1,26 +1,32 @@
 import Link from "next/link";
 import { Reveal } from "./Animations/Reveal";
+import { useState } from "react";
+import { Opc } from "./Animations/Opc";
 
 const memberData = [
   {
     name: "Lasse Osmann",
     position: "Stifter & Frontend Udvikler",
     imageUrl: "/lasseosmann.jpg",
+    secondImageUrl: "/simonmaribo.jpg",
   },
   {
     name: "Simon Maribo",
     position: "Medstifter & backend Udvikler",
     imageUrl: "/simonmaribo.jpg",
+    secondImageUrl: "/lasseosmann.jpg",
   },
   {
     name: "Asger Willumsen",
     position: "SoMe Manager",
-    imageUrl: "/simonmaribo.jpg",
+    imageUrl: "/emptymember.jpg",
+    secondImageUrl: "/lasseosmann.jpg",
   },
   {
     name: "Mik Lønborg",
     position: "Marketing og PR",
     imageUrl: "/emptymember.jpg",
+    secondImageUrl: "/lasseosmann.jpg",
   },
 ];
 
@@ -39,12 +45,15 @@ export default function Members() {
 }
 
 const MemberCard = (props: any) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <Reveal>
       <div>
         <img
-          className="h-[300px] w-full object-cover object-top mb-[20px]"
-          src={props.Obj.imageUrl}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="h-[300px] w-full object-cover object-top mb-[20px] transition-all"
+          src={isHovered ? props.Obj.secondImageUrl : props.Obj.imageUrl}
         ></img>
 
         <h1 className="text-[20px] font-[500]">{props.Obj.name}</h1>
