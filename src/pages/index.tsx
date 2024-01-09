@@ -4,7 +4,6 @@ import Mission from "@/components/mission";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 import { Reveal } from "@/components/Animations/Reveal";
-import LogoSlider from "@/components/logoslider";
 
 export default function Index() {
   return (
@@ -22,7 +21,6 @@ export default function Index() {
           </div>
         </Reveal>
       </section>
-      <LogoSlider />
     </Layout>
   );
 }

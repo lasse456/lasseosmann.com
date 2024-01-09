@@ -7,18 +7,6 @@ const projectData = [
       "Hos Gazella Team er kunden altid i fokus. Gennem hele processen fra ide til færdigt produkt, sørger vi for, at kundens vision og krav til projektet overholdes, i takt med at vi efter aftale supplerer med vores faglige viden og forslag til forbedring.",
     image: "/defaul",
   },
-  {
-    heading: "Founder & Failing",
-    description:
-      "Hos Gazella Team er kunden altid i fokus. Gennem hele processen fra ide til færdigt produkt, sørger vi for, at kundens vision og krav til projektet overholdes, i takt med at vi efter aftale supplerer med vores faglige viden og forslag til forbedring.",
-    image: "/defaul",
-  },
-  {
-    heading: "Founder & Failing",
-    description:
-      "Hos Gazella Team er kunden altid i fokus. Gennem hele processen fra ide til færdigt produkt, sørger vi for, at kundens vision og krav til projektet overholdes, i takt med at vi efter aftale supplerer med vores faglige viden og forslag til forbedring.",
-    image: "/defaul",
-  },
 ];
 
 export default function Projects(props: any) {
@@ -38,15 +26,11 @@ export default function Projects(props: any) {
 const ProjectCard = (props: any) => {
   return (
     <Reveal>
-      <div className="shadow-lg border-[1px] rounded-[6px] grid grid-cols-2">
+      <div className="border-[1px] rounded-[6px]">
         <div className="p-[50px]">
           <h1 className="text-[30px] mb-[20px]">{props.Obj.heading}</h1>
           <p className="w-[80%]">{props.Obj.description}</p>
         </div>
-        <img
-          className="h-[400px] w-full object-cover object-top"
-          src="/one.jpg"
-        ></img>
       </div>
     </Reveal>
   );
