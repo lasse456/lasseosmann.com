@@ -16,7 +16,7 @@ const workOpsData = [
   {
     icon: <Wallet size={40} />,
     headline: "Prissætning",
-    link: "/ydelser/priser",
+    link: "/arbejde/priser",
   },
 ];
 

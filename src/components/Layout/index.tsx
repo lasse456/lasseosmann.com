@@ -3,6 +3,7 @@ import Cta from "./Cta";
 import Meta from "./Meta";
 import Navbar, { PAGES } from "./Navbar";
 import Script from "next/script";
+import Reviews from "../reviews";
 
 export default function Layout({
   page,
@@ -25,6 +26,7 @@ export default function Layout({
         <Navbar page={page} />
         <div className={`${className}`}>{children}</div>
       </div>
+      <Reviews />
       <Footer />
     </div>
   );
