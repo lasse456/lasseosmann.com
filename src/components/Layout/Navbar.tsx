@@ -99,7 +99,7 @@ export default function Navbar({ page }: { page: PAGES }) {
             </div>
 
             <Link
-              className="bg-main text-white p-[10px] px-[20px] text-[14px] rounded-[6px]"
+              className="bg-main text-white p-[10px] px-[20px] text-[14px] rounded-[100px]"
               href={"/kontakt"}
             >
               Book et møde
