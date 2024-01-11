@@ -13,46 +13,24 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      boxShadow: {
-        navigation: "box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;",
-        navbar: "box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;",
-      },
-      fontFamily: {
-        mainFont: "Oxygen",
+      fontSize: {
+        heading: "76px",
+        description: "26px",
+        sectionheading: "50px",
       },
       colors: {
-        main: "#051d40",
+        main: "#001030",
+        second: "#636363",
       },
-      gridTemplateColumns: {
-        features: "40%, 1fr",
+      fontFamily: {
+        italic: "Times new roman",
       },
-      screens: {
-        "2xl": { max: "1535px" },
-        // => @media (max-width: 1535px) { ... }
-
-        xl: { max: "1279px" },
-        // => @media (max-width: 1279px) { ... }
-
-        lg: { max: "1023px" },
-        leg: { max: "1023px" },
-        // => @media (max-width: 1023px) { ... }
-
-        mid: { max: "867px" },
-        // => @media (max-width: 767px) { ... }
-
-        sm: { max: "639px" },
-        // => @media (max-width: 639px) { ... }
-        small: { max: "1278px" },
-        smaller: { min: "1278px" },
+      borderRadius: {
+        main: "8px",
       },
-      maxWidth: {
-        main: "1300px",
-      },
-      gridTemplateColumns: {
-        contact: "40% 1fr",
-        footer: "16% 1fr",
-        cases: "50% 1fr",
-        menu: "60% 1fr",
+      padding: {
+        button: "10px 26px 10px 26px",
+        button02: "16px 30px",
       },
     },
   },

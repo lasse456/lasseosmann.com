@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
-import { Reveal } from "../Animations/Reveal";
-import { Opc } from "../Animations/Opc";
-
-import { ChevronUp, ChevronDown, Layers, LifeBuoy } from "lucide-react";
+import Online from "../online";
+import Language from "../language";
 
 export enum PAGES {
   HOME,
@@ -64,55 +62,33 @@ const pages = [
   },
 ];
 
-export default function Navbar({ page }: { page: PAGES }) {
-  const [menuClicked, setMenuClicked] = useState(false);
-
+export default function Navbar() {
+  const [isEnglish, setIsEnglish] = useState(false);
   return (
-    <>
-      <nav className="py-[14px] fixed w-full bg-white shadow-md z-[2]">
-        <div className="w-[98%] mx-auto max-w-[1400px] flex items-center justify-between">
-          <div className="flex items-center gap-[90px]">
-            <Link href={"/"}>
-              {" "}
-              <img
-                alt="gazella logo"
-                src="/logosvg.svg"
-                className="w-[100px]"
-              ></img>
-            </Link>
-
-            <div className="flex items-center gap-[40px] xl:hidden">
-              <Link href={"/ydelser"}>Ydelser</Link>
-              <Link href={"/arbejde"}>Arbejde</Link>
-              <Link href={"/udvikling"}>Udvikling</Link>
-              <Link href={"/om-os"}>Om os</Link>
-              <Link href={"/kontakt"}>Kontakt</Link>
-            </div>
+    <nav
+      style={{
+        backdropFilter: "blur(5px)", // Apply blur effect
+        backgroundColor: "rgba(255, 255, 255, 0.85)", // Adjust opacity as needed
+      }}
+      className="bg-opacity-70 fixed w-full py-[14px] border-b-[1px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
+    >
+      <div className="w-[96%] mx-auto flex items-center justify-between">
+        <Link href={"/"} className="text-[24px] font-[600]">
+          COAD{" "}
+          <span className="italic font-italic text-[24px] font-[200] text-gray-600">
+            agency
+          </span>{" "}
+        </Link>
+        <div className="flex items-center gap-[50px]">
+          <Online />
+          <div className="flex items-center gap-[20px]">
+            <button className="border-[1px] rounded-[100px] p-button py-[6px]">
+              Gratis Performance Analyse
+            </button>
+            <Language />
           </div>
-
-          <div className="flex items-center gap-[30px]">
-            <div>
-              <Link className="flex items-center gap-[10px]" href={"support"}>
-                <LifeBuoy size={20} />
-                Support
-              </Link>
-            </div>
-
-            <Link
-              className="bg-main text-white p-[10px] px-[20px] text-[14px] rounded-[100px]"
-              href={"/kontakt"}
-            >
-              Book et møde
-            </Link>
-          </div>
-
-          <img
-            onClick={() => setMenuClicked(!menuClicked)}
-            className="hidden w-[22px] cursor-pointer xl:inline"
-            src={menuClicked ? "/cross.png" : "/menu.png"}
-          ></img>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
