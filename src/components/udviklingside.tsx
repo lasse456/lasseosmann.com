@@ -13,11 +13,6 @@ const udviklingData = [
     headline: "Tech Stack",
     link: "/udvikling/techstack",
   },
-  {
-    icon: <Sandwich size={40} />,
-    headline: "Idk",
-    link: "/udvikling/idk",
-  },
 ];
 
 export default function Udviklingside() {
@@ -29,7 +24,7 @@ export default function Udviklingside() {
         </div>
       </Reveal>
 
-      <div className="w-[90%] mx-auto max-w-main z-[1] grid grid-cols-3 gap-[30px]">
+      <div className="w-[90%] mx-auto max-w-main z-[1] grid grid-cols-2 gap-[30px]">
         {udviklingData.map((v) => (
           <UdviklingCard Obj={v} key={v} />
         ))}
