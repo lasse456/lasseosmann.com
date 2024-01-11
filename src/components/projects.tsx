@@ -11,7 +11,7 @@ const projectData = [
 
 export default function Projects(props: any) {
   return (
-    <section className="py-[100px] border-b-[1px]">
+    <section className="py-[60px] border-b-[1px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="grid grid-cols-1 gap-[40px] gap-y-[50px]">
           {projectData.map((v) => (

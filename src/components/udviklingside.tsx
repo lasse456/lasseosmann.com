@@ -1,44 +1,44 @@
 import Link from "next/link";
 import { Reveal } from "./Animations/Reveal";
-import { Wallet, FolderGit2, User2 } from "lucide-react";
+import { ArrowLeftRight, FileStack, Sandwich } from "lucide-react";
 
-const workOpsData = [
+const udviklingData = [
   {
-    icon: <User2 size={40} />,
-    headline: "Kunde Cases",
-    link: "/arbejde/cases",
+    icon: <ArrowLeftRight size={40} />,
+    headline: "Arbejdsprocesser",
+    link: "/udvikling/arbejdsprocesser",
   },
   {
-    icon: <FolderGit2 size={40} />,
-    headline: "Interne Projekter",
-    link: "/arbejde/interneprojekter",
+    icon: <FileStack size={40} />,
+    headline: "Tech Stack",
+    link: "/udvikling/techstack",
   },
   {
-    icon: <Wallet size={40} />,
-    headline: "Prissætning",
-    link: "/arbejde/priser",
+    icon: <Sandwich size={40} />,
+    headline: "Idk",
+    link: "/udvikling/idk",
   },
 ];
 
-export default function WorkOps() {
+export default function Udviklingside() {
   return (
     <section className="py-[60px] w-full border-b-[1px]">
       <Reveal>
         <div className="mt-[76px] w-[90%] mx-auto max-w-main py-[60px]">
-          <h1 className="text-[40px]">Udforsk vores arbejde</h1>
+          <h1 className="text-[40px]">Se hvordan vi arbejder bedst muligt</h1>
         </div>
       </Reveal>
 
       <div className="w-[90%] mx-auto max-w-main z-[1] grid grid-cols-3 gap-[30px]">
-        {workOpsData.map((v) => (
-          <WorkOpsCard Obj={v} key={v} />
+        {udviklingData.map((v) => (
+          <UdviklingCard Obj={v} key={v} />
         ))}
       </div>
     </section>
   );
 }
 
-const WorkOpsCard = (props: any) => {
+const UdviklingCard = (props: any) => {
   return (
     <Reveal>
       <Link

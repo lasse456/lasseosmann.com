@@ -13,7 +13,7 @@ export default function Footer() {
                 <p className="mb-[20px] text-gray-600">
                   Vi udvikler brugbar software til virksomheder
                 </p>
-                <p className="font-[600]">+45 5069 5272</p>
+                <p className="font-[500]">+45 5069 5272</p>
               </div>
               <div className="flex gap-[100px] items-top justify-center">
                 <div>

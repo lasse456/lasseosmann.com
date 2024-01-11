@@ -1,22 +1,22 @@
 import Link from "next/link";
 import { Reveal } from "./Animations/Reveal";
-import { Layers, AppWindow, PaintBucket } from "lucide-react";
+import { Layers, AppWindow, PaintBucket, GaugeCircle } from "lucide-react";
 
 const serviceData = [
   {
     icon: <Layers size={40} />,
-    headline: "Web Applikationer",
-    link: "/ydelser/webapps",
-  },
-  {
-    icon: <AppWindow size={40} />,
-    headline: "Hjemmeside",
-    link: "/ydelser/hjemmesider",
+    headline: "Web Udvikling",
+    link: "/ydelser/webudvikling",
   },
   {
     icon: <PaintBucket size={40} />,
     headline: "UI/UX Design",
     link: "/ydelser/uiux",
+  },
+  {
+    icon: <GaugeCircle size={40} />,
+    headline: "Hastighedsoptimering",
+    link: "/ydelser/hastighedsoptimering",
   },
 ];
 
@@ -43,7 +43,7 @@ const ServiceCard = (props: any) => {
     <Reveal>
       <Link
         href={props.Obj.link}
-        className="border-[1px] p-[20px] py-[80px] flex items-center flex-col justify-center"
+        className="border-[1px] bg-gray-50 rounded-[8px] p-[20px] py-[80px] flex items-center flex-col justify-center"
       >
         <div className="mb-[20px]">{props.Obj.icon}</div>
         <h1 className="text-[24px] font-[500]">{props.Obj.headline}</h1>

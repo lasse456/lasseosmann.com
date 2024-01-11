@@ -84,8 +84,8 @@ export default function Navbar({ page }: { page: PAGES }) {
             <div className="flex items-center gap-[40px] xl:hidden">
               <Link href={"/ydelser"}>Ydelser</Link>
               <Link href={"/arbejde"}>Arbejde</Link>
+              <Link href={"/udvikling"}>Udvikling</Link>
               <Link href={"/om-os"}>Om os</Link>
-              <Link href={"/kontakt"}>Anmeldelser</Link>
               <Link href={"/kontakt"}>Kontakt</Link>
             </div>
           </div>
