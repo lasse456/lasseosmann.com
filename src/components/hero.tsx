@@ -4,23 +4,23 @@ import ConicBlurEffect from "./coinblur";
 
 export default function Hero() {
   return (
-    <section className=" py-[100px] pb-[30px] pt-[160px] bg-[linear-gradient(rgba(5,29,64,0.98),rgba(5,29,64,0.90)),url(/reviewbg.jpg)] bg-center bg-cover">
+    <section className=" py-[100px] pb-[30px] pt-[160px] ">
       <div className="w-[90%] mx-auto">
         {" "}
-        <h1 className="text-center text-heading font-[500] text-white">
+        <h1 className="text-center text-heading font-[500] text-main">
           A <span className="italic font-italic text-[88px]">performance</span>{" "}
           based agency
         </h1>
-        <p className="text-center text-description w-[70%] mx-auto text-gray-200 mb-[40px]">
+        <p className="text-center text-description w-[70%] mx-auto text-gray-600 mb-[40px]">
           Vi er et lille team af dedikerede nørder, der stræber efter at blive
           de førende inden for paid social og e-mail marketing.
         </p>
         <div className="flex items-center justify-center gap-[30px] mb-[50px]">
-          <div className="flex items-center justify-center gap-[10px] text-white">
+          <div className="flex items-center justify-center gap-[10px] text-main">
             <CheckCircle2 size={28} />
             <h2 className="text-[22px]">+4 års erfaring</h2>
           </div>
-          <div className="flex items-center justify-center gap-[10px] text-white">
+          <div className="flex items-center justify-center gap-[10px] text-main">
             <CheckCircle2 size={28} />
             <h2 className="text-[22px]">Ingen binding</h2>
           </div>
