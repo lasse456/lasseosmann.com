@@ -1,5 +1,5 @@
 import { Reveal } from "./Animations/Reveal";
-import CountUp from "react-countup";
+import Counter from "./counter";
 
 export default function Stats() {
   return (
@@ -10,8 +10,15 @@ export default function Stats() {
           <span className="italic font-italic text-[56px] text-gray-600">
             stotle af
           </span>{" "}
-          <CountUp start={0} end={145} duration={2} delay={0} />
         </h1>
+        <div className="grid grid-cols-3 text-[60px]">
+          <div className="inline-block mx-auto">
+            <Counter endValue={100} />
+          </div>
+
+          <Counter endValue={100} />
+          <Counter endValue={100} />
+        </div>
       </div>
     </section>
   );

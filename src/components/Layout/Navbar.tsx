@@ -68,7 +68,7 @@ export default function Navbar({ page }: { page: PAGES }) {
     <nav
       style={{
         backdropFilter: "blur(5px)", // Apply blur effect
-        backgroundColor: "rgba(255, 255, 255, 0.85)", // Adjust opacity as needed
+        backgroundColor: "rgba(255, 255, 255, 1)", // Adjust opacity as needed
       }}
       className="bg-opacity-70 fixed w-full py-[14px] border-b-[1px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
     >

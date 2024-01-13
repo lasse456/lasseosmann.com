@@ -13,10 +13,6 @@ export default function Index() {
     <Layout page={PAGES.HOME}>
       <Hero />
       <Cases />
-      <Skills />
-      <Stats />
-      <Reviews />
-      <Info />
     </Layout>
   );
 }

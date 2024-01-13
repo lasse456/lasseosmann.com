@@ -59,7 +59,7 @@ const casesData = [
 
 export default function Cases() {
   return (
-    <section className=" py-[100px] pt-[160px]">
+    <section className="py-[100px] pt-[160px] bg-white mt-[-400px] z-2 absolute">
       <div className="w-[90%] mx-auto text-center">
         <h1 className="text-sectionheading font-[500] mb-[60px] text-main">
           Cases vi er{" "}
