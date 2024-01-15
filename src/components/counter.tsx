@@ -1,17 +1,19 @@
+import React, { useState } from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
-export default function Couter(props: any) {
+export default function Counter(props: any) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const onVisibilityChange = (visible: boolean) => {
+    if (visible && !isVisible) {
+      setIsVisible(true);
+    }
+  };
+
   return (
-    <div className="App">
-      <div className="content" />
-      <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
-        {({ isVisible }: { isVisible: any }) => (
-          <div style={{ height: 100 }}>
-            {isVisible ? <CountUp end={props.endValue} /> : null}
-          </div>
-        )}
-      </VisibilitySensor>
-    </div>
+    <VisibilitySensor onChange={onVisibilityChange}>
+      <CountUp end={isVisible ? 100 : 0} />
+    </VisibilitySensor>
   );
 }

@@ -2,12 +2,18 @@ export default function Skills() {
   return (
     <section className=" py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main">
-        <h1 className="text-sectionheading font-[500] mb-[60px] text-center text-main">
-          Vi kan ikke alt, men her er vi{" "}
-          <span className="bg-gradient-to-r from-[#526bb9] via-[#233265] via-[#526bb9] to-[#526bb9] text-transparent bg-clip-text">
-            specialister
-          </span>{" "}
-        </h1>
+        <div className="mb-[60px] text-center">
+          <h1 className="text-sectionheading font-[500] text-main">
+            Vi kan ikke alt, men her er vi{" "}
+            <span className="bg-gradient-to-r from-[#526bb9] via-[#233265] via-[#526bb9] to-[#526bb9] text-transparent bg-clip-text">
+              specialister
+            </span>{" "}
+          </h1>
+          <p className="text-description text-gray-600">
+            We&apos;ve analyzed the data and have compelling statistics to
+            share.
+          </p>
+        </div>
         <div className="grid grid-cols-3 gap-[30px]">
           <div className="p-[50px] bg-[#f7f7fc]">
             <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">

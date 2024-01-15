@@ -79,7 +79,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         <div className="flex items-center gap-[50px]">
           <Online />
           <div className="flex items-center gap-[20px]">
-            <button className="border-[1px] text-white rounded-[100px] bg-gradient-to-r from-[#0e152e] via-[#233265] to-[#526bb9] p-button py-[6px]">
+            <button className="border-[1px] text-white rounded-[100px] bg-gradient-to-r from-[#0e152e] via-[#233265] via-[#526bb9] via-[#233265] to-[#0e152e] p-button py-[6px]">
               Gratis Performance Analyse
             </button>
             <Language />

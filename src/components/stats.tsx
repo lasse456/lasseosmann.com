@@ -11,11 +11,8 @@ export default function Stats() {
             stotle af
           </span>{" "}
         </h1>
-        <div className="grid grid-cols-3 text-[60px]">
-          <div className="inline-block mx-auto">
-            <Counter endValue={100} />
-          </div>
-
+        <div className="flex justify-between justify-center text-[60px] w-[60%] mx-auto">
+          <Counter endValue={100} />
           <Counter endValue={100} />
           <Counter endValue={100} />
         </div>
