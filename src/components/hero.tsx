@@ -1,4 +1,4 @@
-import { Reveal } from "./Animations/Reveal";
+import { ScrollAnimation } from "./Animations/ScrollAnimation";
 import { CheckCircle2 } from "lucide-react";
 import ConicBlurEffect from "./coinblur";
 

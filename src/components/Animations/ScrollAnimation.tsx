@@ -5,7 +5,7 @@ interface Props {
   children: JSX.Element;
 }
 
-export const Reveal = ({ children }: Props) => {
+export const ScrollAnimation = ({ children }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();

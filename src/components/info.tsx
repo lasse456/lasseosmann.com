@@ -1,4 +1,4 @@
-import { Reveal } from "./Animations/Reveal";
+import { ScrollAnimation } from "./Animations/ScrollAnimation";
 
 export default function Info() {
   return (

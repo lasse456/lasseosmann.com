@@ -1,4 +1,4 @@
-import { Reveal } from "./Animations/Reveal";
+import { ScrollAnimation } from "./Animations/ScrollAnimation";
 import Slider from "react-infinite-logo-slider";
 
 const reviewData = [

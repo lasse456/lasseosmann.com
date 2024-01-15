@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Reveal } from "../Animations/Reveal";
+import { ScrollAnimation } from "../Animations/ScrollAnimation";
 
 export default function Footer() {
   return (

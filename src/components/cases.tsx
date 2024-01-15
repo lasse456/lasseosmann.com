@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Reveal } from "./Animations/Reveal";
+import { ScrollAnimation } from "./Animations/ScrollAnimation";
 import Counter from "./counter";
 
 const casesData = [
@@ -259,28 +259,43 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
               %
             </h1>
             <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
-              roas
+              roi
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px]">+1200+</h1>
+            <h1 className="mb-[4px]">
+              +
+              <span>
+                <Counter endValue={100} />
+              </span>
+              %
+            </h1>
             <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
               leads
             </p>
-          </div>
+          </div>{" "}
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px]">+45%</h1>
+            <h1 className="mb-[4px]">
+              +
+              <span>
+                <Counter endValue={100} />
+              </span>
+              %
+            </h1>
             <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
-              roas
+              profit
             </p>
           </div>
         </div>
       </div>
       <div className="p-[20px] bg-[rgba(5,29,64,1)] rounded-b-main py-[50px]">
-        <p className="text-white w-[80%] mx-auto">
+        <p className="text-white w-[80%] mx-auto mb-[40px]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem
           Meta, TikTok, Snapchat og content produktion.
+        </p>
+        <p className="text-[#526bb9] border-[2px] border-[#526bb9] rounded-[100px] w-[50%] mx-auto py-[5px]">
+          www.elgiganten.dk
         </p>
       </div>
     </div>
