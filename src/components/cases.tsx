@@ -224,7 +224,6 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           loop
           playsInline
           width="600"
-          loading="lazy"
         >
           <source src="/worst.mp4" type="video/mp4" />
         </video>
@@ -242,12 +241,17 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             borderTopRightRadius: "8px",
           }}
         />
+        <div className="absolute top-0 flex justify-center items-center w-full">
+          <div className="bg-white mt-[10px] p-[20px] py-[10px] rounded-main">
+            <img className="w-[70px]" src="/elgiganten.png"></img>
+          </div>
+        </div>
       </div>
 
       <div className="bg-[rgba(5,29,64,1)]">
         <div className="w-[80%] mx-auto flex text-white justify-between text-[30px]">
           <div className="flex flex-col items-center">
-            <h1>
+            <h1 className="mb-[4px]">
               +
               <span>
                 <Counter endValue={100} />
@@ -259,13 +263,13 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <h1>+1200+</h1>
+            <h1 className="mb-[4px]">+1200+</h1>
             <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
               leads
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <h1>+45%</h1>
+            <h1 className="mb-[4px]">+45%</h1>
             <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
               roas
             </p>
