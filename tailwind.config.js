@@ -14,8 +14,8 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        heading: "76px",
-        description: "26px",
+        heading: "66px",
+        description: "22px",
         sectionheading: "50px",
       },
       colors: {
@@ -31,6 +31,9 @@ module.exports = {
       padding: {
         button: "10px 26px 10px 26px",
         button02: "16px 30px",
+      },
+      maxWidth: {
+        main: "1300px",
       },
     },
   },

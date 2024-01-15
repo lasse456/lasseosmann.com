@@ -2,8 +2,8 @@ import { Reveal } from "./Animations/Reveal";
 
 export default function Info() {
   return (
-    <section className=" py-[100px] pt-[160px]">
-      <div className="w-[90%] mx-auto grid grid-cols-2 gap-[100px]">
+    <section className="py-[100px] pt-[160px]">
+      <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px]">
         <div className="flex flex-col justify-center py-[60px]">
           <h1 className="text-sectionheading leading-[60px] mb-[40px]">
             High-Converting content til{" "}

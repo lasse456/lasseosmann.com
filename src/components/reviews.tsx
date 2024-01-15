@@ -20,33 +20,6 @@ const reviewData = [
     founder: "/profile.jpg",
     name: "Jonas Larsen",
   },
-  {
-    image: "/fivestar.jpg",
-    heading: "Kan stærkt anbefales!",
-    description:
-      "Vi har førhend gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
-    position: "Co-Founder Leve.",
-    founder: "/profile.jpg",
-    name: "Jonas Larsen",
-  },
-  {
-    image: "/fivestar.jpg",
-    heading: "Kan stærkt anbefales!",
-    description:
-      "Vi har førhen gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
-    position: "Co-Founder Leve.",
-    founder: "/profile.jpg",
-    name: "Jonas Larsen",
-  },
-  {
-    image: "/fivestar.jpg",
-    heading: "Kan stærkt anbefales!",
-    description:
-      "Vi har dog førhen gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
-    position: "Co-Founder Leve.",
-    founder: "/profile.jpg",
-    name: "Jonas Larsen",
-  },
 ];
 export default function Reviews() {
   return (

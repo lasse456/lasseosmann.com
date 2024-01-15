@@ -1,10 +1,10 @@
 import Head from "next/head";
 
 const Meta = ({
-  title = "Gazella Team ┃ Unik softwareudvikling til din virksomhed",
+  title = "COAD - Performance based agency",
   keywords = "A modern dat software group",
   description = "For ofte bliver unges idéer ikke til virkelighed, derfor samler vi unge iværksættere.",
-  icon = "/favicon.ico",
+  icon = "/gustav.jpg",
   banner = "/seo/banner.png",
   url = "https://gazellateam.com",
 }: {

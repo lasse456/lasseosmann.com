@@ -1,10 +1,10 @@
 export default function Skills() {
   return (
     <section className=" py-[100px] pt-[160px]">
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] mx-auto max-w-main">
         <h1 className="text-sectionheading font-[500] mb-[60px] text-center text-main">
           Vi kan ikke alt, men her er vi{" "}
-          <span className="italic font-italic text-[56px] text-gray-600">
+          <span className="bg-gradient-to-r from-[#526bb9] via-[#233265] via-[#526bb9] to-[#526bb9] text-transparent bg-clip-text">
             specialister
           </span>{" "}
         </h1>

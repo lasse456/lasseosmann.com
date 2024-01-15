@@ -70,19 +70,16 @@ export default function Navbar({ page }: { page: PAGES }) {
         backdropFilter: "blur(5px)", // Apply blur effect
         backgroundColor: "rgba(255, 255, 255, 1)", // Adjust opacity as needed
       }}
-      className="bg-opacity-70 fixed w-full py-[14px] border-b-[1px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
+      className="bg-opacity-70 border-b-[1px] fixed w-full py-[14px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
     >
-      <div className="w-[96%] mx-auto flex items-center justify-between">
-        <Link href={"/"} className="text-[24px] font-[600]">
+      <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
+        <Link href={"/"} className="text-[24px] font-[600] text-main">
           COAD{" "}
-          <span className="italic font-italic text-[24px] font-[200] text-gray-600">
-            agency
-          </span>{" "}
         </Link>
         <div className="flex items-center gap-[50px]">
           <Online />
           <div className="flex items-center gap-[20px]">
-            <button className="border-[1px] rounded-[100px] p-button py-[6px]">
+            <button className="border-[1px] text-white rounded-[100px] bg-gradient-to-r from-[#0e152e] via-[#233265] to-[#526bb9] p-button py-[6px]">
               Gratis Performance Analyse
             </button>
             <Language />

@@ -24,6 +24,7 @@ export default function Layout({
         <Navbar page={page} />
         <div className={`${className}`}>{children}</div>
       </div>
+      <Footer />
     </div>
   );
 }
