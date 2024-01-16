@@ -7,6 +7,7 @@ import Skills from "@/components/skills";
 import Cases from "@/components/cases";
 import Info from "@/components/info";
 import Stats from "@/components/stats";
+import Team from "@/components/team";
 
 export default function Index() {
   return (
@@ -17,6 +18,7 @@ export default function Index() {
       <Stats />
       <Reviews />
       <Info />
+      <Team />
     </Layout>
   );
 }

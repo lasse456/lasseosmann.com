@@ -70,7 +70,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         backdropFilter: "blur(5px)", // Apply blur effect
         backgroundColor: "rgba(255, 255, 255, 1)", // Adjust opacity as needed
       }}
-      className="bg-opacity-70 border-b-[1px] fixed w-full py-[14px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
+      className="bg-opacity-70 fixed w-full py-[24px] z-[3]" // You can adjust opacity using Tailwind's bg-opacity utility
     >
       <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
         <Link href={"/"} className="text-[24px] font-[600] text-main">

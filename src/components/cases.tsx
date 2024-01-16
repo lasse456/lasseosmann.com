@@ -262,7 +262,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
               roi
             </p>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center justify-center">
             <h1 className="mb-[4px]">
               +
               <span>
@@ -288,15 +288,21 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           </div>
         </div>
       </div>
-      <div className="p-[20px] bg-[rgba(5,29,64,1)] rounded-b-main py-[50px]">
+      <div className="p-[20px] bg-[rgba(5,29,64,1)] rounded-b-main py-[50px] pb-[0px]">
         <p className="text-white w-[80%] mx-auto mb-[40px]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem
           Meta, TikTok, Snapchat og content produktion.
         </p>
-        <p className="text-[#526bb9] border-[2px] border-[#526bb9] rounded-[100px] w-[50%] mx-auto py-[5px]">
-          www.elgiganten.dk
-        </p>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/tiktok.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+        </div>
       </div>
     </div>
   );

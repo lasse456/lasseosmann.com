@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <section className=" py-[100px] pt-[160px]">
+    <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
           <h1 className="text-sectionheading font-[500] text-main">
@@ -15,7 +15,7 @@ export default function Skills() {
           </p>
         </div>
         <div className="grid grid-cols-3 gap-[30px]">
-          <div className="p-[50px] bg-[#f7f7fc]">
+          <div className="p-[50px] bg-[#f7f7fc] rounded-[8px]">
             <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
               <img className="w-[30px]" src="/metalogo.png"></img>
             </div>
@@ -41,7 +41,7 @@ export default function Skills() {
               at vækste din bundlinje og profit.
             </p>
           </div>
-          <div className="p-[50px] bg-[#f7f7fc]">
+          <div className="p-[50px] bg-[#f7f7fc] rounded-[8px]">
             <div className="mb-[40px] border-[1px] bg-white p-[10px] rounded-[50px] inline-block">
               <img className="w-[30px]" src="/klaviyo.png"></img>
             </div>
@@ -51,7 +51,7 @@ export default function Skills() {
               at vækste din bundlinje og profit.
             </p>
           </div>
-          <div className="p-[50px] bg-[#f7f7fc]">
+          <div className="p-[50px] bg-[#f7f7fc] rounded-[8px]">
             <div className="mb-[40px] border-[1px] bg-white p-[10px] rounded-[50px] inline-block">
               <img className="w-[30px]" src="/adwords.png"></img>
             </div>

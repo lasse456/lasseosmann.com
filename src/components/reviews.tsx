@@ -31,7 +31,7 @@ export default function Reviews() {
         </h1>
         <Slider
           width="500px"
-          duration={50}
+          duration={10}
           pauseOnHover={true}
           blurBorders={false}
           blurBoderColor={"#fff"}
