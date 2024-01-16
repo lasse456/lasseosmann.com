@@ -173,7 +173,7 @@ const expandedCasesData = [
 export default function Cases() {
   const [casesExpanded, setCasesExpanded] = useState(false);
   return (
-    <section className="py-[100px] pt-[160px] z-[2] bg-white mt-[-400px] relative">
+    <section className="py-[100px] pt-[160px] z-[2] bg-white mt-[-510px] relative">
       <div className="w-[90%] mx-auto text-center max-w-main">
         <div className="mb-[60px]">
           <h1 className="text-sectionheading font-[500] text-main">

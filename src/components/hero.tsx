@@ -4,7 +4,13 @@ import ConicBlurEffect from "./coinblur";
 
 export default function Hero() {
   return (
-    <section className="z-[0] py-[100px] pb-[30px] pt-[160px] relative bg-gradient-to-r from-[#0e152e] via-[#233265] via-[#233265] via-[#233265 to-[#0e152e]">
+    <section
+      style={{
+        background:
+          "radial-gradient(circle, rgba(1,30,62,1) 1%, rgba(0,41,93,1) 50%, rgba(0,22,48,1) 81%, rgba(0,15,32,1) 100%)",
+      }}
+      className="heroback z-[0] py-[100px] pb-[30px] pt-[160px] relative bg-gradient-to-br from-rgb-1-30-62 via-rgb-0-41-93 to-rgb-0-22-48"
+    >
       <div className="w-[90%] mx-auto max-w-main">
         {" "}
         <h1 className="text-center text-heading font-[500] text-white">
@@ -24,14 +30,15 @@ export default function Hero() {
             <h2 className="text-[20px]">Ingen binding</h2>
           </div>
         </div>
-        <div className="flex items-center justify-center mb-[50px]">
+        <div className="flex items-center justify-center mb-[100px]">
           <button className="rounded-[60px] border-[2px] border-white text-white p-button02 font-[500]">
             Få en gratis analyse
           </button>
         </div>
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <img className="mt-[-300px]" src="/lines.svg"></img>
           <img
-            className="z-0 spin-animation w-[600px]"
+            className="z-0 spin-animation w-[800px] mt-[-320px]"
             src="/globe.png"
             alt="Globe"
           ></img>
@@ -50,6 +57,9 @@ export default function Hero() {
           }
           .spin-animation {
             animation: spin 40s infinite linear;
+          }
+          .heroback {
+            background: radial-gradient(47.77362456046952% 100% at 50.00000569505985% 3.3306690738754696e-14%,rgba(0,113,227,.3) 0%,rgba(0,0,0,0) 100%);
           }
         `}
       </style>

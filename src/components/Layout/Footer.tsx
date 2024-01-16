@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
 
       {/* Footer */}
-      <footer className="absolute bottom-[-60px] py-[100px] left-0 right-0 bg-main z-10">
+      <footer className="absolute bottom-[-60px] py-[200px] left-0 right-0 bg-main z-0">
         <div className="flex flex-col items-center w-[90%] mx-auto text-center">
           <h1 className="text-sectionheading font-[500] text-white mb-[20px]">
             Lad os gennemgå{" "}
