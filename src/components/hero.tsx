@@ -7,16 +7,22 @@ export default function Hero() {
     <section
       style={{
         background:
-          "radial-gradient(circle, rgba(1,30,62,1) 1%, rgba(0,41,93,1) 50%, rgba(0,22,48,1) 81%, rgba(0,15,32,1) 100%)",
+          "radial-gradient(circle, rgba(18,21,56,1) 0%, rgba(23,23,46,1) 15%, rgba(0,4,50,1) 33%, rgba(14,25,56,1) 51%, rgba(18,14,31,1) 73%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%)",
       }}
       className="heroback z-[0] py-[100px] pb-[30px] pt-[160px] relative bg-gradient-to-br from-rgb-1-30-62 via-rgb-0-41-93 to-rgb-0-22-48"
     >
       <div className="w-[90%] mx-auto max-w-main">
         {" "}
+        <div className="flex items-center justify-center mb-[20px]">
+          <div className="flex items-center gap-[10px]">
+            <img className="w-[140px]" src="/trust.svg"></img>
+            <p className="text-gray-200">4.5/5 - Trustpilot</p>
+          </div>
+        </div>
         <h1 className="text-center text-heading font-[500] text-white">
           A performance based agency
         </h1>
-        <p className="text-center text-description w-[60%] mx-auto text-gray-200 mb-[40px]">
+        <p className="text-center text-description font-[200] w-[60%] mx-auto text-gray-200 mb-[40px]">
           Vi er et lille team af dedikerede nørder, der stræber efter at blive
           de førende inden for paid social og e-mail marketing.
         </p>
@@ -31,7 +37,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex items-center justify-center mb-[100px]">
-          <button className="rounded-[60px] border-[2px] border-white text-white p-button02 font-[500]">
+          <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
             Få en gratis analyse
           </button>
         </div>
