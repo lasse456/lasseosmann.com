@@ -19,8 +19,8 @@ export default function Hero() {
             <p className="text-gray-200">4.5/5 - Trustpilot</p>
           </div>
         </div>
-        <h1 className="text-center text-heading font-[500] text-white">
-          A performance based agency
+        <h1 className="text-center text-heading font-[500] text-white w-[80%] mx-auto leading-[76px] mb-[30px]">
+          A performance based agency growing your business
         </h1>
         <p className="text-center text-description font-[200] w-[60%] mx-auto text-gray-200 mb-[40px]">
           Vi er et lille team af dedikerede nørder, der stræber efter at blive
