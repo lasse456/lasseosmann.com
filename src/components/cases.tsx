@@ -213,7 +213,7 @@ export default function Cases() {
 
 const CaseCard = ({ object, background }: { object: any; background: any }) => {
   return (
-    <div className="shadow-lg rounded-main">
+    <div>
       <div className="relative">
         <video
           className="pointer-events-none rounded-t-main bg-[linear-gradient(rgba(5,29,64,0),rgba(5,29,64,1))]"
@@ -233,7 +233,8 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             left: "0",
             width: "100%",
             height: "100%", // Adjust the height of the gradient overlay as needed
-            background: "linear-gradient(rgba(16,25,46,0.4),rgba(16,25,46,1))",
+            background:
+              "linear-gradient(rgba(247, 247, 252, 0.4),rgba(247, 247, 252, 1))",
             pointerEvents: "none",
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
@@ -246,10 +247,10 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
         </div>
       </div>
 
-      <div className="bg-[rgba(16,25,46,1)]">
+      <div className="bg-[#f7f7fc]">
         <div className="w-[80%] mx-auto flex text-white justify-between text-[30px]">
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px]">
+            <h1 className="mb-[4px] text-main">
               +
               <span>
                 <Counter endValue={100} />
@@ -261,7 +262,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h1 className="mb-[4px]">
+            <h1 className="mb-[4px] text-main">
               +
               <span>
                 <Counter endValue={100} />
@@ -273,7 +274,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             </p>
           </div>{" "}
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px]">
+            <h1 className="mb-[4px] text-main">
               +
               <span>
                 <Counter endValue={100} />
@@ -286,8 +287,8 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           </div>
         </div>
       </div>
-      <div className="p-[20px] bg-[rgba(16,25,46,1)] rounded-b-main py-[50px] pt-[24px] pb-[0px]">
-        <p className="text-white w-[80%] mx-auto mb-[20px]">
+      <div className="p-[20px] bg-[#f7f7fc] rounded-b-main py-[50px] pt-[24px] pb-[0px]">
+        <p className="text-main w-[80%] mx-auto mb-[20px]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem
           Meta, TikTok, Snapchat og content produktion.
