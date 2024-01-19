@@ -17,18 +17,3 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
-@keyframes spin {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-  }
-}
-
-/* Apply the spin animation to the image */
-.spinning-globe {
-  animation: spin 10s infinite linear; /* Adjust the duration and timing function as needed */
-  transform-style: preserve-3d; /* Ensure 3D transformation is applied */
-}

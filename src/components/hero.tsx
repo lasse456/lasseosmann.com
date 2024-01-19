@@ -3,28 +3,30 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="heroback z-[0] py-[100px] relative bg-main">
+    <section className="heroback z-[0] py-[100px] relative bg-white ">
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px]">
         <div className="flex flex-col justify-center">
           <div className="flex mb-[20px]">
             <div className="flex items-center gap-[10px]">
               <img className="w-[140px]" src="/trust.svg"></img>
-              <p className="text-gray-200">4.5/5 - Trustpilot</p>
+              <p className="text-gray-600">4.5/5 - Trustpilot</p>
             </div>
           </div>
-          <h1 className="text-heading font-[500] text-white leading-[76px] mb-[30px]">
+
+          <h1 className="text-heading font-[500] text-main leading-[76px] mb-[30px]">
             Et performance baseret agency
           </h1>
-          <p className="text-description font-[200] text-gray-200 mb-[40px]">
+
+          <p className="text-description font-[200] text-gray-600 mb-[40px]">
             Vi er et lille team af dedikerede nørder, der stræber efter at blive
             de førende inden for paid social og e-mail marketing.
           </p>
           <div className="flex gap-[30px] mb-[50px]">
-            <div className="flex items-center justify-center gap-[10px] text-white">
+            <div className="flex items-center justify-center gap-[10px] text-main">
               <CheckCircle2 size={28} />
               <h2 className="text-[20px]">+4 års erfaring</h2>
             </div>
-            <div className="flex items-center justify-center gap-[10px] text-white">
+            <div className="flex items-center justify-center gap-[10px] text-main">
               <CheckCircle2 size={28} />
               <h2 className="text-[20px]">Ingen binding</h2>
             </div>

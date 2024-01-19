@@ -1,10 +1,14 @@
-import { ScrollAnimation } from "./Animations/ScrollAnimation";
+import SectionStarter from "./sectionstarter";
 
 export default function Info() {
   return (
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[170px]">
         <div className="flex flex-col justify-center py-[60px]">
+          <div className="flex items-left justify-left mb-[20px]">
+            <SectionStarter section="vores speciale" />
+          </div>
+
           <h1 className="text-sectionheading font-[500] text-main mb-[40px] leading-[60px]">
             Vi kan ikke alt, men her er vi{" "}
             <span className="text-[#0071e3]">specialister</span>{" "}

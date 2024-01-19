@@ -24,7 +24,7 @@ const reviewData = [
 
 export default function Cta() {
   return (
-    <section className="py-[bg-main mb-[1000px] grid grid-cols-2 border-y-[1px]">
+    <section className="grid grid-cols-2 border-y-[1px]">
       <div className="max-w-main bg-white py-[100px]">
         <div className="w-[90%] ml-auto max-w-[650px]">
           <div className="flex items-center gap-[10px] mb-[30px]">

@@ -23,7 +23,10 @@ export default function Layout({
         <Meta />
         <Navbar page={PAGES.HOME} />
         <div className="mt-[68px]">
-          <div className={`${className}`}>{children}</div>
+          <div className={`${className}`}>
+            {children}
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

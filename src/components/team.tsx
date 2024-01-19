@@ -1,8 +1,11 @@
+import SectionStarter from "./sectionstarter";
+
 export default function Team() {
   return (
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
+          <SectionStarter section="holdet bag" />
           <h1 className="text-sectionheading font-[500] text-main">
             Vores dedikerede <span className="text-[#0071e3]">team</span>{" "}
           </h1>

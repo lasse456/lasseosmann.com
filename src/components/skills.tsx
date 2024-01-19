@@ -1,11 +1,13 @@
+import SectionStarter from "./sectionstarter";
+
 export default function Skills() {
   return (
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
+          <SectionStarter section="anvendte værktøjer" />
           <h1 className="text-sectionheading font-[500] text-main">
-            Vi kan ikke alt, men her er vi{" "}
-            <span className="text-[#0071e3]">specialister</span>{" "}
+            Vores <span className="text-[#0071e3]">specialer</span>{" "}
           </h1>
           <p className="text-description text-gray-600">
             We&apos;ve analyzed the data and have compelling statistics to
