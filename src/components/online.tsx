@@ -9,7 +9,7 @@ export default function Online() {
       ></img>
       <div className="flex items-center gap-[5px]">
         <img className="w-[16px]" src="/online.svg"></img>
-        <p className="text-white">Online</p>
+        <p>Online</p>
       </div>
     </div>
   );

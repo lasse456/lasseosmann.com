@@ -21,10 +21,11 @@ export default function Layout({
           strategy="lazyOnload"
         />
         <Meta />
-        <Navbar page={page} />
-        <div className={`${className}`}>{children}</div>
+        <Navbar page={PAGES.HOME} />
+        <div className="mt-[68px]">
+          <div className={`${className}`}>{children}</div>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 }

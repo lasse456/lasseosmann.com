@@ -8,6 +8,7 @@ import Cases from "@/components/cases";
 import Info from "@/components/info";
 import Stats from "@/components/stats";
 import Team from "@/components/team";
+import Cta from "@/components/Cta";
 
 export default function Index() {
   return (
@@ -19,6 +20,7 @@ export default function Index() {
       <Reviews />
       <Info />
       <Team />
+      <Cta />
     </Layout>
   );
 }

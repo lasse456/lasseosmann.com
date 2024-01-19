@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ScrollAnimation } from "./Animations/ScrollAnimation";
 import Counter from "./counter";
+import SectionStarter from "./sectionstarter";
 
 const casesData = [
   {
@@ -173,14 +173,12 @@ const expandedCasesData = [
 export default function Cases() {
   const [casesExpanded, setCasesExpanded] = useState(false);
   return (
-    <section className="py-[100px] pt-[160px] z-[2] bg-white mt-[-510px] relative">
+    <section className="py-[100px] pt-[160px] z-[2] bg-white">
       <div className="w-[90%] mx-auto text-center max-w-main">
         <div className="mb-[60px]">
+          <SectionStarter section="resultater" />
           <h1 className="text-sectionheading font-[500] text-main">
-            Cases vi er{" "}
-            <span className="bg-gradient-to-r from-[#526bb9] via-[#233265] via-[#526bb9] to-[#526bb9] text-transparent bg-clip-text">
-              stolte af
-            </span>{" "}
+            Cases vi er <span className="text-[#0071e3]">stolte af</span>{" "}
           </h1>
           <p className="text-description text-gray-600">
             We&apos;ve analyzed the data and have compelling statistics to
@@ -235,7 +233,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             left: "0",
             width: "100%",
             height: "100%", // Adjust the height of the gradient overlay as needed
-            background: "linear-gradient(rgba(5,29,64,0.4),rgba(5,29,64,1))",
+            background: "linear-gradient(rgba(16,25,46,0.4),rgba(16,25,46,1))",
             pointerEvents: "none",
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
@@ -248,7 +246,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
         </div>
       </div>
 
-      <div className="bg-[rgba(5,29,64,1)]">
+      <div className="bg-[rgba(16,25,46,1)]">
         <div className="w-[80%] mx-auto flex text-white justify-between text-[30px]">
           <div className="flex flex-col items-center">
             <h1 className="mb-[4px]">
@@ -258,7 +256,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
+            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
               roi
             </p>
           </div>
@@ -270,7 +268,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
+            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
               leads
             </p>
           </div>{" "}
@@ -282,13 +280,13 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-gradient-to-r from-[#526bb9] via-[#233265] to-[#526bb9] rounded-[100px] w-[70px]">
+            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
               profit
             </p>
           </div>
         </div>
       </div>
-      <div className="p-[20px] bg-[rgba(5,29,64,1)] rounded-b-main py-[50px] pb-[0px]">
+      <div className="p-[20px] bg-[rgba(16,25,46,1)] rounded-b-main py-[50px] pb-[0px]">
         <p className="text-white w-[80%] mx-auto mb-[40px]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem

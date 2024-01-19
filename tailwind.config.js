@@ -19,7 +19,7 @@ module.exports = {
         sectionheading: "50px",
       },
       colors: {
-        main: "#001030",
+        main: "#10192e",
         second: "#636363",
       },
       fontFamily: {

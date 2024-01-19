@@ -3,18 +3,13 @@ import { ScrollAnimation } from "../Animations/ScrollAnimation";
 
 export default function Footer() {
   return (
-    <div className="relative">
-      {/* Image */}
-      <div className="py-[60px] relative z-0 flex justify-center">
-        <img
-          className="z-0 spin-animation w-[800px]"
-          src="/globe.png"
-          alt="Globe"
-        ></img>
-      </div>
-
-      {/* Footer */}
-      <footer className="absolute bottom-[-60px] py-[200px] left-0 right-0 bg-main z-0">
+    <div>
+      <footer
+        style={{
+          background:
+            "radial-gradient(circle, rgba(18,21,56,1) 0%, rgba(23,23,46,1) 15%, rgba(0,4,50,1) 33%, rgba(14,25,56,1) 51%, rgba(18,14,31,1) 73%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%)",
+        }}
+      >
         <div className="flex flex-col items-center w-[90%] mx-auto text-center">
           <h1 className="text-sectionheading font-[500] text-white mb-[20px]">
             Lad os gennemgå{" "}

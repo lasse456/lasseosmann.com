@@ -4,10 +4,7 @@ export default function Team() {
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
           <h1 className="text-sectionheading font-[500] text-main">
-            Vores dedikerede{" "}
-            <span className="bg-gradient-to-r from-[#526bb9] via-[#233265] via-[#526bb9] to-[#526bb9] text-transparent bg-clip-text">
-              team
-            </span>{" "}
+            Vores dedikerede <span className="text-[#0071e3]">team</span>{" "}
           </h1>
           <p className="text-description text-gray-600">
             We&apos;ve analyzed the data and have compelling statistics to

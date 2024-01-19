@@ -23,11 +23,11 @@ const reviewData = [
 ];
 export default function Reviews() {
   return (
-    <section className="py-[100px] pb-[50px] bg-[linear-gradient(rgba(5,29,64,0.90),rgba(5,29,64,0.90)),url(/reviewbg.jpg)] bg-center bg-cover">
+    <section className="bg-main py-[100px] pb-[50px]">
       <div className="text-white">
         <h1 className="text-sectionheading font-[500] mb-[60px] text-center">
           Glade kunder er vores{" "}
-          <span className="italic font-italic text-[56px]">top-prioritet</span>{" "}
+          <span className="text-[#0071e3]">top-prioritet</span>{" "}
         </h1>
         <Slider
           width="500px"
