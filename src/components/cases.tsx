@@ -239,7 +239,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             borderTopRightRadius: "8px",
           }}
         />
-        <div className="absolute top-0 flex justify-center items-center w-full">
+        <div className="absolute top-[20px] flex justify-center items-center w-full">
           <div className="bg-white mt-[10px] p-[20px] py-[10px] rounded-main">
             <img className="w-[70px]" src="/elgiganten.png"></img>
           </div>
@@ -286,8 +286,8 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           </div>
         </div>
       </div>
-      <div className="p-[20px] bg-[rgba(16,25,46,1)] rounded-b-main py-[50px] pb-[0px]">
-        <p className="text-white w-[80%] mx-auto mb-[40px]">
+      <div className="p-[20px] bg-[rgba(16,25,46,1)] rounded-b-main py-[50px] pt-[24px] pb-[0px]">
+        <p className="text-white w-[80%] mx-auto mb-[20px]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem
           Meta, TikTok, Snapchat og content produktion.
