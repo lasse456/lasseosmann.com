@@ -24,31 +24,31 @@ const reviewData = [
 
 export default function Cta() {
   return (
-    <section className="py-[bg-main mb-[1000px] grid grid-cols-2">
-      <div className="max-w-main bg-main py-[100px]">
+    <section className="py-[bg-main mb-[1000px] grid grid-cols-2 border-y-[1px]">
+      <div className="max-w-main bg-white py-[100px]">
         <div className="w-[90%] ml-auto max-w-[650px]">
           <div className="flex items-center gap-[10px] mb-[30px]">
             <img className="w-[140px]" src="/trust.svg"></img>
-            <p className="text-gray-200">4.5/5 - Trustpilot</p>
+            <p className="text-gray-600">4.5/5 - Trustpilot</p>
           </div>
-          <h1 className="text-white text-sectionheading leading-[60px] w-[80%] mb-[20px]">
+          <h1 className="text-sectionheading leading-[60px] w-[80%] mb-[20px] text-main">
             Book en gratis performance analyse
           </h1>
-          <p className="w-[70%] text-gray-200 mb-[40px]">
+          <p className="w-[70%] text-gray-600 mb-[40px]">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s
           </p>
           <div className="flex flex-col gap-[20px] mb-[60px]">
-            <div className="flex items-center gap-[10px] text-white">
+            <div className="flex items-center gap-[10px] text-gray-600">
               <CheckCircle className="text-[#0071e3]" />
               <p>Helt uforpligtende</p>
             </div>
-            <div className="flex items-center gap-[10px] text-white">
+            <div className="flex items-center gap-[10px] text-gray-600">
               <CheckCircle className="text-[#0071e3]" />
               <p>Gratis analyse</p>
             </div>
-            <div className="flex items-center gap-[10px] text-white">
+            <div className="flex items-center gap-[10px] text-gray-600">
               <CheckCircle className="text-[#0071e3]" />
               <p>Overblik af vækstpotentiale</p>
             </div>
@@ -56,10 +56,10 @@ export default function Cta() {
           <div className="w-[100%]">
             <Slider
               width="500px"
-              duration={10}
+              duration={14}
               pauseOnHover={true}
               blurBorders={true}
-              blurBoderColor={"#10192e"}
+              blurBoderColor={"#fff"}
             >
               {reviewData.map((v) => (
                 <Slider.Slide key={v}>
@@ -116,7 +116,7 @@ export default function Cta() {
 
 const ReviewCard = ({ object }: { object: any }) => {
   return (
-    <div className="mr-[40px] bg-white p-[30px] rounded-[8px] text-black">
+    <div className="mr-[40px] bg-white p-[30px] rounded-[8px] border-[1px] text-black">
       <img className="w-[120px] mb-[20px]" src={object.image}></img>
       <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
       <p className="mb-[40px] text-[18px]">{object.description}</p>
