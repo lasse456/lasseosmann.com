@@ -31,24 +31,24 @@ export default function Cta() {
             <img className="w-[140px]" src="/trust.svg"></img>
             <p className="text-gray-600">4.5/5 - Trustpilot</p>
           </div>
-          <h1 className="text-sectionheading leading-[60px] w-[80%] mb-[20px] text-main">
+          <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main">
             Book en gratis performance analyse
           </h1>
-          <p className="w-[70%] text-gray-600 mb-[40px]">
+          <p className="w-[70%] text-gray-600 mb-[40px] font-[500]">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s
           </p>
           <div className="flex flex-col gap-[20px] mb-[60px]">
-            <div className="flex items-center gap-[10px] text-gray-600">
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
               <p>Helt uforpligtende</p>
             </div>
-            <div className="flex items-center gap-[10px] text-gray-600">
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
               <p>Gratis analyse</p>
             </div>
-            <div className="flex items-center gap-[10px] text-gray-600">
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
               <p>Overblik af vækstpotentiale</p>
             </div>

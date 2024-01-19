@@ -5,7 +5,7 @@ export default function Stats() {
   return (
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto">
-        <div className="mb-[60px] text-center">
+        <div className="mb-[70px] text-center">
           <h1 className="text-sectionheading font-[500] text-main">
             Resultater vi er <span className="text-[#0071e3]">stolte af</span>{" "}
           </h1>
@@ -15,21 +15,21 @@ export default function Stats() {
           </p>
         </div>
         <div className="flex justify-between text-main text-[100px] w-[60%] mx-auto">
-          <div>
+          <div className="font-[600] leading-[76px]">
             <Counter endValue={100} />
-            <p className="text-[20px] text-gray-600 text-center">
+            <p className="text-[20px] text-gray-400 text-center">
               Leads genereret
             </p>
           </div>
-          <div>
+          <div className="font-[600] leading-[76px]">
             <Counter endValue={100} />
-            <p className="text-[20px] text-gray-600 text-center">
+            <p className="text-[20px] text-gray-400 text-center">
               Leads genereret
             </p>
           </div>{" "}
-          <div>
+          <div className="font-[600] leading-[76px]">
             <Counter endValue={100} />
-            <p className="text-[20px] text-gray-600 text-center">
+            <p className="text-[20px] text-gray-400 text-center">
               Leads genereret
             </p>
           </div>

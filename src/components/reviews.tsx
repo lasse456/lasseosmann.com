@@ -23,9 +23,9 @@ const reviewData = [
 ];
 export default function Reviews() {
   return (
-    <section className="bg-main py-[100px] pb-[50px]">
+    <section className="bg-[#f7f7fc] py-[100px] pb-[50px]">
       <div className="text-white">
-        <h1 className="text-sectionheading font-[500] mb-[60px] text-center">
+        <h1 className="text-sectionheading font-[500] mb-[60px] text-center text-main">
           Glade kunder er vores{" "}
           <span className="text-[#0071e3]">top-prioritet</span>{" "}
         </h1>

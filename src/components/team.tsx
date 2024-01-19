@@ -6,10 +6,10 @@ export default function Team() {
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
           <SectionStarter section="holdet bag" />
-          <h1 className="text-sectionheading font-[500] text-main">
+          <h1 className="text-sectionheading font-[600] text-main">
             Vores dedikerede <span className="text-[#0071e3]">team</span>{" "}
           </h1>
-          <p className="text-description text-gray-600">
+          <p className="text-description text-gray-600 font-[500]">
             We&apos;ve analyzed the data and have compelling statistics to
             share.
           </p>

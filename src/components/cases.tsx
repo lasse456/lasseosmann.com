@@ -173,14 +173,14 @@ const expandedCasesData = [
 export default function Cases() {
   const [casesExpanded, setCasesExpanded] = useState(false);
   return (
-    <section className="py-[100px] pt-[160px] z-[2] bg-white">
+    <section className="py-[100px] pt-[160px] z-[2] bg-[#f7f7fc]">
       <div className="w-[90%] mx-auto text-center max-w-main">
         <div className="mb-[60px]">
           <SectionStarter section="resultater" />
-          <h1 className="text-sectionheading font-[500] text-main">
+          <h1 className="text-sectionheading font-[600] text-main">
             Cases vi er <span className="text-[#0071e3]">stolte af</span>{" "}
           </h1>
-          <p className="text-description text-gray-600">
+          <p className="text-description text-gray-600 font-[500]">
             We&apos;ve analyzed the data and have compelling statistics to
             share.
           </p>
@@ -202,7 +202,7 @@ export default function Cases() {
 
         <button
           onClick={() => setCasesExpanded(!casesExpanded)}
-          className="border-[1px] p-[16px] px-[40px] rounded-[100px] cursor-pointer"
+          className="border-[1px] p-[16px] px-[40px] rounded-[100px] cursor-pointer font-[600] text-main"
         >
           {casesExpanded ? "Luk" : "Indlæs flere"}
         </button>
@@ -234,7 +234,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             width: "100%",
             height: "100%", // Adjust the height of the gradient overlay as needed
             background:
-              "linear-gradient(rgba(247, 247, 252, 0.4),rgba(247, 247, 252, 1))",
+              "linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 1))",
             pointerEvents: "none",
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
@@ -247,48 +247,48 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
         </div>
       </div>
 
-      <div className="bg-[#f7f7fc]">
+      <div className="bg-white">
         <div className="w-[80%] mx-auto flex text-white justify-between text-[30px]">
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px] text-main">
+            <h1 className="mb-[4px] font-[600] text-main">
               +
               <span>
                 <Counter endValue={100} />
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
+            <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[70px]">
               roi
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h1 className="mb-[4px] text-main">
+            <h1 className="mb-[4px] font-[600] text-main">
               +
               <span>
                 <Counter endValue={100} />
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
+            <p className="text-[16px] font-[500] bg-[#0071e3] rounded-[100px] w-[70px]">
               leads
             </p>
           </div>{" "}
           <div className="flex flex-col items-center">
-            <h1 className="mb-[4px] text-main">
+            <h1 className="mb-[4px] font-[600] text-main">
               +
               <span>
                 <Counter endValue={100} />
               </span>
               %
             </h1>
-            <p className="text-[16px] bg-[#0071e3] rounded-[100px] w-[70px]">
+            <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[70px]">
               profit
             </p>
           </div>
         </div>
       </div>
-      <div className="p-[20px] bg-[#f7f7fc] rounded-b-main py-[50px] pt-[24px] pb-[0px]">
-        <p className="text-main w-[80%] mx-auto mb-[20px]">
+      <div className="p-[20px] bg-white rounded-b-main py-[50px] pt-[24px] pb-[0px]">
+        <p className="text-main w-[80%] mx-auto mb-[20px] font-[500]">
           Trendsales er Danmarks største og bedste bedømte secondhand
           markedsplads. Vi løftede deres digitale markedsføring med 307% gennem
           Meta, TikTok, Snapchat og content produktion.

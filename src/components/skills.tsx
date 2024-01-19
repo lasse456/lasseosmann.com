@@ -6,10 +6,10 @@ export default function Skills() {
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center">
           <SectionStarter section="anvendte værktøjer" />
-          <h1 className="text-sectionheading font-[500] text-main">
+          <h1 className="text-sectionheading font-[600] text-main">
             Vores <span className="text-[#0071e3]">specialer</span>{" "}
           </h1>
-          <p className="text-description text-gray-600">
+          <p className="text-description font-[500] text-gray-600">
             We&apos;ve analyzed the data and have compelling statistics to
             share.
           </p>
@@ -35,8 +35,8 @@ export default function Skills() {
               ></img>
             </div>
 
-            <h1 className="text-[26px] font-[600] mb-[20px]">Digital Ads</h1>
-            <p className="text-[20px] text-gray-600">
+            <h1 className="text-[22px] font-[600] mb-[20px]">Digital Ads</h1>
+            <p className="text-[18px] text-gray-600 font-[500]">
               Med en langsigtet holistiske tilgang har vi udelukkende fokus på
               at vækste din bundlinje og profit.
             </p>
@@ -45,8 +45,8 @@ export default function Skills() {
             <div className="mb-[40px] border-[1px] bg-white p-[10px] rounded-[50px] inline-block">
               <img className="w-[30px]" src="/klaviyo.png"></img>
             </div>
-            <h1 className="text-[26px] font-[600] mb-[20px]">Klaviyo</h1>
-            <p className="text-[20px] text-gray-600">
+            <h1 className="text-[22px] font-[600] mb-[20px]">Klaviyo</h1>
+            <p className="text-[18px] text-gray-600 font-[500]">
               Med en langsigtet holistiske tilgang har vi udelukkende fokus på
               at vækste din bundlinje og profit.
             </p>
@@ -55,8 +55,8 @@ export default function Skills() {
             <div className="mb-[40px] border-[1px] bg-white p-[10px] rounded-[50px] inline-block">
               <img className="w-[30px]" src="/adwords.png"></img>
             </div>
-            <h1 className="text-[26px] font-[600] mb-[20px]">Meta Ads</h1>
-            <p className="text-[20px] text-gray-600">
+            <h1 className="text-[22px] font-[600] mb-[20px]">Meta Ads</h1>
+            <p className="text-[18px] text-gray-600 font-[500]">
               Med en langsigtet holistiske tilgang har vi udelukkende fokus på
               at vækste din bundlinje og profit.
             </p>

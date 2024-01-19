@@ -1,6 +1,6 @@
 import SectionStarter from "./sectionstarter";
 
-export default function Info() {
+export default function International() {
   return (
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[170px]">
@@ -9,11 +9,11 @@ export default function Info() {
             <SectionStarter section="vores speciale" />
           </div>
 
-          <h1 className="text-sectionheading font-[600] text-main mb-[40px] leading-[60px]">
+          <h1 className="text-sectionheading font-[500] text-main mb-[40px] leading-[60px]">
             Vi kan ikke alt, men her er vi{" "}
             <span className="text-[#0071e3]">specialister</span>{" "}
           </h1>
-          <p className="text-description text-gray-600 font-[500]">
+          <p className="text-description text-gray-600">
             En af hemmelighederne bag vores samarbejdspartneres enorme succes på
             paid social, skyldes vores content eksekvering, som er alfa-omega
             når det kommer til at skabe ekstraordinære resultater på de sociale

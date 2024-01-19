@@ -13,11 +13,11 @@ export default function Hero() {
             </div>
           </div>
 
-          <h1 className="text-heading font-[500] text-main leading-[76px] mb-[30px]">
+          <h1 className="text-heading font-[600] text-main leading-[76px] mb-[30px]">
             Et performance baseret agency
           </h1>
 
-          <p className="text-description font-[200] text-gray-600 mb-[40px]">
+          <p className="text-description font-[400] text-gray-600 mb-[40px]">
             Vi er et lille team af dedikerede nørder, der stræber efter at blive
             de førende inden for paid social og e-mail marketing.
           </p>
