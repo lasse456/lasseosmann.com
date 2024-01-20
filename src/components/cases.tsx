@@ -223,7 +223,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           playsInline
           width="600"
         >
-          <source src="/worst.mp4" type="video/mp4" />
+          <source src="/castillo.mp4" type="video/mp4" />
         </video>
 
         <div
