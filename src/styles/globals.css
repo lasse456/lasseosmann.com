@@ -17,3 +17,5 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+@import url("./bubble-hero.css");

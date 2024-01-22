@@ -13,13 +13,8 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="flex flex-col justify-between min-h-screen">
       <div>
-        <Script
-          src="/js/script.js"
-          data-domain="ungeivaerksattere.dk"
-          strategy="lazyOnload"
-        />
         <Meta />
         <Navbar page={PAGES.HOME} />
         <div className="mt-[68px]">
