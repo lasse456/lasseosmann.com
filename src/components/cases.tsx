@@ -22,7 +22,7 @@ const casesData = [
           omsætning
         </p>
       </div>,
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
@@ -42,7 +42,7 @@ const casesData = [
     description:
       "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
     results: [
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
@@ -54,7 +54,7 @@ const casesData = [
           roi
         </p>
       </div>,
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
@@ -74,7 +74,7 @@ const casesData = [
     description:
       "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder, ved at stå for alt deres betalte markedsføring.",
     results: [
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
@@ -86,7 +86,7 @@ const casesData = [
           roi
         </p>
       </div>,
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
