@@ -72,7 +72,103 @@ const casesData = [
     media: "/cases/ankerstjerne/ankerstjerne.mp4",
     brand: "/cases/ankerstjerne/ankerstjerne.png",
     description:
-      "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder, ved at stå for alt deres betalte markedsføring.",
+      "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
+    results: [
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+    ],
+  },
+  {
+    media: "/cases/denomo/denomo.mp4",
+    brand: "/cases/denomo/denomo.png",
+    description:
+      "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
+    results: [
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+    ],
+  },
+  {
+    media: "/cases/marina/marina.mp4",
+    brand: "/cases/marina/marina.png",
+    description:
+      "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
+    results: [
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+      <div key={1} className="flex flex-col items-center">
+        <h1 className="mb-[4px] font-[600] text-main flex">
+          +
+          <span className="w-[50px]">
+            <Counter endValue={100} />
+          </span>
+          %
+        </h1>
+        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+          roi
+        </p>
+      </div>,
+    ],
+  },
+  {
+    media: "/cases/gelblast/gelblast.mp4",
+    brand: "/cases/gelblast/gelblast.png",
+    description:
+      "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
     results: [
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
