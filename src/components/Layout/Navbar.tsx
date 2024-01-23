@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Online from "../online";
 import Language from "../language";
+import { Menu } from "lucide-react";
 
 export enum PAGES {
   HOME,
@@ -66,20 +67,15 @@ export default function Navbar({ page }: { page: PAGES }) {
   const [isEnglish, setIsEnglish] = useState(false);
   return (
     <nav
-      className="bg-white fixed w-full py-[26px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
+      className="bg-white fixed w-full py-[16px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
     >
       <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
         <Link href={"/"} className="text-[24px] font-[600] text-main">
           COAD{" "}
         </Link>
-        <div className="flex items-center gap-[50px]">
-          <Online />
-          <div className="flex items-center gap-[20px]">
-            <button className="border-[1px] rounded-[100px] p-button py-[6px]">
-              Gratis Performance Analyse
-            </button>
-            <Language />
-          </div>
+        <div className="flex">
+          <Menu size={28} className="fixed top-[41px] right-[95px]" />
+          <img className="w-[80px]" src="/menuspin.png"></img>
         </div>
       </div>
     </nav>

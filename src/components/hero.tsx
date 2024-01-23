@@ -3,13 +3,13 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bubble-hero heroback z-[0] py-[100px] relative bg-white ">
-      <Script src="/js/bubbles.js"/>
+    <section className="bubble-hero overflow-hidden heroback z-[0] py-[100px] relative bg-white">
+      <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px]">
-        <div className="z-10 flex flex-col justify-center">
+        <div className="z-10 flex flex-col justify-center text-center">
           <div className="flex mb-[20px]">
             <div className="flex items-center gap-[10px]">
-              <img className="w-[140px]" src="/trust.svg" alt="Trustpilot"/>
+              <img className="w-[140px]" src="/trust.svg" alt="Trustpilot" />
               <p className="text-gray-600">4.5/5 - Trustpilot</p>
             </div>
           </div>
@@ -38,11 +38,8 @@ export default function Hero() {
             </button>
           </div>
         </div>
-        <div className="z-10 flex flex-col items-end justify-center">
-          <img className="rounded-main w-[500px]" src="/gustav.jpg"></img>
-        </div>
       </div>
-      <div className="bubbles"/>
+      <div className="bubbles overflow-hidden" />
     </section>
   );
 }
