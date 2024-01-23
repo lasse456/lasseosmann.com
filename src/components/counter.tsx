@@ -13,7 +13,10 @@ export default function Counter(props: any) {
 
   return (
     <VisibilitySensor onChange={onVisibilityChange}>
-      <CountUp end={isVisible ? 100 : 0} />
+      <div>
+        <CountUp end={isVisible ? props.endValue : 0} />
+        {props.percentage ? "%" : null}
+      </div>
     </VisibilitySensor>
   );
 }

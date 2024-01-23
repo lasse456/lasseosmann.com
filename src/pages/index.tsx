@@ -14,6 +14,7 @@ export default function Index() {
   return (
     <Layout page={PAGES.HOME}>
       <Hero />
+      <Stats />
       <Cases />
       <Skills />
       <Stats />

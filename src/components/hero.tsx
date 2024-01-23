@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bubble-hero heroback z-[0] py-[100px] relative bg-white ">
+    <section className="bubble-hero heroback z-[0] py-[100px] relative bg-white overflow-hidden">
       <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">
         <a

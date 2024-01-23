@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Counter from "./counter";
 import SectionStarter from "./sectionstarter";
+import Slider from "react-infinite-logo-slider";
 
 const casesData = [
   {
@@ -173,39 +174,31 @@ const expandedCasesData = [
 export default function Cases() {
   const [casesExpanded, setCasesExpanded] = useState(false);
   return (
-    <section className="py-[100px] pt-[160px] z-[2] bg-[#f7f7fc]">
+    <section className="py-[150px] pt-[160px] z-[2] bg-[#f7f7fc]">
       <div className="w-[90%] mx-auto text-center max-w-main">
         <div className="mb-[60px]">
           <SectionStarter section="resultater" />
           <h1 className="text-sectionheading font-[600] text-main">
-            Cases vi er <span className="text-[#0071e3]">stolte af</span>{" "}
+            Et udvalg af <span className="text-[#0071e3]">succes cases</span>{" "}
           </h1>
           <p className="text-description text-gray-600 font-[500]">
-            We&apos;ve analyzed the data and have compelling statistics to
-            share.
+            Vi har skabt nogle af de hurtigst voksende e-commerce brands i
+            norden
           </p>
         </div>
-
-        {casesExpanded ? (
-          <div className="grid grid-cols-3 gap-[30px] mb-[80px]">
-            {expandedCasesData.map((v: any) => (
-              <CaseCard background={v.media} key={v} object={v} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-3 gap-[30px] mb-[80px]">
-            {casesData.map((v: any) => (
-              <CaseCard background={v.media} key={v} object={v} />
-            ))}
-          </div>
-        )}
-
-        <button
-          onClick={() => setCasesExpanded(!casesExpanded)}
-          className="border-[1px] p-[16px] px-[40px] rounded-[100px] cursor-pointer font-[600] text-main"
+        <Slider
+          width="500px"
+          duration={30}
+          pauseOnHover={true}
+          blurBorders={true}
+          blurBoderColor={"#f7f7fc"}
         >
-          {casesExpanded ? "Luk" : "Indlæs flere"}
-        </button>
+          {casesData.map((v) => (
+            <Slider.Slide key={v}>
+              <CaseCard object={v} background={"/worst.mp4"} />
+            </Slider.Slide>
+          ))}
+        </Slider>
       </div>
     </section>
   );
@@ -213,7 +206,7 @@ export default function Cases() {
 
 const CaseCard = ({ object, background }: { object: any; background: any }) => {
   return (
-    <div>
+    <div className="mr-[50px]">
       <div className="relative">
         <video
           className="pointer-events-none rounded-t-main bg-[linear-gradient(rgba(5,29,64,0),rgba(5,29,64,1))]"

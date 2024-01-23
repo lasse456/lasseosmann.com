@@ -3,33 +3,36 @@ import Counter from "./counter";
 
 export default function Stats() {
   return (
-    <section className="py-[100px] pt-[160px]">
+    <section className="py-[100px] pt-[160px] bg-[#f7f7fc]">
       <div className="w-[90%] mx-auto">
-        <div className="mb-[70px] text-center">
-          <h1 className="text-sectionheading font-[500] text-main">
-            Resultater vi er <span className="text-[#0071e3]">stolte af</span>{" "}
-          </h1>
-          <p className="text-description text-gray-600">
-            We&apos;ve analyzed the data and have compelling statistics to
-            share.
-          </p>
-        </div>
         <div className="flex justify-between text-main text-[100px] w-[60%] mx-auto">
           <div className="font-[600] leading-[76px]">
-            <Counter endValue={100} />
-            <p className="text-[20px] text-gray-400 text-center">
+            <div className="mb-[30px] w-[100px]">
+              <span className="flex items-center justify-start">
+                <Counter endValue={100} percentage={true} />
+              </span>
+            </div>
+            <p className="text-[20px] text-gray-400 text-center leading-[0px]">
               Leads genereret
             </p>
           </div>
           <div className="font-[600] leading-[76px]">
-            <Counter endValue={100} />
-            <p className="text-[20px] text-gray-400 text-center">
+            <div className="mb-[30px] w-[100px]">
+              <span className="flex items-center justify-start">
+                <Counter endValue={62} percentage={true} />
+              </span>
+            </div>
+            <p className="text-[20px] text-gray-400 text-center leading-[0px]">
               Leads genereret
             </p>
-          </div>{" "}
+          </div>
           <div className="font-[600] leading-[76px]">
-            <Counter endValue={100} />
-            <p className="text-[20px] text-gray-400 text-center">
+            <div className="mb-[30px] w-[100px]">
+              <span className="flex items-center justify-start">
+                <Counter endValue={14} percentage={false} />
+              </span>
+            </div>
+            <p className="text-[20px] text-gray-400 text-center leading-[0px]">
               Leads genereret
             </p>
           </div>
