@@ -10,7 +10,7 @@ const casesData = [
     description:
       "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
     results: [
-      <div className="flex flex-col items-center">
+      <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
