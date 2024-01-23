@@ -1,42 +1,40 @@
 import Script from "next/script";
-import { CheckCircle2 } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bubble-hero overflow-hidden heroback z-[0] py-[100px] relative bg-white">
+    <section className="bubble-hero heroback z-[0] py-[100px] relative bg-white ">
       <Script src="/js/bubbles.js" />
-      <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px]">
-        <div className="z-10 flex flex-col justify-center text-center">
-          <div className="flex mb-[20px]">
-            <div className="flex items-center gap-[10px]">
-              <img className="w-[140px]" src="/trust.svg" alt="Trustpilot" />
-              <p className="text-gray-600">4.5/5 - Trustpilot</p>
-            </div>
-          </div>
-
-          <h1 className="text-heading font-[600] text-main leading-[76px] mb-[30px]">
-            Et performance baseret agency
+      <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">
+        <a
+          href="https://trustpilot.com/review/coad.dk"
+          className="cursor-pointer"
+          target="_blank"
+        >
+          <img className="w-[160px]" src="/trust.svg" alt="Trustpilot" />
+        </a>
+        <div className="flex flex-col items-center justify-center gap-4 md:gap-8">
+          <h1 className="text-3xl font-semibold leading-normal text-center md:text-6xl text-main">
+            Vi skaber brancheførende resultater for e-commerce brands.
           </h1>
-
-          <p className="text-description font-[400] text-gray-600 mb-[40px]">
-            Vi er et lille team af dedikerede nørder, der stræber efter at blive
-            de førende inden for paid social og e-mail marketing.
-          </p>
-          <div className="flex gap-[30px] mb-[50px]">
-            <div className="flex items-center justify-center gap-[10px] text-main">
-              <CheckCircle2 size={28} />
-              <h2 className="text-[20px]">+4 års erfaring</h2>
-            </div>
-            <div className="flex items-center justify-center gap-[10px] text-main">
-              <CheckCircle2 size={28} />
-              <h2 className="text-[20px]">Ingen binding</h2>
-            </div>
-          </div>
-          <div className="flex">
-            <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
-              Få en gratis analyse
-            </button>
-          </div>
+          <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
+            Med en langsigtet holistiske tilgang har vi udelukkende fokus på at
+            vækste din profit. Vi varetager hele den digitale kunderejse
+          </h2>
+        </div>
+        <div className="flex items-center justify-center">
+          <button className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-br active:scale-[0.99]">
+            <p className="text-lg font-bold text-white">
+              Få en gratis marketingsanalyse
+            </p>
+            <ChevronRight size={24} color="white" />
+          </button>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-8 mt-4">
+          <img src="./partners/google.png" className="h-[50px]" />
+          <img src="./partners/klaviyo.png" className="h-[50px]" />
+          <img src="./partners/meta.png" className="h-[50px]" />
+          <img src="./partners/shopify-v2.png" className="h-[50px]" />
         </div>
       </div>
       <div className="bubbles overflow-hidden" />
