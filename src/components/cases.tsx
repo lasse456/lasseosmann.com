@@ -13,7 +13,7 @@ const casesData = [
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
-          <span className="w-[50px]">
+          <span className="w-[100px]">
             <Counter endValue={4322} />
           </span>
           %
@@ -25,13 +25,13 @@ const casesData = [
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
-          <span className="w-[50px]">
+          <span className="w-[30px]">
             <Counter endValue={2.4} />
           </span>
           x
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          POAS
+          poas
         </p>
       </div>,
     ],
@@ -46,24 +46,24 @@ const casesData = [
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={74} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          profit
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
-          +
+          -
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={21} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          cpa
         </p>
       </div>,
     ],
@@ -77,25 +77,25 @@ const casesData = [
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
-          <span className="w-[50px]">
-            <Counter endValue={100} />
+          <span className="w-[100px]">
+            <Counter endValue={8820} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
-          +
+          -
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={31} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          cac
         </p>
       </div>,
     ],
@@ -110,24 +110,24 @@ const casesData = [
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={72} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          poas
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
-          +
+          -
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={29} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          cpa
         </p>
       </div>,
     ],
@@ -142,24 +142,24 @@ const casesData = [
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={316} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
-          +
+          -
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={52} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          cac
         </p>
       </div>,
     ],
@@ -174,24 +174,24 @@ const casesData = [
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={520} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
-          +
+          -
           <span className="w-[50px]">
-            <Counter endValue={100} />
+            <Counter endValue={64} />
           </span>
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          roi
+          cac
         </p>
       </div>,
     ],
@@ -201,7 +201,7 @@ const casesData = [
 export default function Cases() {
   const [casesExpanded, setCasesExpanded] = useState(false);
   return (
-    <section className="py-[150px] pt-[160px] z-[2] bg-[#f7f7fc]">
+    <section className="py-[150px] pt-[90px] z-[2] bg-[#f7f7fc]">
       <div className="w-[90%] mx-auto text-center max-w-main">
         <div className="mb-[60px]">
           <SectionStarter section="resultater" />

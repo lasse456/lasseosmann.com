@@ -4,21 +4,40 @@ import Slider from "react-infinite-logo-slider";
 const reviewData = [
   {
     image: "/fivestar.jpg",
-    heading: "Kan stærkt anbefales!",
+    heading: "Rigtig tilfreds med samarbejdet",
     description:
-      "Vi har førheng gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
+      "Rigtig tilfreds med samarbejdet med COAD. Meget professionelle og gode til at få vores annoncer til at afspejle vores værdier. Stor anbefaling herfra” Leve.",
     position: "Co-Founder Leve.",
-    founder: "/profile.jpg",
-    name: "Jonas Larsen",
+    founder: "/reviews/emma.png",
+    name: "Emma",
+  },
+
+  {
+    image: "/fivestar.jpg",
+    heading: "Seriøse og tillidsfulde!",
+    description:
+      "Vi samarbejder med Coad, da vi oplever en seriøs og tillidsfuld tilgang til arbejdet med markedsføring. Coad er gode til at afprøve og analysere vores annoncering. Dermed sikrer vi os, at vi hele tiden kan følge med i tidens tendenser på de sociale medier",
+    position: "CEO.",
+    founder: "/reviews/kern.png",
+    name: "Kern",
   },
   {
     image: "/fivestar.jpg",
-    heading: "Kan stærkt anbefales!",
+    heading: "Very helpful!",
     description:
-      "Vi har førhenz gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
-    position: "Co-Founder Leve.",
-    founder: "/profile.jpg",
-    name: "Jonas Larsen",
+      "We’ve had the pleasure to work with COAD and Gustav for a while now and we see great results on our marketing. He is very helpful, honest and solution-oriented. I can highly recommend using COAD’s services",
+    position: "CMO Skandi",
+    founder: "/reviews/monica.png",
+    name: "Monica",
+  },
+  {
+    image: "/fivestar.jpg",
+    heading: "Anbefales på det sterkeste.",
+    description:
+      "Vi er svært fornøyd med samarbeidet med Coad. Salgstallene våre har økt med +8000% etter vi startet samarbeidet. Coad er profesjonelle og yter langt bedre og tettere oppfølging enn det vi tidligere har opplevd med andre markedsføring selskaper. Den tette dialogen sikre at annonsene avspeiler vår verdier. Anbefales på det sterkeste.",
+    position: "CEO Dr. Ankerstjerne",
+    founder: "/reviews/stine.png",
+    name: "Stine",
   },
 ];
 
@@ -56,7 +75,7 @@ export default function Cta() {
           <div className="w-[100%]">
             <Slider
               width="500px"
-              duration={14}
+              duration={30}
               pauseOnHover={true}
               blurBorders={true}
               blurBoderColor={"#fff"}
@@ -116,7 +135,7 @@ export default function Cta() {
 
 const ReviewCard = ({ object }: { object: any }) => {
   return (
-    <div className="mr-[40px] bg-white p-[30px] rounded-[8px] border-[1px] text-black">
+    <div className="mr-[40px] bg-white p-[30px] rounded-[8px] border-[1px] text-black h-[450px] flex flex-col justify-between">
       <img className="w-[120px] mb-[20px]" src={object.image}></img>
       <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
       <p className="mb-[40px] text-[18px]">{object.description}</p>
@@ -127,8 +146,8 @@ const ReviewCard = ({ object }: { object: any }) => {
           src={object.founder}
         ></img>
         <div className="text-gray-600">
-          <p className="text-[18px] ">{object.name}</p>
-          <p className="text-[18px]">{object.position}</p>
+          <p className="text-[18px] font-[600]">{object.name}</p>
+          <p className="text-[18px] font-[300]">{object.position}</p>
         </div>
       </div>
     </div>
