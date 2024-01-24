@@ -54,22 +54,37 @@ export default function Cta() {
             Book en gratis performance analyse
           </h1>
           <p className="w-[70%] text-gray-600 mb-[40px] font-[500]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s
+            Gør som vores nuværende samarbejdspartnere, og anmod om en 100%
+            gratis analyse af jeres digitale marketing eksekvering.
           </p>
           <div className="flex flex-col gap-[20px] mb-[60px]">
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
-              <p>Helt uforpligtende</p>
+              <p>Vi gennemgår hele jeres digitale kunderejse fra A til Z</p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
-              <p>Gratis analyse</p>
+              <p>
+                Analyse af jeres Paid social, E-mail marketing, Google ads og
+                hjemmeside
+              </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
-              <p>Overblik af vækstpotentiale</p>
+              <p>Inklusiv en vurdering af jeres vækspotientale</p>
+            </div>
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
+              <CheckCircle className="text-[#0071e3]" />
+              <p>
+                Du får konkrete tiltag du kan implementere for at forbedre
+                performance{" "}
+              </p>
+            </div>
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
+              <CheckCircle className="text-[#0071e3]" />
+              <p>
+                BONUS: Oversigt over din profit og beregning af break-even ROAS.
+              </p>
             </div>
           </div>
           <div className="w-[100%]">
@@ -91,35 +106,60 @@ export default function Cta() {
       </div>
       <div className="max-w-main bg-[#f7f7fc] py-[100px]">
         <div className="w-[90%] mr-auto max-w-[650px] flex flex-col justify-center items-center">
-          <div className="bg-white w-[80%] p-[30px] border-[1px] rounded-main flex flex-col gap-[30px]">
-            <h1 className="text-[30px] text-main font-[600] border-b-[2px] border-[#0071e3]">
-              Starten på din vækstrejse
-            </h1>
+          <h1 className="font-[600] text-[30px] text-center mb-[20px] w-[60%]">
+            Anmod om en gratis marketingsanalyse
+          </h1>
+          <div className="bg-white w-[80%] p-[30px] border-[1px] border-blue-500 rounded-main flex flex-col gap-[30px]">
+            <div className="flex items-center justify-between gap-[30px]">
+              <div className="w-full border-blue-500">
+                <p className="mb-[12px]">Dit fulde navn</p>
+                <input
+                  className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
+                  placeholder="Eg. Gustav Walsted"
+                ></input>
+              </div>{" "}
+              <div className="w-full">
+                <p className="mb-[12px]">E-mail</p>
+                <input
+                  className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
+                  placeholder="Eg. Gustav Walsted"
+                ></input>
+              </div>
+            </div>
             <div>
-              <p className="mb-[12px]">Hvilken hjemmeside skal vi analysere?</p>
+              <p className="mb-[12px]">Virksomhed</p>
               <input
-                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main"
+                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                 placeholder="www.eksempel.com"
               ></input>
             </div>
-            <div>
-              <p className="mb-[12px]">Dit fulde navn</p>
-              <input
-                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main"
-                placeholder="Eg. Gustav Walsted"
-              ></input>
+            <div className="flex items-center justify-between gap-[30px]">
+              <div className="w-full">
+                <p className="mb-[12px]">Telefonnummer</p>
+                <input
+                  className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
+                  placeholder="Eg. Gustav Walsted"
+                ></input>
+              </div>{" "}
+              <div className="w-full">
+                <p className="mb-[12px]">Hjemmeside link</p>
+                <input
+                  className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
+                  placeholder="Eg. Gustav Walsted"
+                ></input>
+              </div>
             </div>
-            <div>
-              <p className="mb-[12px]">Din foretrukne e-mail</p>
+            <div className="w-full">
+              <p className="mb-[12px]">Annonceringsforbrug på månedlig basis</p>
               <input
-                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main"
-                placeholder="navn@gmail.com"
+                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
+                placeholder="Eg. Gustav Walsted"
               ></input>
             </div>
             <div>
               <p className="mb-[12px]">Noter til Coad</p>
               <input
-                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main"
+                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500"
                 placeholder="Har i mulighed for at være ekstra opmærksomme på ..."
               ></input>
             </div>
