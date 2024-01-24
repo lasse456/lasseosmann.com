@@ -122,7 +122,7 @@ export default function Cta() {
                 <p className="mb-[12px]">E-mail</p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. Gustav Walsted"
+                  placeholder="Eg. gustav@coad.dk"
                 ></input>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function Cta() {
               <p className="mb-[12px]">Virksomhed</p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                placeholder="www.eksempel.com"
+                placeholder="COAD"
               ></input>
             </div>
             <div className="flex items-center justify-between gap-[30px]">
@@ -138,14 +138,14 @@ export default function Cta() {
                 <p className="mb-[12px]">Telefonnummer</p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. Gustav Walsted"
+                  placeholder="Eg. +45 45 90 23 63"
                 ></input>
               </div>{" "}
               <div className="w-full">
                 <p className="mb-[12px]">Hjemmeside link</p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. Gustav Walsted"
+                  placeholder="Eg. www.virksomhed.com"
                 ></input>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function Cta() {
               <p className="mb-[12px]">Annonceringsforbrug på månedlig basis</p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                placeholder="Eg. Gustav Walsted"
+                placeholder="Eg. 10.000 DKK"
               ></input>
             </div>
             <div>
