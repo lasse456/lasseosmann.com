@@ -16,11 +16,6 @@ export default function Index() {
       <Hero />
       <Stats />
       <Cases />
-      <Skills />
-      <Stats />
-      <Reviews />
-      <Info />
-      <Team />
       <Cta />
     </Layout>
   );

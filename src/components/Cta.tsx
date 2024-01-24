@@ -51,7 +51,7 @@ export default function Cta() {
             <p className="text-gray-600">4.5/5 - Trustpilot</p>
           </div>
           <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main">
-            Book en gratis performance analyse
+            Anmod om en gratis marketingsanalyse
           </h1>
           <p className="w-[70%] text-gray-600 mb-[40px] font-[500]">
             Gør som vores nuværende samarbejdspartnere, og anmod om en 100%
