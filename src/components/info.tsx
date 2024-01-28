@@ -5,13 +5,43 @@ export default function Info() {
     <section className="py-[100px] pt-[160px]">
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[170px]">
         <div className="flex flex-col justify-center py-[60px]">
-          <div className="flex items-left justify-left mb-[20px]">
-            <SectionStarter section="vores speciale" />
+          <div className="mb-[40px] flex items-center">
+            <img
+              className="w-[40px] rounded-[100px]"
+              src="/flags/denflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/gerflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/holflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/norflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/porflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/sweflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/ukflag.png"
+            ></img>
+            <img
+              className="w-[40px] ml-[-10px] rounded-[100px]"
+              src="/flags/usaflag.png"
+            ></img>
           </div>
-
           <h1 className="text-sectionheading font-[600] text-main mb-[40px] leading-[60px]">
-            Vi kan ikke alt, men her er vi{" "}
-            <span className="text-[#0071e3]">specialister</span>{" "}
+            For e-commerces der søger den{" "}
+            <span className="text-[#0071e3]">bedste vækstpartner</span>{" "}
           </h1>
           <p className="text-description text-gray-600 font-[500]">
             En af hemmelighederne bag vores samarbejdspartneres enorme succes på

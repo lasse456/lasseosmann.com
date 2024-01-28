@@ -6,7 +6,7 @@ const Meta = ({
   description = "For ofte bliver unges idéer ikke til virkelighed, derfor samler vi unge iværksættere.",
   icon = "/gustav.jpg",
   banner = "/seo/banner.png",
-  url = "https://gazellateam.com",
+  url = "https://coad.dk",
 }: {
   title?: string;
   keywords?: string;

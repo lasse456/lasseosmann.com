@@ -20,6 +20,24 @@ const reviewData = [
     founder: "/profile.jpg",
     name: "Jonas Larsen",
   },
+  {
+    image: "/fivestar.jpg",
+    heading: "Kan stærkt anbefales!",
+    description:
+      "Vi har førheng gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
+    position: "Co-Founder Leve.",
+    founder: "/profile.jpg",
+    name: "Jonas Larsen",
+  },
+  {
+    image: "/fivestar.jpg",
+    heading: "Kan stærkt anbefales!",
+    description:
+      "Vi har førhenz gjort brug af et anden firma til at markedsføre for os som var ekstremt dårlige… vi ignorerede stort set alle henvendelser efterfølgende da vi ikke ønskede at prøve igen.",
+    position: "Co-Founder Leve.",
+    founder: "/profile.jpg",
+    name: "Jonas Larsen",
+  },
 ];
 export default function Reviews() {
   return (
@@ -49,7 +67,7 @@ export default function Reviews() {
 
 const ReviewCard = ({ object }: { object: any }) => {
   return (
-    <div className="mr-[40px] mb-[100px] bg-white p-[30px] rounded-[8px] text-black">
+    <div className="mr-[40px] mb-[100px] bg-white p-[30px] rounded-[8px] text-black border-[1px]">
       <img className="w-[120px] mb-[20px]" src={object.image}></img>
       <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
       <p className="mb-[40px] text-[18px]">{object.description}</p>

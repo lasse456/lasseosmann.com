@@ -71,7 +71,7 @@ export default function Navbar({ page }: { page: PAGES }) {
     >
       <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
         <Link href={"/"} className="text-[24px] font-[600] text-main">
-          COAD{" "}
+          <img className="w-[100px]" src="/logo.png"></img>
         </Link>
         <div className="flex">
           <Menu size={28} className="fixed top-[41px] right-[95px]" />
