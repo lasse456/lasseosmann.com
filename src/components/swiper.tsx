@@ -98,7 +98,7 @@ export default function Swipe() {
             className="mySwiper"
           >
             {reviewData.map((v, index) => (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <ReviewCard key={index} object={v} />
               </SwiperSlide>
             ))}
