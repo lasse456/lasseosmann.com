@@ -9,6 +9,7 @@ import Info from "@/components/info";
 import Stats from "@/components/stats";
 import Team from "@/components/team";
 import Cta from "@/components/Cta";
+import Swipe from "@/components/swiper";
 
 export default function Index() {
   return (
@@ -18,7 +19,7 @@ export default function Index() {
       <Cases />
       <Skills />
       <Info />
-      <Reviews />
+      <Swipe />
       <Team />
       <Cta />
     </Layout>
