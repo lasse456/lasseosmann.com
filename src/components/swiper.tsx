@@ -97,9 +97,9 @@ export default function Swipe() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {reviewData.map((v) => (
+            {reviewData.map((v, index) => (
               <SwiperSlide>
-                <ReviewCard object={v} />
+                <ReviewCard key={index} object={v} />
               </SwiperSlide>
             ))}
           </Swiper>
