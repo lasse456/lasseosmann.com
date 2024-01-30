@@ -10,13 +10,14 @@ import Stats from "@/components/stats";
 import Team from "@/components/team";
 import Cta from "@/components/Cta";
 import Swipe from "@/components/swiper";
+import CaseSwiper from "@/components/caseswiper";
 
 export default function Index() {
   return (
     <Layout page={PAGES.HOME}>
       <Hero />
       <Stats />
-      <Cases />
+      <CaseSwiper />
       <Skills />
       <Info />
       <Swipe />

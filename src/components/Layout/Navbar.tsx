@@ -73,7 +73,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         <Link href={"/"} className="text-[24px] font-[600] text-main">
           <img className="w-[100px]" src="/logo.png"></img>
         </Link>
-        <div className="flex items-center gap-[50px] font-[500] text-[18px]">
+        <div className="flex items-center gap-[50px] font-[500] text-[16px]">
           <Link href={"/"}>Resultater</Link>
           <Link href={"/"}>Services</Link>
           <Link href={"/"}>Teamet</Link>

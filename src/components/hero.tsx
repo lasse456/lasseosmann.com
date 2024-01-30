@@ -8,7 +8,7 @@ export default function Hero() {
         background:
           "linear-gradient(90deg, rgba(249,254,255,1) 0%, rgba(231,251,255,1) 49%, rgba(243,253,255,1) 100%)",
       }}
-      className="bubble-hero heroback bg-blue-400 z-[0] py-[100px] relative bg-white overflow-hidden"
+      className="bubble-hero heroback bg-blue-400 z-[0] py-[100px] relative overflow-hidden"
     >
       <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">
@@ -20,7 +20,7 @@ export default function Hero() {
           <img className="w-[160px]" src="/trust.svg" alt="Trustpilot" />
         </a>
         <div className="flex flex-col items-center justify-center gap-4 md:gap-8">
-          <h1 className="text-3xl font-semibold leading-normal text-center md:text-6xl text-main">
+          <h1 className="text-4xl font-semibold leading-normal text-center md:text-6xl text-main">
             Vi skaber brancheførende resultater for e-commerce brands.
           </h1>
           <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
@@ -29,14 +29,17 @@ export default function Hero() {
           </h2>
         </div>
         <div className="flex items-center justify-center">
-          <a href="#marketingsanalyse" className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-br active:scale-[0.99]">
-            <p className="text-lg font-bold text-white">
+          <a
+            href="#marketingsanalyse"
+            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-[#0071e3]"
+          >
+            <p className="text-lg font-[600] text-white">
               Få en gratis marketingsanalyse
             </p>
             <ChevronRight size={24} color="white" />
           </a>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-4">
+        <div className="flex mb-[50px] flex-wrap items-center justify-center gap-8 mt-4 md:mb-0">
           <img src="./partners/google.png" className="h-[50px]" />
           <img src="./partners/klaviyo.png" className="h-[50px]" />
           <img src="./partners/meta.png" className="h-[50px]" />

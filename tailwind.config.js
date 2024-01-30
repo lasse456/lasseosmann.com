@@ -54,6 +54,9 @@ module.exports = {
         teamOne: { max: "1000px" },
         ctaOne: { max: "1100px" },
       },
+      gridTemplateColumns: {
+        footermain: "20% 1fr",
+      },
     },
   },
   plugins: [],

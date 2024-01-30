@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="py-[100px] pb-[20px]">
       <div className="w-[90%] mx-auto max-w-main">
-        <div className="flex justify-between py-[60px] gap-[200px]">
-          <div className="w-[35%]">
+        <div className="grid grid-cols-footermain gap-[100px] pb-[40px]">
+          <div>
             <Link href={"/"} className="text-[24px] font-[600] text-main">
               <img className="w-[100px] mb-[40px]" src="/logo.png"></img>
             </Link>
@@ -14,26 +14,44 @@ export default function Footer() {
               Book et uforpligtende møde
             </button>
           </div>
-          <div className="w-[60%]">
-            <h1 className="font-[600] text-[22px] mb-[10px]">
-              Vi skaber brancheførende vækst resultater for e-commmerce brands
-            </h1>
-            <p className="text-gray-600">
-              Med en langsigtet holistiske tilgang har vi udelukkende fokus på
-              at vækste din profit. Vi varetager hele den digitale kunderejse.
-            </p>
-          </div>
-          <div className="w-[20%] flex flex-col gap-[10px]">
-            <h1 className="font-[600] text-[22px] mb-[10px]">Kontakt os</h1>
-            <p className="text-gray-600">CVR: 43407376</p>
-            <p className="text-gray-600">gustav@coad.dk</p>
-            <p className="text-gray-600">Vesterbrogade 18b 2.1</p>
-            <p className="text-gray-600">8000, Aarhus C</p>
+          <div className="flex justify-between gap-[130px]">
+            <div>
+              <h1 className="font-[600] text-[22px] mb-[10px]">
+                Vi skaber brancheførende vækst resultater for e-commmerce brands
+              </h1>
+              <p className="text-gray-600">
+                Med en langsigtet holistiske tilgang har vi udelukkende fokus på
+                at vækste din profit. Vi varetager hele den digitale kunderejse.
+              </p>
+            </div>
+            <div className="flex flex-col gap-[10px]">
+              <h1 className="font-[600] text-[22px] mb-[10px]">Menu</h1>
+              <p className="text-gray-600">CVR: 43407376</p>
+              <p className="text-gray-600">gustav@coad.dk</p>
+              <p className="text-gray-600">Vesterbrogade 18b 2.1</p>
+              <p className="text-gray-600">8000, Aarhus C</p>
+            </div>
+            <div className="flex flex-col gap-[10px]">
+              <h1 className="font-[600] text-[22px] mb-[10px]">Kontakt os</h1>
+              <p className="text-gray-600">CVR: 43407376</p>
+              <p className="text-gray-600">gustav@coad.dk</p>
+              <p className="text-gray-600">Vesterbrogade 18b 2.1</p>
+              <p className="text-gray-600">8000, Aarhus C</p>
+            </div>
           </div>
         </div>
-        <div className="border-t-[1px] flex items-center justify-between py-[20px] text-gray-400 text-[14px] font-[300]">
-          <h1>COAD Agency</h1>
-          <h1>© Alle rettigheder forbeholdt, {new Date().getFullYear()}</h1>
+        <div className="border-t-[1px] flex items-center justify-between py-[50px] text-gray-400 text-[14px] font-[300]">
+          <h1>
+            COAD Agency - © Alle rettigheder forbeholdt,{" "}
+            {new Date().getFullYear()}
+          </h1>
+          <div className="flex items-center gap-[40px]">
+            <img className="w-[100px]" src="/trust.svg" alt="Trustpilot" />
+            <img className="w-[80px]" src="/partners/google.png"></img>
+            <img className="w-[100px]" src="/partners/shopify-v2.png"></img>
+            <img className="w-[100px]" src="/partners/klaviyo.png"></img>
+            <img className="w-[100px]" src="/partners/meta.png"></img>
+          </div>
         </div>
       </div>
     </footer>
