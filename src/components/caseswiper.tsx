@@ -232,7 +232,18 @@ export default function CaseSwiper() {
   return (
     <>
       <section className="bg-[#f7f7fc] py-[100px]">
-        <div className="w-[90%] mx-auto">
+        <div className="w-[90%] mx-auto max-w-main">
+          <div className="mb-[60px] text-center ctaOne:text-left">
+            <SectionStarter section="hvad vi gør bedst" />
+            <h1 className="text-sectionheading font-[600] text-main ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
+              Vi dominerer hele e-commerce{" "}
+              <span className="text-[#0071e3]">kunderejsen</span>{" "}
+            </h1>
+            <p className="text-description font-[500] text-gray-600">
+              Det kræver en holistisk tilgang for at opnå brancheførende
+              resultater
+            </p>
+          </div>
           <div className="flex items-center justify-end gap-2 mb-4">
             <div
               onClick={() => onArrowClick("next")}
@@ -270,7 +281,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
     <div>
       <div className="relative p-[10px]">
         <video
-          className="pointer-events-none rounded-main bg-[linear-gradient(rgba(5,29,64,0),rgba(5,29,64,1))]"
+          className="pointer-events-none rounded-main bg-[linear-gradient(rgba(5,29,64,0),rgba(5,29,64,0))]"
           autoPlay
           muted
           loop

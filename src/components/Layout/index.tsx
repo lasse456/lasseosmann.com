@@ -17,7 +17,7 @@ export default function Layout({
       <div>
         <Meta />
         <Navbar page={PAGES.HOME} />
-        <div className="mt-[68px]">
+        <div>
           <div className={`${className}`}>
             {children}
             <Footer />

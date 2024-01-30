@@ -67,7 +67,7 @@ export default function Navbar({ page }: { page: PAGES }) {
   const [isEnglish, setIsEnglish] = useState(false);
   return (
     <nav
-      className="bg-white fixed w-full py-[16px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
+      className="bg-white py-[16px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
     >
       <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
         <Link href={"/"} className="text-[24px] font-[600] text-main">
