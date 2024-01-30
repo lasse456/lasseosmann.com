@@ -110,22 +110,33 @@ export default function Swipe() {
 }
 
 const ReviewCard = ({ object }: { object: any }) => {
+  const [cardClicked, setCardClicked] = useState(false);
   return (
-    <div className="mb-[100px] bg-white p-[30px] rounded-[8px] text-black border-[1px]">
-      <img className="w-[120px] mb-[20px]" src={object.image}></img>
-      <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
-      <p className="mb-[40px] text-[18px]">{object.description}</p>
+    <>
+      <div className="mb-[100px] bg-white p-[30px] rounded-[8px] text-black border-[1px]">
+        <img className="w-[120px] mb-[20px]" src={object.image}></img>
+        <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
+        <p className="mb-[40px] text-[18px]">{object.description}</p>
 
-      <div className="flex gap-[20px] items-center">
-        <img
-          className="w-[60px] h-[60px] object-cover rounded-[60px]"
-          src={object.founder}
-        ></img>
-        <div className="text-gray-600">
-          <p className="text-[18px] ">{object.name}</p>
-          <p className="text-[18px]">{object.position}</p>
+        <div className="flex gap-[20px] items-center">
+          <img
+            className="w-[60px] h-[60px] object-cover rounded-[60px]"
+            src={object.founder}
+          ></img>
+          <div className="text-gray-600">
+            <p className="text-[18px] ">{object.name}</p>
+            <p className="text-[18px]">{object.position}</p>
+          </div>
         </div>
+        <p onClick={() => setCardClicked(true)} className="mt-[30px]">
+          Læs mere
+        </p>
       </div>
-    </div>
+      {cardClicked && (
+        <div className="fixed top-0 left-0 w-full h-full bg-blue-500 box-border">
+          <h1 onClick={() => setCardClicked(!cardClicked)}>review</h1>
+        </div>
+      )}
+    </>
   );
 };

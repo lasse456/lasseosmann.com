@@ -73,10 +73,7 @@ export default function Navbar({ page }: { page: PAGES }) {
         <Link href={"/"} className="text-[24px] font-[600] text-main">
           <img className="w-[100px]" src="/logo.png"></img>
         </Link>
-        <div className="flex">
-          <Menu size={28} className="fixed top-[41px] right-[95px]" />
-          <img className="w-[80px]" src="/menuspin.png"></img>
-        </div>
+        <Language />
       </div>
     </nav>
   );

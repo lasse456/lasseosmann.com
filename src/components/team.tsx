@@ -15,7 +15,7 @@ export default function Team() {
             share.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-[30px]">
+        <div className="grid grid-cols-2 gap-[30px] teamOne:grid-cols-1">
           <div className="p-[50px] bg-[#f7f7fc] rounded-[8px] flex items-center gap-[20px] border-[1px]">
             <img
               className="w-[80px] h-[80px] object-cover rounded-[100px]"

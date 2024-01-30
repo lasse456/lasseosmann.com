@@ -15,7 +15,7 @@ export default function Skills() {
             share.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-[30px]">
+        <div className="grid grid-cols-3 gap-[30px] skillsOne:grid-cols-1">
           <div className="p-[50px] bg-[#f7f7fc] rounded-[8px] border-[1px]">
             <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
               <img className="w-[30px]" src="/metalogo.png"></img>

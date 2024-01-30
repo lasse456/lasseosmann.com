@@ -43,9 +43,9 @@ const reviewData = [
 
 export default function Cta() {
   return (
-    <section className="grid grid-cols-2 border-y-[1px]">
+    <section className="grid grid-cols-2 border-y-[1px] ctaOne:grid-cols-1">
       <div className="max-w-main bg-white py-[100px]">
-        <div className="w-[90%] ml-auto max-w-[650px]">
+        <div className="w-[90%] ml-auto max-w-[650px] ctaOne:mx-auto ctaOne:max-w-main">
           <div className="flex items-center gap-[10px] mb-[30px]">
             <img className="w-[140px]" src="/trust.svg"></img>
             <p className="text-gray-600">4.5/5 - Trustpilot</p>
@@ -105,11 +105,11 @@ export default function Cta() {
         </div>
       </div>
       <div className="max-w-main bg-[#f7f7fc] py-[100px]">
-        <div className="w-[90%] mr-auto max-w-[650px] flex flex-col justify-center items-center">
-          <h1 className="font-[600] text-[30px] text-center mb-[20px] w-[60%]">
+        <div className="w-[90%] mr-auto max-w-[650px] flex flex-col justify-center items-center ctaOne:mx-auto ctaOne:max-w-main">
+          <h1 className="font-[600] text-[30px] text-center mb-[20px] w-[60%] ctaOne:text-left ctaOne:w-[100%]">
             Anmod om en gratis marketingsanalyse
           </h1>
-          <div className="bg-white w-[80%] p-[30px] border-[1px] border-blue-500 rounded-main flex flex-col gap-[30px]">
+          <div className="bg-white w-[80%] p-[30px] border-[1px] border-blue-500 rounded-main flex flex-col gap-[30px] ctaOne:w-[100%]">
             <div className="flex items-center justify-between gap-[30px]">
               <div className="w-full border-blue-500">
                 <p className="mb-[12px]">Dit fulde navn</p>
