@@ -379,7 +379,7 @@
             { image: "./balloons/meta.png" },
             { image: "./balloons/pinterest.png" },
             { image: "./balloons/shopify.png" },
-            { image: "./balloons/snapchat.webp" },
+            { image: "./balloons/snapchat.png" },
             { image: "./balloons/tiktok.png" },
         ]
 

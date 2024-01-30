@@ -1,5 +1,7 @@
 import { Check, CheckCircle } from "lucide-react";
+import { useState } from "react";
 import Slider from "react-infinite-logo-slider";
+import { toast } from "sonner";
 
 const reviewData = [
   {
@@ -41,9 +43,57 @@ const reviewData = [
   },
 ];
 
+export type ContactFormData = {
+  fullName: string
+  email: string
+  company: string
+  phoneNumber: string
+  website: string
+  monthlyAdSpend: string
+  notes: string 
+}
+
 export default function Cta() {
+
+  const [submitting, setSubmitting] = useState(false)
+  const [data, setData] = useState<ContactFormData>({
+    fullName: "",
+    email: "",
+    company: "",
+    phoneNumber: "",
+    website: "",
+    monthlyAdSpend: "",
+    notes: ""
+  })
+
+  async function submit(e: React.FormEvent<HTMLFormElement>){
+    e.preventDefault()
+    if(submitting) return
+    setSubmitting(true)
+    let res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    if(res.status != 200){
+        toast.error("Der skete en fejl, prøv igen senere.")
+    } else {
+        toast.success("Tak for din henvendelse, vi vender tilbage hurtigst muligt.")
+        setData({
+          fullName: "",
+          email: "",
+          company: "",
+          phoneNumber: "",
+          website: "",
+          monthlyAdSpend: "",
+          notes: ""
+        })
+    }
+    setSubmitting(false)
+  }
+
+
   return (
-    <section className="grid grid-cols-2 border-y-[1px] ctaOne:grid-cols-1">
+    <section id="marketingsanalyse" className="grid grid-cols-2 border-y-[1px] ctaOne:grid-cols-1">
       <div className="max-w-main bg-white py-[100px]">
         <div className="w-[90%] ml-auto max-w-[650px] ctaOne:mx-auto ctaOne:max-w-main">
           <div className="flex items-center gap-[10px] mb-[30px]">
@@ -109,20 +159,27 @@ export default function Cta() {
           <h1 className="font-[600] text-[30px] text-center mb-[20px] w-[60%] ctaOne:text-left ctaOne:w-[100%]">
             Anmod om en gratis marketingsanalyse
           </h1>
-          <div className="bg-white w-[80%] p-[30px] border-[1px] border-blue-500 rounded-main flex flex-col gap-[30px] ctaOne:w-[100%]">
+          <form onSubmit={submit} className="bg-white w-[80%] p-[30px] border-[1px] border-blue-500 rounded-main flex flex-col gap-[30px] ctaOne:w-[100%]">
             <div className="flex items-center justify-between gap-[30px]">
               <div className="w-full border-blue-500">
                 <p className="mb-[12px]">Dit fulde navn</p>
                 <input
+                  required
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                   placeholder="Eg. Gustav Walsted"
+                  value={data?.fullName}
+                  onChange={(e) => setData({...data, fullName: e.target.value})}
                 ></input>
-              </div>{" "}
+              </div>
               <div className="w-full">
                 <p className="mb-[12px]">E-mail</p>
                 <input
+                  required
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                   placeholder="Eg. gustav@coad.dk"
+                  type="email"
+                  value={data?.email}
+                  onChange={(e) => setData({...data, email: e.target.value})}
                 ></input>
               </div>
             </div>
@@ -131,6 +188,8 @@ export default function Cta() {
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                 placeholder="COAD"
+                value={data?.company}
+                onChange={(e) => setData({...data, company: e.target.value})}
               ></input>
             </div>
             <div className="flex items-center justify-between gap-[30px]">
@@ -139,6 +198,9 @@ export default function Cta() {
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                   placeholder="Eg. +45 45 90 23 63"
+                  type="tel"
+                  value={data?.phoneNumber}
+                  onChange={(e) => setData({...data, phoneNumber: e.target.value})}
                 ></input>
               </div>{" "}
               <div className="w-full">
@@ -146,6 +208,8 @@ export default function Cta() {
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                   placeholder="Eg. www.virksomhed.com"
+                  value={data?.website}
+                  onChange={(e) => setData({...data, website: e.target.value})}
                 ></input>
               </div>
             </div>
@@ -154,6 +218,8 @@ export default function Cta() {
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                 placeholder="Eg. 10.000 DKK"
+                value={data?.monthlyAdSpend}
+                onChange={(e) => setData({...data, monthlyAdSpend: e.target.value})}
               ></input>
             </div>
             <div>
@@ -161,12 +227,14 @@ export default function Cta() {
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500"
                 placeholder="Har i mulighed for at være ekstra opmærksomme på ..."
+                value={data?.notes}
+                onChange={(e) => setData({...data, notes: e.target.value})}
               ></input>
             </div>
-            <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
-              Anmod om analysen
+            <button type="submit" className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
+              {submitting ? "Anmoder..." : "Anmod om analysen"}
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </section>

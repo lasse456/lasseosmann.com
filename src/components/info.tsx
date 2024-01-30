@@ -7,35 +7,35 @@ export default function Info() {
         <div className="flex flex-col justify-center py-[60px]">
           <div className="mb-[40px] flex items-center">
             <img
-              className="w-[40px] rounded-[100px]"
+              className="w-[40px] rounded-full border border-white"
               src="/flags/denflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/gerflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/holflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/norflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/porflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/sweflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/ukflag.png"
             ></img>
             <img
-              className="w-[40px] ml-[-10px] rounded-[100px]"
+              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
               src="/flags/usaflag.png"
             ></img>
           </div>
@@ -55,7 +55,7 @@ export default function Info() {
           </p>
         </div>
 
-        <img src="/ads.jpg" className="h-full object-cover rounded-main"></img>
+        <img src="/ads.jpg" className="object-cover h-full select-none rounded-main"></img>
       </div>
     </section>
   );

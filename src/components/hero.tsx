@@ -29,12 +29,12 @@ export default function Hero() {
           </h2>
         </div>
         <div className="flex items-center justify-center">
-          <button className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-br active:scale-[0.99]">
+          <a href="#marketingsanalyse" className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-br active:scale-[0.99]">
             <p className="text-lg font-bold text-white">
               Få en gratis marketingsanalyse
             </p>
             <ChevronRight size={24} color="white" />
-          </button>
+          </a>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-8 mt-4">
           <img src="./partners/google.png" className="h-[50px]" />
@@ -43,7 +43,7 @@ export default function Hero() {
           <img src="./partners/shopify-v2.png" className="h-[50px]" />
         </div>
       </div>
-      <div className="bubbles overflow-hidden" />
+      <div className="overflow-hidden bubbles" />
     </section>
   );
 }
