@@ -1,7 +1,10 @@
 import Script from "next/script";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/router";
 
 export default function Hero() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   return (
     <section
       style={{

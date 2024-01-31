@@ -312,9 +312,11 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import useMediaQuery from "@/hooks/use-media-query";
 
 export default function CaseSwiper() {
   const swiperRef = useRef<SwiperRef>(null);
+  const { isMobile, isTablet, isDesktop } = useMediaQuery();
 
   function onArrowClick(direction: "prev" | "next") {
     if (swiperRef.current) {
@@ -364,7 +366,7 @@ export default function CaseSwiper() {
           </div>
           <Swiper
             ref={swiperRef}
-            slidesPerView={3}
+            slidesPerView={isDesktop ? 3 : isTablet ? 2 : 1}
             spaceBetween={20}
             className="mySwiper"
           >
