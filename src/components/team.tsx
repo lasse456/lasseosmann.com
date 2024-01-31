@@ -10,9 +10,11 @@ export default function Team() {
             Ikke det største men det{" "}
             <span className="text-[#0071e3]">bedste team</span>{" "}
           </h1>
-          <p className="text-description text-gray-600 font-[500] ctaOne:text-left">
-            We&apos;ve analyzed the data and have compelling statistics to
-            share.
+          <p className="text-description text-gray-600 mx-auto font-[500] w-[70%] ctaOne:text-left ctaOne:w-[90%] ctaOne:mx-auto">
+            De sidste 4 år har vi vækstet et utal af e-commerce cases i hele
+            verden. Vi har ingen ambition om at blive er stort, middelmådigt
+            bureau med mange amsatte. Tværtimod vil vi være et mindre agilt team
+            der levere den absolut bedste service
           </p>
         </div>
         <div className="grid grid-cols-2 gap-[30px] teamOne:grid-cols-1">
