@@ -153,8 +153,8 @@ const ReviewCard = ({ object }: { object: any }) => {
   const [readMore, setReadmore] = useState(false);
 
   const description = useMemo(() => {
-    return object.description.length > 100 && !readMore
-      ? object.description.slice(0, 100) + "..."
+    return object.description.length > 150 && !readMore
+      ? object.description.slice(0, 150) + "..."
       : object.description;
   }, [object.description, readMore]);
 
@@ -178,8 +178,11 @@ const ReviewCard = ({ object }: { object: any }) => {
             <p className="text-[18px]">{object.position}</p>
           </div>
         </div>
-        <p onClick={() => setReadmore(!readMore)} className="mt-[30px] cursor-pointer hover:underline">
-          { readMore ? "Vis mindre" : "Læs mere" }
+        <p
+          onClick={() => setReadmore(!readMore)}
+          className="mt-[30px] cursor-pointer hover:underline"
+        >
+          {readMore ? "Vis mindre" : "Læs mere"}
         </p>
       </div>
     </>
