@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useState } from "react";
 // Import Swiper React components
 import SectionStarter from "./sectionstarter";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+// hey
 const reviewData = [
   {
     image: "/fivestar.jpg",
