@@ -207,7 +207,7 @@ const casesData = [
     description:
       "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
     results: [
-      <div key={1} key={1} className="flex flex-col items-center text-center">
+      <div key={1} className="flex flex-col items-center text-center">
         <h1 className="mb-[4px] font-[600] text-main flex">
           +
           <span className="w-[50px]">
