@@ -2,8 +2,8 @@ import Head from "next/head";
 
 const Meta = ({
   title = "COAD - Performance based agency",
-  keywords = "A modern dat software group",
-  description = "For ofte bliver unges idéer ikke til virkelighed, derfor samler vi unge iværksættere.",
+  keywords = "Vi skaber brancheførende resultater for e-commerce brands.",
+  description = "Vi skaber brancheførende resultater for e-commerce brands.",
   icon = "/gustav.jpg",
   banner = "/seo/banner.png",
   url = "https://coad.dk",
@@ -17,7 +17,7 @@ const Meta = ({
 }) => {
   return (
     <Head>
-      <meta name="theme-color" content={"#395a3f"} key="theme-color" />
+      <meta name="theme-color" content={"#0071e3"} key="theme-color" />
 
       <meta
         name="viewport"
@@ -35,11 +35,7 @@ const Meta = ({
       <title key="title">{title}</title>
 
       <meta property="og:title" content={title} key="og:title" />
-      <meta
-        property="og:site_name"
-        content="Unge Iværksættere"
-        key="og:site_name"
-      />
+      <meta property="og:site_name" content="COAD" key="og:site_name" />
       <meta property="og:url" content={url} key="og:url" />
       <meta
         property="og:description"
