@@ -68,7 +68,7 @@ export default function Info() {
               e-commerce strategies and a deep understanding of how all your
               marketing channels work together is crucial.
               <br></br>
-              <br></br>We're here to help your brand achieve rapid national and
+              <br></br>We are here to help your brand achieve rapid national and
               international growth while keeping a constant eye on your bottom
               line.<br></br>
               <br></br>We do what it takes to achieve the best results and are
