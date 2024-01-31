@@ -11,8 +11,8 @@ export default function Skills() {
             <span className="text-[#0071e3]">kunderejsen</span>{" "}
           </h1>
           <p className="text-description font-[500] text-gray-600">
-            Det kræver en holistisk tilgang for at opnå brancheførende
-            resultater
+            Hold dig et par trin foran dine konkurrenter ved at implementere de
+            førende strategier
           </p>
         </div>
         <div className="grid grid-cols-4 gap-[30px] skillsOne:grid-cols-1">

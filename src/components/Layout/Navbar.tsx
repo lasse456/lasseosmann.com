@@ -64,42 +64,56 @@ const pages = [
 
 export default function Navbar({ page }: { page: PAGES }) {
   const [isEnglish, setIsEnglish] = useState(false);
+  const [menuClicked, setMenuClicked] = useState(false);
   return (
-    <nav
-      className="bg-white py-[16px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
-    >
-      <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
-        <Link href={"/"} className="text-[24px] font-[600] text-main">
-          <img className="w-[100px]" src="/logo.png"></img>
-        </Link>
-        <div className="flex items-center gap-[50px] font-[500] text-[16px]">
-          <Link
-            to="results"
-            smooth={true}
-            duration={10}
-            className="cursor-pointer text-[18px]"
-          >
-            Resultater
+    <>
+      <nav
+        className="bg-white py-[16px] z-[999]" // You can adjust opacity using Tailwind's bg-opacity utility
+      >
+        <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
+          <Link href={"/"} className="text-[24px] font-[600] text-main">
+            <img className="w-[100px]" src="/logo.png"></img>
           </Link>
-          <Link
-            to="services"
-            smooth={true}
-            duration={10}
-            className="cursor-pointer text-[18px]"
+          <div className="flex items-center gap-[50px] font-[500] text-[16px] mde:hidden">
+            <Link
+              to="results"
+              smooth={true}
+              duration={10}
+              className="cursor-pointer text-[18px]"
+            >
+              Resultater
+            </Link>
+            <Link
+              to="services"
+              smooth={true}
+              duration={10}
+              className="cursor-pointer text-[18px]"
+            >
+              Services
+            </Link>
+            <Link
+              to="team"
+              smooth={true}
+              duration={10}
+              className="cursor-pointer text-[18px]"
+            >
+              Teamet
+            </Link>
+          </div>
+          <div className="mde:hidden">
+            <Language />
+          </div>
+          <div
+            onClick={() => setMenuClicked(true)}
+            className="hidden mde:inline-block"
           >
-            Services
-          </Link>
-          <Link
-            to="team"
-            smooth={true}
-            duration={10}
-            className="cursor-pointer text-[18px]"
-          >
-            Teamet
-          </Link>
+            <Menu size={26} />
+          </div>
         </div>
-        <Language />
-      </div>
-    </nav>
+      </nav>
+      {menuClicked ? (
+        <div className="fixed w-full h-full bg-blue-600 z-[1000]">hey</div>
+      ) : null}
+    </>
   );
 }

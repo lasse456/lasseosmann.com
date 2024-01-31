@@ -101,7 +101,7 @@ export default function Cta() {
         <div className="w-[90%] ml-auto max-w-[650px] ctaOne:mx-auto ctaOne:max-w-main">
           <div className="flex items-center gap-[10px] mb-[30px]">
             <img className="w-[140px]" src="/trust.svg"></img>
-            <p className="text-gray-600">4.5/5 - Trustpilot</p>
+            <p className="text-gray-600">4.5/5</p>
           </div>
           <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main">
             Anmod om en gratis marketingsanalyse
@@ -139,6 +139,11 @@ export default function Cta() {
                 BONUS: Oversigt over din profit og beregning af break-even ROAS.
               </p>
             </div>
+            <p className="w-[80%] mt-[20px] text-gray-600 font-[500]">
+              Vigtigt: Du er kvalificeret til at anmode om en gratis
+              marketingsanalyse, hvis du er i stand til at bruge +10.000
+              kr./måned betalt annoncering.
+            </p>
           </div>
           <div className="w-[100%]">
             <Slider
