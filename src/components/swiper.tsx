@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 // Import Swiper React components
 import SectionStarter from "./sectionstarter";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
@@ -154,7 +154,14 @@ export default function Swipe() {
 }
 
 const ReviewCard = ({ object }: { object: any }) => {
-  const [cardClicked, setCardClicked] = useState(false);
+  const [readMore, setReadmore] = useState(false);
+
+  const description = useMemo(() => {
+    return object.description.length > 100 && !readMore
+      ? object.description.slice(0, 100) + "..."
+      : object.description;
+  }, [object.description, readMore]);
+
   return (
     <>
       <div className="mb-[100px] bg-white p-[30px] rounded-[8px] text-black border-[1px]">
@@ -163,7 +170,7 @@ const ReviewCard = ({ object }: { object: any }) => {
           src={object.image}
         ></img>
         <h1 className="text-[26px] font-[600] mb-[10px]">{object.heading}</h1>
-        <p className="mb-[40px] text-[18px]">{object.description}</p>
+        <p className="mb-[40px] text-[18px]">{description}</p>
 
         <div className="flex gap-[20px] items-center">
           <img
@@ -175,15 +182,10 @@ const ReviewCard = ({ object }: { object: any }) => {
             <p className="text-[18px]">{object.position}</p>
           </div>
         </div>
-        <p onClick={() => setCardClicked(true)} className="mt-[30px]">
-          Læs mere
+        <p onClick={() => setReadmore(!readMore)} className="mt-[30px] cursor-pointer hover:underline">
+          { readMore ? "Vis mindre" : "Læs mere" }
         </p>
       </div>
-      {cardClicked && (
-        <div className="box-border fixed top-0 left-0 w-full h-full bg-blue-500">
-          <h1 onClick={() => setCardClicked(!cardClicked)}>review</h1>
-        </div>
-      )}
     </>
   );
 };
