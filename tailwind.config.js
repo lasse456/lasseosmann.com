@@ -41,6 +41,7 @@ module.exports = {
 
         md: "768px",
         mde: { max: "768px" },
+        mne: "768px",
         // => @media (min-width: 768px) { ... }
 
         lg: "1024px",
@@ -54,6 +55,7 @@ module.exports = {
         skillsOne: { max: "1124px" },
         teamOne: { max: "1000px" },
         ctaOne: { max: "1100px" },
+        reviewLarge: { max: "1240px" },
       },
       gridTemplateColumns: {
         footermain: "20% 1fr",

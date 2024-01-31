@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Online from "../online";
 import Language from "../language";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, Element } from "react-scroll";
 export enum PAGES {
   HOME,
@@ -112,7 +112,77 @@ export default function Navbar({ page }: { page: PAGES }) {
         </div>
       </nav>
       {menuClicked ? (
-        <div className="fixed w-full h-full bg-blue-600 z-[1000]">hey</div>
+        <div className="fixed top-0 bottom-0 left-0 right-0 bg-white z-[1000] py-[16px] mne:hidden">
+          <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
+            <Link href={"/"} className="text-[24px] font-[600] text-main">
+              <img className="w-[100px]" src="/logo.png"></img>
+            </Link>
+            <div className="flex items-center gap-[50px] font-[500] text-[16px] mde:hidden">
+              <Link
+                to="results"
+                smooth={true}
+                duration={10}
+                className="cursor-pointer text-[18px]"
+              >
+                Resultater
+              </Link>
+              <Link
+                to="services"
+                smooth={true}
+                duration={10}
+                className="cursor-pointer text-[18px]"
+              >
+                Services
+              </Link>
+              <Link
+                to="team"
+                smooth={true}
+                duration={10}
+                className="cursor-pointer text-[18px]"
+              >
+                Teamet
+              </Link>
+            </div>
+            <div className="mde:hidden">
+              <Language />
+            </div>
+            <div
+              onClick={() => setMenuClicked(false)}
+              className="hidden mde:inline-block"
+            >
+              <X size={28} />
+              <div className="flex items-center gap-[50px] font-[500] text-[16px] mde:hidden">
+                <Link
+                  to="results"
+                  smooth={true}
+                  duration={10}
+                  className="cursor-pointer text-[18px]"
+                >
+                  Resultater
+                </Link>
+                <Link
+                  to="services"
+                  smooth={true}
+                  duration={10}
+                  className="cursor-pointer text-[18px]"
+                >
+                  Services
+                </Link>
+                <Link
+                  to="team"
+                  smooth={true}
+                  duration={10}
+                  className="cursor-pointer text-[18px]"
+                >
+                  Teamet
+                </Link>
+              </div>
+              <div className="mde:hidden">
+                <Language />
+              </div>
+            </div>
+          </div>
+        </div>
       ) : null}
     </>
   );

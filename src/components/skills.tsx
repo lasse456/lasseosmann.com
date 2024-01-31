@@ -2,7 +2,7 @@ import SectionStarter from "./sectionstarter";
 
 export default function Skills() {
   return (
-    <section className="py-[100px] pt-[160px]">
+    <section className="py-[100px] pt-[160px] ctaOne:pb-[0px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center ctaOne:text-left">
           <SectionStarter section="hvad vi gør bedst" />

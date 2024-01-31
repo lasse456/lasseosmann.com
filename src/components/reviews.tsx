@@ -47,19 +47,21 @@ export default function Reviews() {
           Glade kunder er vores{" "}
           <span className="text-[#0071e3]">top-prioritet</span>{" "}
         </h1>
-        <Slider
-          width="500px"
-          duration={30}
-          pauseOnHover={true}
-          blurBorders={false}
-          blurBoderColor={"#fff"}
-        >
-          {reviewData.map((v) => (
-            <Slider.Slide key={v}>
-              <ReviewCard object={v} />
-            </Slider.Slide>
-          ))}
-        </Slider>
+        <div>
+          <Slider
+            width="500px"
+            duration={30}
+            pauseOnHover={true}
+            blurBorders={false}
+            blurBoderColor={"#fff"}
+          >
+            {reviewData.map((v) => (
+              <Slider.Slide key={v}>
+                <ReviewCard object={v} />
+              </Slider.Slide>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

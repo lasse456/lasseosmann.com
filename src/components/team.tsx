@@ -10,7 +10,7 @@ export default function Team() {
             Ikke det største men det{" "}
             <span className="text-[#0071e3]">bedste team</span>{" "}
           </h1>
-          <p className="text-description text-gray-600 mx-auto font-[500] w-[70%] ctaOne:text-left ctaOne:w-[90%] ctaOne:mx-auto">
+          <p className="text-description text-gray-600 mx-auto font-[500] w-[70%] ctaOne:text-left ctaOne:w-[90%] ctaOne:mr-auto ctaOne:ml-0">
             De sidste 4 år har vi vækstet et utal af e-commerce cases i hele
             verden. Vi har ingen ambition om at blive er stort, middelmådigt
             bureau med mange amsatte. Tværtimod vil vi være et mindre agilt team
