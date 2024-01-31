@@ -3,6 +3,7 @@ import Online from "../online";
 import Language from "../language";
 import { Menu, X } from "lucide-react";
 import { Link, Element } from "react-scroll";
+import { useRouter } from "next/router";
 export enum PAGES {
   HOME,
   EVENTS,
@@ -65,6 +66,8 @@ const pages = [
 export default function Navbar({ page }: { page: PAGES }) {
   const [isEnglish, setIsEnglish] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   return (
     <>
       <nav

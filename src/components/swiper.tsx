@@ -95,7 +95,9 @@ export default function Swipe() {
     if (swiperRef.current) {
       if (direction == "prev") {
         if (swiperRef.current.swiper.isBeginning) {
-          swiperRef.current.swiper.slideTo(7);
+          swiperRef.current.swiper.slideTo(
+            swiperRef.current.swiper.slides.length - 1
+          );
           return;
         }
         swiperRef.current.swiper.slidePrev();
@@ -122,16 +124,16 @@ export default function Swipe() {
           </div>
           <div className="flex items-center justify-end gap-2 mb-4">
             <div
-              onClick={() => onArrowClick("next")}
+              onClick={() => onArrowClick("prev")}
               className="p-4 bg-white border border-gray-300 rounded shadow cursor-pointer active:scale-95"
             >
-              <ArrowLeft onClick={() => onArrowClick("prev")} size={20} />
+              <ArrowLeft size={20} />
             </div>
             <div
               onClick={() => onArrowClick("next")}
               className="p-4 bg-white border border-gray-300 rounded shadow cursor-pointer active:scale-95"
             >
-              <ArrowRight onClick={() => onArrowClick("next")} size={20} />
+              <ArrowRight size={20} />
             </div>
           </div>
           <Swiper

@@ -24,11 +24,14 @@ export default function Hero() {
         </a>
         <div className="flex flex-col items-center justify-center gap-4 md:gap-8">
           <h1 className="text-4xl font-semibold leading-normal text-center md:text-6xl text-main">
-            Vi skaber brancheførende resultater for e-commerce brands.
+            {currentPath === "/en"
+              ? "We create industry-leading results for e-commerce brands."
+              : "Vi skaber brancheførende resultater for e-commerce brands."}
           </h1>
           <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
-            Med en langsigtet holistiske tilgang har vi udelukkende fokus på at
-            vækste din profit. Vi varetager hele den digitale kunderejse
+            {currentPath === "/en"
+              ? "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"
+              : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"}
           </h2>
         </div>
         <div className="flex items-center justify-center">
