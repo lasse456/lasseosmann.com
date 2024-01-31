@@ -84,7 +84,7 @@ export default function Navbar({ page }: { page: PAGES }) {
               duration={10}
               className="cursor-pointer text-[18px]"
             >
-              Resultater
+              {currentPath === "/en" ? "Results" : "Resultater"}
             </Link>
             <Link
               to="services"
@@ -100,7 +100,7 @@ export default function Navbar({ page }: { page: PAGES }) {
               duration={10}
               className="cursor-pointer text-[18px]"
             >
-              Teamet
+              Team
             </Link>
           </div>
           <div className="mde:hidden">
@@ -116,73 +116,49 @@ export default function Navbar({ page }: { page: PAGES }) {
       </nav>
       {menuClicked ? (
         <div className="fixed top-0 bottom-0 left-0 right-0 bg-white z-[1000] py-[16px] mne:hidden">
-          <div className="w-[96%] mx-auto max-w-main flex items-center justify-between">
-            <Link href={"/"} className="text-[24px] font-[600] text-main">
-              <img className="w-[100px]" src="/logo.png"></img>
-            </Link>
-            <div className="flex items-center gap-[50px] font-[500] text-[16px] mde:hidden">
+          <div className="w-[96%] mx-auto max-w-main">
+            <div className="flex items-center justify-between">
+              <Link href={"/"} className="text-[24px] font-[600] text-main">
+                <img className="w-[100px]" src="/logo.png"></img>
+              </Link>
+              <div
+                onClick={() => setMenuClicked(false)}
+                className="hidden mde:inline-block"
+              >
+                <X size={28} />
+              </div>
+            </div>
+            <div className="py-[60px] flex flex-col">
               <Link
+                onClick={() => setMenuClicked(false)}
                 to="results"
                 smooth={true}
                 duration={10}
-                className="cursor-pointer text-[18px]"
+                className="cursor-pointer text-[40px]"
               >
-                Resultater
+                {currentPath === "/en" ? "Results" : "Resultater"}
               </Link>
               <Link
+                onClick={() => setMenuClicked(false)}
                 to="services"
                 smooth={true}
                 duration={10}
-                className="cursor-pointer text-[18px]"
+                className="cursor-pointer text-[40px]"
               >
                 Services
               </Link>
               <Link
+                onClick={() => setMenuClicked(false)}
                 to="team"
                 smooth={true}
                 duration={10}
-                className="cursor-pointer text-[18px]"
+                className="cursor-pointer text-[40px]"
               >
-                Teamet
+                Team
               </Link>
             </div>
-            <div className="mde:hidden">
+            <div className="inline-block">
               <Language />
-            </div>
-            <div
-              onClick={() => setMenuClicked(false)}
-              className="hidden mde:inline-block"
-            >
-              <X size={28} />
-              <div className="flex items-center gap-[50px] font-[500] text-[16px] mde:hidden">
-                <Link
-                  to="results"
-                  smooth={true}
-                  duration={10}
-                  className="cursor-pointer text-[18px]"
-                >
-                  Resultater
-                </Link>
-                <Link
-                  to="services"
-                  smooth={true}
-                  duration={10}
-                  className="cursor-pointer text-[18px]"
-                >
-                  Services
-                </Link>
-                <Link
-                  to="team"
-                  smooth={true}
-                  duration={10}
-                  className="cursor-pointer text-[18px]"
-                >
-                  Teamet
-                </Link>
-              </div>
-              <div className="mde:hidden">
-                <Language />
-              </div>
             </div>
           </div>
         </div>

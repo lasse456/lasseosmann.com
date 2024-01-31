@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useState } from "react";
 // Import Swiper React components
 import SectionStarter from "./sectionstarter";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/router";
 // hey
 const reviewData = [
   {
@@ -88,6 +89,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import useMediaQuery from "@/hooks/use-media-query";
 
 export default function Swipe() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   const swiperRef = useRef<SwiperRef>(null);
   const { isMobile, isTablet, isDesktop } = useMediaQuery();
 
@@ -116,10 +119,16 @@ export default function Swipe() {
       <section className="bg-[#f7f7fc] py-[100px]">
         <div className="w-[90%] mx-auto max-w-main">
           <div className="mb-[60px] text-center ctaOne:text-left">
-            <SectionStarter section="anmeldelser" />
+            <SectionStarter
+              section={currentPath === "/en" ? "reviews" : "anmeldelser"}
+            />
             <h1 className="text-sectionheading font-[600] text-main ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
-              Glade kunder er vores{" "}
-              <span className="text-[#0071e3]">top-prioritet</span>{" "}
+              {currentPath === "/en"
+                ? "Happy brands are our"
+                : "Glade kunder er vores"}{" "}
+              <span className="text-[#0071e3]">
+                {currentPath === "/en" ? "top priority" : "topprioritet"}
+              </span>
             </h1>
           </div>
           <div className="flex items-center justify-end gap-2 mb-4">

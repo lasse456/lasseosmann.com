@@ -1,6 +1,9 @@
 import SectionStarter from "./sectionstarter";
+import { useRouter } from "next/router";
 
 export default function Info() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   return (
     <section className="py-[100px] pt-[160px] ctaOne:pt-[100px]">
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px] skillsOne:grid-cols-1 skillsOne:gap-[0px]">
@@ -50,21 +53,44 @@ export default function Info() {
             </div>
           </div>
           <h1 className="text-sectionheading font-[600] text-main mb-[40px] leading-[60px] ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
-            For e-commerces der søger den{" "}
-            <span className="text-[#0071e3]">bedste vækstpartner</span>{" "}
+            {currentPath === "/en"
+              ? "For e-commerce brands looking for the"
+              : "For e-commerces der søger den"}{" "}
+            <span className="text-[#0071e3]">
+              {currentPath === "/en"
+                ? "best growth partner"
+                : "bedste vækstpartner"}
+            </span>{" "}
           </h1>
-          <p className="text-[17px] text-gray-600 font-[500] mb-[60px]">
-            For at overgå dine konkurrenter er det afgørende at have en partner
-            med førsteklasses e-commerce-strategier og dyb forståelse for,
-            hvordan alle dine marketingkanaler kan arbejde sammen.<br></br>
-            <br></br>Vi er her for at hjælpe dit brand med hurtig national og
-            international vækst, samtidig med at vi konstant holder øje med din
-            faktiske profit.<br></br>
-            <br></br>Vi gør, hvad der skal til for at opnå de bedste resultater
-            og er ikke bundet af strenge aftaler.
-          </p>
+          {currentPath === "/en" ? (
+            <p className="text-[17px] text-gray-600 font-[500] mb-[60px]">
+              To outperform your competitors, having a partner with top-notch
+              e-commerce strategies and a deep understanding of how all your
+              marketing channels work together is crucial.
+              <br></br>
+              <br></br>We're here to help your brand achieve rapid national and
+              international growth while keeping a constant eye on your bottom
+              line.<br></br>
+              <br></br>We do what it takes to achieve the best results and are
+              not bound by strict agreements.
+            </p>
+          ) : (
+            <p className="text-[17px] text-gray-600 font-[500] mb-[60px]">
+              For at overgå dine konkurrenter er det afgørende at have en
+              partner med førsteklasses e-commerce-strategier og dyb forståelse
+              for, hvordan alle dine marketingkanaler kan arbejde sammen.
+              <br></br>
+              <br></br>Vi er her for at hjælpe dit brand med hurtig national og
+              international vækst, samtidig med at vi konstant holder øje med
+              din reelle profit.<br></br>
+              <br></br>Vi gør, hvad der skal til for at opnå de bedste
+              resultater og er ikke bundet af strenge aftaler.
+            </p>
+          )}
           <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500] w-[300px]">
-            Book et uforpligtende møde
+            {currentPath === "/en"
+              ? "Book a free meeting"
+              : "Book et uforpligtende møde"}
           </button>
         </div>
         <div className="flex flex-col justify-center">

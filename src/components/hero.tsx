@@ -25,12 +25,12 @@ export default function Hero() {
         <div className="flex flex-col items-center justify-center gap-4 md:gap-8">
           <h1 className="text-4xl font-semibold leading-normal text-center md:text-6xl text-main">
             {currentPath === "/en"
-              ? "We create industry-leading results for e-commerce brands."
-              : "Vi skaber brancheførende resultater for e-commerce brands."}
+              ? "We create industry-leading results for e-commerce brands"
+              : "Vi skaber brancheførende resultater for e-commerce brands"}
           </h1>
           <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
             {currentPath === "/en"
-              ? "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"
+              ? "With a long-term holistic approach, we focus solely on growing your profits. We manage the entire digital customer journey"
               : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"}
           </h2>
         </div>
@@ -40,7 +40,9 @@ export default function Hero() {
             className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-[#0071e3]"
           >
             <p className="text-lg font-[600] text-white">
-              Få en gratis marketingsanalyse
+              {currentPath === "/en"
+                ? "Get a free marketing analysis"
+                : "Få en gratis marketinganalyse"}
             </p>
             <ChevronRight size={24} color="white" />
           </a>

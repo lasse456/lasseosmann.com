@@ -4,6 +4,7 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import Counter from "./counter";
 import SectionStarter from "./sectionstarter";
 import Slider from "react-infinite-logo-slider";
+import { useRouter } from "next/router";
 
 const casesData = [
   {
@@ -315,6 +316,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import useMediaQuery from "@/hooks/use-media-query";
 
 export default function CaseSwiper() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   const swiperRef = useRef<SwiperRef>(null);
   const { isMobile, isTablet, isDesktop } = useMediaQuery();
 
@@ -322,7 +325,9 @@ export default function CaseSwiper() {
     if (swiperRef.current) {
       if (direction == "prev") {
         if (swiperRef.current.swiper.isBeginning) {
-          swiperRef.current.swiper.slideTo(7);
+          swiperRef.current.swiper.slideTo(
+            swiperRef.current.swiper.slides.length - 1
+          );
           return;
         }
         swiperRef.current.swiper.slidePrev();
@@ -341,27 +346,33 @@ export default function CaseSwiper() {
       <section className="bg-[#f7f7fc] py-[100px]">
         <div className="w-[90%] mx-auto max-w-main">
           <div className="mb-[60px] text-center ctaOne:text-left">
-            <SectionStarter section="cases" />
+            <SectionStarter
+              section={currentPath === "/en" ? "cases" : "samarbejder"}
+            />
             <h1 className="text-sectionheading font-[600] text-main ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
-              Et udvalg af <span className="text-[#0071e3]">succes cases</span>{" "}
+              {currentPath === "/en" ? "A selection of" : "Et udvalg af"}{" "}
+              <span className="text-[#0071e3]">
+                {currentPath === "/en" ? "success cases" : "succes cases"}
+              </span>{" "}
             </h1>
             <p className="text-description font-[500] text-gray-600">
-              Vi har skabt nogle af de hurtigst voksende e-commerce brands i
-              norden
+              {currentPath === "/en"
+                ? "We have created some of the fastest-growing e-commerce brands in Europe"
+                : " Vi har skabt nogle af de hurtigst voksende e-commerce brands i norden"}
             </p>
           </div>
           <div className="flex items-center justify-end gap-2 mb-4">
             <div
-              onClick={() => onArrowClick("next")}
+              onClick={() => onArrowClick("prev")}
               className="p-4 bg-white border border-gray-300 rounded shadow cursor-pointer active:scale-95"
             >
-              <ArrowLeft onClick={() => onArrowClick("prev")} size={20} />
+              <ArrowLeft size={20} />
             </div>
             <div
               onClick={() => onArrowClick("next")}
               className="p-4 bg-white border border-gray-300 rounded shadow cursor-pointer active:scale-95"
             >
-              <ArrowRight onClick={() => onArrowClick("next")} size={20} />
+              <ArrowRight size={20} />
             </div>
           </div>
           <Swiper

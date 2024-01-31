@@ -2,6 +2,7 @@ import { Check, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import Slider from "react-infinite-logo-slider";
 import { toast } from "sonner";
+import { useRouter } from "next/router";
 
 const reviewData = [
   {
@@ -91,6 +92,8 @@ export default function Cta() {
     }
     setSubmitting(false);
   }
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
 
   return (
     <section
@@ -103,46 +106,61 @@ export default function Cta() {
             <img className="w-[140px]" src="/trust.svg"></img>
             <p className="text-gray-600">4.5/5</p>
           </div>
-          <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main">
-            Anmod om en gratis marketingsanalyse
+          <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main ctaOne:text-[40px]">
+            {currentPath === "/en"
+              ? "Request a free marketing analysis"
+              : "Anmod om en gratis marketingsanalyse"}
           </h1>
           <p className="w-[70%] text-gray-600 mb-[40px] font-[500]">
-            Gør som vores nuværende samarbejdspartnere, og anmod om en 100%
-            gratis analyse af jeres digitale marketing eksekvering.
+            {currentPath === "/en"
+              ? "Do as our current partners and request a 100% free analysis of your digital marketing execution."
+              : "Gør som vores nuværende samarbejdspartnere, og anmod om en 100% gratis analyse af jeres digitale marketing eksekvering."}
           </p>
           <div className="flex flex-col gap-[20px] mb-[60px]">
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
-              <p>Vi gennemgår hele jeres digitale kunderejse fra A til Z</p>
-            </div>
-            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
               <p>
-                Analyse af jeres Paid social, E-mail marketing, Google ads og
-                hjemmeside
-              </p>
-            </div>
-            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
-              <p>Inklusiv en vurdering af jeres vækspotientale</p>
-            </div>
-            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
-              <p>
-                Du får konkrete tiltag du kan implementere for at forbedre
-                performance{" "}
+                {currentPath === "/en"
+                  ? "Vi gennemgår hele jeres digitale kunderejse fra A til Z"
+                  : "We'll review your entire digital customer journey from A to Z"}
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
               <p>
-                BONUS: Oversigt over din profit og beregning af break-even ROAS.
+                {currentPath === "/en"
+                  ? "Analyze your Paid Social, E-mail Marketing, Google ads, and website"
+                  : "Analyse af jeres Paid social, E-mail marketing, Google ads og hjemmeside"}
+              </p>
+            </div>
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
+              <CheckCircle className="text-[#0071e3]" />
+              <p>
+                {currentPath === "/en"
+                  ? "Including an assessment of your growth potential"
+                  : "Inklusiv en vurdering af jeres vækspotientale"}
+              </p>
+            </div>
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
+              <CheckCircle className="text-[#0071e3]" />
+              <p>
+                {currentPath === "/en"
+                  ? "You get concrete actions you can implement to improve performance"
+                  : "Du får konkrete tiltag du kan implementere for at forbedre performance"}
+              </p>
+            </div>
+            <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
+              <CheckCircle className="text-[#0071e3]" />
+              <p>
+                {currentPath === "/en"
+                  ? "BONUS: Overview of your profit and calculation of break-even ROAS."
+                  : "BONUS: Oversigt over din profit og beregning af break-even ROAS."}
               </p>
             </div>
             <p className="w-[80%] mt-[20px] text-gray-600 font-[500]">
-              Vigtigt: Du er kvalificeret til at anmode om en gratis
-              marketingsanalyse, hvis du er i stand til at bruge +10.000
-              kr./måned betalt annoncering.
+              {currentPath === "/en"
+                ? "Important: You are eligible to request a free marketing analysis if you can spend +€1,500/month on paid advertising."
+                : "      Vigtigt: Du er kvalificeret til at anmode om en gratis marketingsanalyse, hvis du er i stand til at bruge +10.000kr./måned betalt annoncering."}
             </p>
           </div>
           <div className="w-[100%]">
@@ -165,7 +183,9 @@ export default function Cta() {
       <div className="max-w-main bg-[#f7f7fc] py-[100px]">
         <div className="w-[90%] mr-auto max-w-[650px] flex flex-col justify-center items-center ctaOne:mx-auto ctaOne:max-w-main">
           <h1 className="font-[600] text-[30px] text-center mb-[20px] w-[60%] ctaOne:text-left ctaOne:w-[100%]">
-            Anmod om en gratis marketingsanalyse
+            {currentPath === "/en"
+              ? "Request a free marketing analysis"
+              : "Anmod om en gratis marketingsanalyse"}
           </h1>
           <form
             onSubmit={submit}
@@ -173,11 +193,13 @@ export default function Cta() {
           >
             <div className="flex items-center justify-between gap-[30px]">
               <div className="w-full border-blue-500">
-                <p className="mb-[12px]">Dit fulde navn</p>
+                <p className="mb-[12px]">
+                  {currentPath === "/en" ? "Full name" : "Fulde navn"}
+                </p>
                 <input
                   required
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. Gustav Walsted"
+                  placeholder="Gustav Walsted"
                   value={data?.fullName}
                   onChange={(e) =>
                     setData({ ...data, fullName: e.target.value })
@@ -189,7 +211,7 @@ export default function Cta() {
                 <input
                   required
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. gustav@coad.dk"
+                  placeholder="gustav@coad.dk"
                   type="email"
                   value={data?.email}
                   onChange={(e) => setData({ ...data, email: e.target.value })}
@@ -197,7 +219,9 @@ export default function Cta() {
               </div>
             </div>
             <div>
-              <p className="mb-[12px]">Virksomhed</p>
+              <p className="mb-[12px]">
+                {currentPath === "/en" ? "Company name" : "Virksomhed"}
+              </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
                 placeholder="COAD"
@@ -207,10 +231,12 @@ export default function Cta() {
             </div>
             <div className="flex items-center justify-between gap-[30px]">
               <div className="w-full">
-                <p className="mb-[12px]">Telefonnummer</p>
+                <p className="mb-[12px]">
+                  {currentPath === "/en" ? "Phone number" : "Telefonnummer"}
+                </p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. +45 45 90 23 63"
+                  placeholder="+45 45 90 23 63"
                   type="tel"
                   value={data?.phoneNumber}
                   onChange={(e) =>
@@ -219,10 +245,12 @@ export default function Cta() {
                 ></input>
               </div>{" "}
               <div className="w-full">
-                <p className="mb-[12px]">Hjemmeside link</p>
+                <p className="mb-[12px]">
+                  {currentPath === "/en" ? "Website link" : "Hjemmeside link"}
+                </p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                  placeholder="Eg. www.virksomhed.com"
+                  placeholder="www.name.com"
                   value={data?.website}
                   onChange={(e) =>
                     setData({ ...data, website: e.target.value })
@@ -231,10 +259,14 @@ export default function Cta() {
               </div>
             </div>
             <div className="w-full">
-              <p className="mb-[12px]">Annonceringsforbrug på månedlig basis</p>
+              <p className="mb-[12px]">
+                {currentPath === "/en"
+                  ? "Monthly ad-spend"
+                  : "Annonceringsforbrug på månedlig basis"}
+              </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
-                placeholder="Eg. 10.000 DKK"
+                placeholder="10.000 DKK"
                 value={data?.monthlyAdSpend}
                 onChange={(e) =>
                   setData({ ...data, monthlyAdSpend: e.target.value })
@@ -242,10 +274,12 @@ export default function Cta() {
               ></input>
             </div>
             <div>
-              <p className="mb-[12px]">Noter til Coad</p>
+              <p className="mb-[12px]">
+                {currentPath === "/en" ? "Comments" : "Kommentarer"}
+              </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500"
-                placeholder="Har i mulighed for at være ekstra opmærksomme på ..."
+                placeholder={currentPath === "/en" ? "Comments" : "Kommentarer"}
                 value={data?.notes}
                 onChange={(e) => setData({ ...data, notes: e.target.value })}
               ></input>

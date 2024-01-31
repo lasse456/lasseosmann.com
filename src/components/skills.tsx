@@ -1,18 +1,28 @@
 import SectionStarter from "./sectionstarter";
+import { useRouter } from "next/router";
 
 export default function Skills() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   return (
     <section className="py-[100px] pt-[160px] ctaOne:pb-[0px]">
       <div className="w-[90%] mx-auto max-w-main">
         <div className="mb-[60px] text-center ctaOne:text-left">
-          <SectionStarter section="hvad vi gør bedst" />
+          <SectionStarter
+            section={currentPath === "/en" ? "what we do" : "hvad vi gør"}
+          />
           <h1 className="text-sectionheading font-[600] text-main ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
-            Vi dominerer hele e-commerce{" "}
-            <span className="text-[#0071e3]">kunderejsen</span>{" "}
+            {currentPath === "/en"
+              ? "We dominate the entire e-commerce"
+              : "Vi dominerer hele e-commerce kunderejsen"}{" "}
+            <span className="text-[#0071e3]">
+              {currentPath === "/en" ? "customer journey" : "kunderejsen"}
+            </span>{" "}
           </h1>
           <p className="text-description font-[500] text-gray-600">
-            Hold dig et par trin foran dine konkurrenter ved at implementere de
-            førende strategier
+            {currentPath === "/en"
+              ? "It takes a holistic approach to achieve industry-leading results"
+              : "Det kræver en holistisk tilgang for at opnå brancheførende resultater"}
           </p>
         </div>
         <div className="grid grid-cols-4 gap-[30px] skillsOne:grid-cols-1">
@@ -39,8 +49,9 @@ export default function Skills() {
 
               <h1 className="text-[22px] font-[600] mb-[20px]">Paid social</h1>
               <p className="text-[16px] text-gray-600 font-[500] mb-[20px]">
-                Skab værdi med en resultatorienteret og proaktiv tilgang til
-                annoncering på sociale medier
+                {currentPath === "/en"
+                  ? "Create value with a results-driven and proactive approach to social media advertising"
+                  : "Skab værdi med en resultatorienteret og proaktiv tilgang til annoncering på sociale medier"}
               </p>
             </div>
 
@@ -55,8 +66,9 @@ export default function Skills() {
               </div>
               <h1 className="text-[22px] font-[600] mb-[20px]">Klaviyo</h1>
               <p className="text-[16px] text-gray-600 font-[500] mb-[50px]">
-                Få en strøm af tilbagevendende kunder med hyper-personaliserede
-                e-mail marketing flows
+                {currentPath === "/en"
+                  ? "Get a flow of returning customers with hyper-personalized email marketing flows"
+                  : "Få en strøm af tilbagevendende kunder med hyper-personaliserede e-mail marketing flows"}
               </p>
             </div>
 
@@ -72,8 +84,9 @@ export default function Skills() {
               </div>
               <h1 className="text-[22px] font-[600] mb-[20px]">Google Ads</h1>
               <p className="text-[16px] text-gray-600 font-[500] mb-[50px]">
-                Oplev profitabel vækst på Google med de mest avancerede
-                strategier
+                {currentPath === "/en"
+                  ? "Experience profitable growth on Google with the most advanced strategies"
+                  : "Oplev profitabel vækst på Google med de mest avancerede strategier"}
               </p>
             </div>
 
@@ -88,11 +101,14 @@ export default function Skills() {
                 <img className="w-[30px]" src="/spfy.png"></img>
               </div>
               <h1 className="text-[22px] font-[600] mb-[20px]">
-                Hjemmeside optimering
+                {currentPath === "/en"
+                  ? "Website optimization"
+                  : "Hjemmeside optimering"}
               </h1>
               <p className="text-[16px] text-gray-600 font-[500] mb-[50px]">
-                Vi optimerer din konverteringsrate så du får mest muligt ud af
-                trafikken
+                {currentPath === "/en"
+                  ? "We optimize your conversion rate so you get the most out of your traffic"
+                  : "Vi optimerer din konverteringsrate så du får mest muligt ud af trafikken"}
               </p>
             </div>
 

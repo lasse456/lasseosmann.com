@@ -8,8 +8,8 @@ export default function Language() {
   const [isEnglish, setIsEnglish] = useState(false);
   return (
     <div className="flex items-center gap-[4px] bg-[#f0f2f5] p-[4px] rounded-[100px]">
-      <Link
-        href={"/"}
+      <a
+        href="/"
         className={
           currentPath === "/en"
             ? "p-[6px] flex items-center gap-[6px] rounded-[70px] cursor-pointer"
@@ -22,9 +22,9 @@ export default function Language() {
       >
         <img className="w-[16px]" src="/denmark.png"></img>
         <p className="text-[13px]">DK</p>
-      </Link>
-      <Link
-        href={"/en"}
+      </a>
+      <a
+        href="/en"
         className={
           currentPath === "/en"
             ? "bg-white p-[6px] flex items-center gap-[6px] rounded-[70px] cursor-pointer"
@@ -37,7 +37,7 @@ export default function Language() {
       >
         <img className="w-[16px]" src="/united-kingdom.png"></img>
         <p className="text-[13px]">EN</p>
-      </Link>
+      </a>
     </div>
   );
 }
