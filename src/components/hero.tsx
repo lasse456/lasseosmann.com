@@ -8,7 +8,7 @@ export default function Hero() {
         background:
           "linear-gradient(90deg, rgba(249,254,255,1) 0%, rgba(231,251,255,1) 49%, rgba(243,253,255,1) 100%)",
       }}
-      className="bubble-hero heroback bg-blue-400 z-[0] py-[140px] h-[100vh] relative overflow-hidden"
+      className="bubble-hero heroback bg-blue-400 z-[0] py-[100px] h-[80vh] relative overflow-hidden"
     >
       <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">

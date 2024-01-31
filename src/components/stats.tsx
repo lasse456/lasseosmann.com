@@ -34,7 +34,7 @@ export default function Stats() {
                 <Counter endValue={14} percentage={false} />
               </span>
               <p className="text-[20px] text-center text-gray-600">
-                Performance baseret
+                Gennemsnitlig månedlig samarbejdsperiode
               </p>
             </div>
           </div>

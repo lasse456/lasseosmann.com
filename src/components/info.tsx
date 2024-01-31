@@ -6,38 +6,48 @@ export default function Info() {
       <div className="w-[90%] mx-auto max-w-main grid grid-cols-2 gap-[100px] skillsOne:grid-cols-1 skillsOne:gap-[0px]">
         <div className="flex flex-col justify-center py-[60px] skillsOne:pb-[20px]">
           <div className="mb-[40px] flex items-center">
-            <img
-              className="w-[40px] rounded-full border border-white"
-              src="/flags/denflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/gerflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/holflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/norflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/porflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/sweflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/ukflag.png"
-            ></img>
-            <img
-              className="w-[40px] ml-[-10px] rounded-full border-2 border-white"
-              src="/flags/usaflag.png"
-            ></img>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/denflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/sweflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/norflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/holflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/porflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/usaflag.png"
+              ></img>
+            </div>
+            <div className="border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+              <img
+                className="w-[40px] rounded-full border border-white"
+                src="/flags/ukflag.png"
+              ></img>
+            </div>
           </div>
           <h1 className="text-sectionheading font-[600] text-main mb-[40px] leading-[60px] ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
             For e-commerces der søger den{" "}

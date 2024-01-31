@@ -21,7 +21,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          omsætning
+          Omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -33,8 +33,30 @@ const casesData = [
           x
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          poas
+          POAS
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/tiktok.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img
+            className="w-[30px] h-[30px] object-cover"
+            src="/adwords.png"
+          ></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -53,7 +75,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          profit
+          Profit
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -65,8 +87,15 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          cpa
+          CPA
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -85,7 +114,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          omsætning
+          Omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -97,8 +126,36 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          cac
+          CAC
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/tiktok.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img
+            className="w-[30px] h-[30px] object-cover"
+            src="/adwords.png"
+          ></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img
+            className="w-[30px] h-[30px] object-cover"
+            src="/pinterest.png"
+          ></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -117,7 +174,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          poas
+          POAS
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -129,8 +186,18 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          cpa
+          CPA
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/klaviyo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -149,7 +216,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          omsætning
+          Omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -161,8 +228,24 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          cac
+          CAC
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/adwords.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -181,7 +264,7 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          omsætning
+          Omsætning
         </p>
       </div>,
       <div key={1} className="flex flex-col items-center text-center">
@@ -193,8 +276,30 @@ const casesData = [
           %
         </h1>
         <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          cac
+          CAC
         </p>
+      </div>,
+    ],
+    channels: [
+      <div className="flex items-center justify-center">
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+          <img className="w-[30px]" src="/metalogo.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px]" src="/tiktok.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img
+            className="w-[30px] h-[30px] object-cover"
+            src="/adwords.png"
+          ></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+        </div>
+        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+        </div>
       </div>,
     ],
   },
@@ -299,7 +404,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
             width: "100%",
             height: "100%", // Adjust the height of the gradient overlay as needed
             background:
-              "linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 1))",
+              "linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 1))",
             pointerEvents: "none",
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
@@ -321,17 +426,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
         <p className="text-main w-[90%] mx-auto mb-[20px] font-[500] text-center">
           {object.description}
         </p>
-        <div className="flex items-center justify-center">
-          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-            <img className="w-[30px]" src="/metalogo.png"></img>
-          </div>
-          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-            <img className="w-[30px]" src="/tiktok.png"></img>
-          </div>
-          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
-          </div>
-        </div>
+        {object.channels}
       </div>
     </div>
   );

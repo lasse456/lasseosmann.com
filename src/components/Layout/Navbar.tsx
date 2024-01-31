@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { useState } from "react";
 import Online from "../online";
 import Language from "../language";
 import { Menu } from "lucide-react";
-
+import { Link, Element } from "react-scroll";
 export enum PAGES {
   HOME,
   EVENTS,
@@ -74,9 +73,30 @@ export default function Navbar({ page }: { page: PAGES }) {
           <img className="w-[100px]" src="/logo.png"></img>
         </Link>
         <div className="flex items-center gap-[50px] font-[500] text-[16px]">
-          <Link href={"/"}>Resultater</Link>
-          <Link href={"/"}>Services</Link>
-          <Link href={"/"}>Teamet</Link>
+          <Link
+            to="results"
+            smooth={true}
+            duration={10}
+            className="cursor-pointer text-[18px]"
+          >
+            Resultater
+          </Link>
+          <Link
+            to="services"
+            smooth={true}
+            duration={10}
+            className="cursor-pointer text-[18px]"
+          >
+            Services
+          </Link>
+          <Link
+            to="team"
+            smooth={true}
+            duration={10}
+            className="cursor-pointer text-[18px]"
+          >
+            Teamet
+          </Link>
         </div>
         <Language />
       </div>

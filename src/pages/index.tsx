@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import { PAGES } from "@/components/Layout/Navbar";
-import Link from "next/link";
 import Hero from "@/components/hero";
 import Reviews from "@/components/reviews";
 import Skills from "@/components/skills";
@@ -11,17 +10,24 @@ import Team from "@/components/team";
 import Cta from "@/components/Cta";
 import Swipe from "@/components/swiper";
 import CaseSwiper from "@/components/caseswiper";
+import { Element } from "react-scroll";
 
 export default function Index() {
   return (
     <Layout page={PAGES.HOME}>
       <Hero />
       <Stats />
-      <CaseSwiper />
-      <Skills />
+      <Element name="results">
+        <CaseSwiper />
+      </Element>
+      <Element name="services">
+        <Skills />
+      </Element>
       <Info />
       <Swipe />
-      <Team />
+      <Element name="team">
+        <Team />
+      </Element>
       <Cta />
     </Layout>
   );
