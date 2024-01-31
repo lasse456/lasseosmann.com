@@ -281,7 +281,7 @@ const casesData = [
       </div>,
     ],
     channels: [
-      <div className="flex items-center justify-center">
+      <div key={1} className="flex items-center justify-center">
         <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
           <img className="w-[30px]" src="/metalogo.png"></img>
         </div>
