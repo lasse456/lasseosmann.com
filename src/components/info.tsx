@@ -89,8 +89,8 @@ export default function Info() {
           )}
           <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500] w-[300px]">
             {currentPath === "/en"
-              ? "Book a free marketing analysis"
-              : "Book en gratis marketinganalyse"}
+              ? "Get a free marketing analysis"
+              : "Få en gratis marketinganalyse"}
           </button>
         </div>
         <div className="flex flex-col justify-center">

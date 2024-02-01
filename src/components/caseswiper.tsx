@@ -1252,7 +1252,7 @@ export default function CaseSwiper() {
             <p className="text-description font-[500] text-gray-600">
               {currentPath === "/en"
                 ? "We have created some of the fastest-growing e-commerce brands in Europe"
-                : " Vi har skabt nogle af de hurtigst voksende e-commerce brands i norden"}
+                : " Vi har skabt nogle af de hurtigst voksende e-commerce brands i Europa"}
             </p>
           </div>
           <div className="flex items-center justify-end gap-2 mb-4">

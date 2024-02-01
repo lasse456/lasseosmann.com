@@ -16,7 +16,7 @@ export default function Hero() {
       <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">
         <a
-          href="https://trustpilot.com/review/coad.dk"
+          href="https://dk.trustpilot.com/review/coad.agency"
           className="cursor-pointer"
           target="_blank"
         >

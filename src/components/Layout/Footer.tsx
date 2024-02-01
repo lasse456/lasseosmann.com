@@ -15,8 +15,8 @@ export default function Footer() {
             </Link>
             <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
               {currentPath === "/en"
-                ? "Book a free marketing analysis"
-                : "Book en gratis marketinganalyse"}
+                ? "Get a free marketing analysis"
+                : "Få en gratis marketinganalyse"}
             </button>
           </div>
           <div className="flex justify-between gap-[130px] ctaOne:flex-col">

@@ -104,7 +104,6 @@ export default function Cta() {
         <div className="w-[90%] ml-auto max-w-[650px] ctaOne:mx-auto ctaOne:max-w-main">
           <div className="flex items-center gap-[10px] mb-[30px]">
             <img className="w-[140px]" src="/trust.svg"></img>
-            <p className="text-gray-600">4.5/5</p>
           </div>
           <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main ctaOne:text-[30px] ctaOne:leading-[40px]">
             {currentPath === "/en"
@@ -118,7 +117,9 @@ export default function Cta() {
           </p>
           <div className="flex flex-col gap-[20px] mb-[60px] mde:mb-[0px]">
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
+              <div className="w-[40px]">
+                <CheckCircle className="text-[#0071e3]" />
+              </div>
               <p>
                 {currentPath === "/en"
                   ? "We'll review your entire digital customer journey from A to Z"
@@ -126,7 +127,9 @@ export default function Cta() {
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
+              <div className="w-[40px]">
+                <CheckCircle className="text-[#0071e3]" />
+              </div>
               <p>
                 {currentPath === "/en"
                   ? "Analyze your Paid Social, E-mail Marketing, Google ads, and website"
@@ -134,7 +137,9 @@ export default function Cta() {
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
+              <div className="w-[40px]">
+                <CheckCircle className="text-[#0071e3]" />
+              </div>
               <p>
                 {currentPath === "/en"
                   ? "Including an assessment of your growth potential"
@@ -142,7 +147,9 @@ export default function Cta() {
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
+              <div className="w-[40px]">
+                <CheckCircle className="text-[#0071e3]" />
+              </div>
               <p>
                 {currentPath === "/en"
                   ? "You get concrete actions you can implement to improve performance"
@@ -150,7 +157,10 @@ export default function Cta() {
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
-              <CheckCircle className="text-[#0071e3]" />
+              <div className="w-[40px]">
+                <CheckCircle className="text-[#0071e3]" />
+              </div>
+
               <p>
                 {currentPath === "/en"
                   ? "BONUS: Overview of your profit and calculation of break-even ROAS."
@@ -291,8 +301,8 @@ export default function Cta() {
               {submitting
                 ? "Anmoder..."
                 : currentPath === "/en"
-                ? "Book the analysis"
-                : "Anmod om analysen"}
+                ? "Book an analysis"
+                : "Anmod om en analyse"}
             </button>
           </form>
         </div>
