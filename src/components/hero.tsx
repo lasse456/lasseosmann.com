@@ -28,13 +28,13 @@ export default function Hero() {
               ? "We create industry-leading results for e-commerce brands"
               : "Vi skaber brancheførende resultater for e-commerce brands"}
           </h1>
+          <div className="w-full overflow-hidden bubbles" />
           <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
             {currentPath === "/en"
               ? "With a long-term holistic approach, we focus solely on growing your profits. We manage the entire digital customer journey"
               : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"}
           </h2>
         </div>
-        <div className="w-full overflow-hidden bubbles" />
 
         <div className="flex items-center justify-center">
           <a
