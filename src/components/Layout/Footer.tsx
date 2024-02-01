@@ -15,8 +15,8 @@ export default function Footer() {
             </Link>
             <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
               {currentPath === "/en"
-                ? "Book a free meeting"
-                : "Book et uforpligtende møde"}
+                ? "Book a free marketing analysis"
+                : "Book en gratis marketinganalyse"}
             </button>
           </div>
           <div className="flex justify-between gap-[130px] ctaOne:flex-col">
@@ -74,18 +74,34 @@ export default function Footer() {
         </div>
         <div className="border-t-[1px] flex items-center justify-between py-[50px] text-gray-400 text-[14px] font-[300] ctaOne:flex-col ctaOne:gap-[60px]">
           <h1>
-            COAD Agency - ©{" "}
+            COAD - ©{" "}
             {currentPath === "/en"
               ? "All rights reserved"
               : "Alle rettigheder forbeholdt"}
             , {new Date().getFullYear()}
           </h1>
-          <div className="flex items-center gap-[40px] mde:flex-col">
-            <img className="w-[100px]" src="/trust.svg" alt="Trustpilot" />
-            <img className="w-[80px]" src="/partners/google.png"></img>
-            <img className="w-[100px]" src="/partners/shopify-v2.png"></img>
-            <img className="w-[100px]" src="/partners/klaviyo.png"></img>
-            <img className="w-[100px]" src="/partners/meta.png"></img>
+          <div className="flex items-center gap-[40px] mde:gap-[10px]">
+            <img
+              className="w-[100px] mde:w-[60px]"
+              src="/trust.svg"
+              alt="Trustpilot"
+            />
+            <img
+              className="w-[100px] mde:w-[60px]"
+              src="/partners/google.png"
+            ></img>
+            <img
+              className="w-[100px] mde:w-[60px]"
+              src="/partners/shopify-v2.png"
+            ></img>
+            <img
+              className="w-[100px] mde:w-[50px]"
+              src="/partners/klaviyo.png"
+            ></img>
+            <img
+              className="w-[100px] mde:w-[50px]"
+              src="/partners/meta.png"
+            ></img>
           </div>
         </div>
       </div>

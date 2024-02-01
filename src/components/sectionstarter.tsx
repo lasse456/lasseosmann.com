@@ -11,7 +11,12 @@ export default function SectionStarter(props: any) {
   ) : (
     <div className="text-center flex justify-center ctaOne:items-start">
       <div className="text-white inline-block p-[10px] px-[36px] rounded-[100px] border-[2px] bg-blue-500 mb-[20px] ctaOne:mr-auto">
-        <p>{props.section}</p>
+        <p className="uppercase">
+          {props.section.slice(0, 1)}
+          <span className="lowercase">
+            {props.section.slice(1, props.section.length)}
+          </span>
+        </p>
       </div>
     </div>
   );

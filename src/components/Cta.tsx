@@ -100,13 +100,13 @@ export default function Cta() {
       id="marketingsanalyse"
       className="grid grid-cols-2 border-y-[1px] ctaOne:grid-cols-1"
     >
-      <div className="max-w-main bg-white py-[100px]">
+      <div className="max-w-main bg-white py-[100px] mde:pb-[50px]">
         <div className="w-[90%] ml-auto max-w-[650px] ctaOne:mx-auto ctaOne:max-w-main">
           <div className="flex items-center gap-[10px] mb-[30px]">
             <img className="w-[140px]" src="/trust.svg"></img>
             <p className="text-gray-600">4.5/5</p>
           </div>
-          <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main ctaOne:text-[40px]">
+          <h1 className="text-sectionheading font-[600] leading-[60px] w-[80%] mb-[20px] text-main ctaOne:text-[30px] ctaOne:leading-[40px]">
             {currentPath === "/en"
               ? "Request a free marketing analysis"
               : "Anmod om en gratis marketingsanalyse"}
@@ -116,13 +116,13 @@ export default function Cta() {
               ? "Do as our current partners and request a 100% free analysis of your digital marketing execution."
               : "Gør som vores nuværende samarbejdspartnere, og anmod om en 100% gratis analyse af jeres digitale marketing eksekvering."}
           </p>
-          <div className="flex flex-col gap-[20px] mb-[60px]">
+          <div className="flex flex-col gap-[20px] mb-[60px] mde:mb-[0px]">
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
               <CheckCircle className="text-[#0071e3]" />
               <p>
                 {currentPath === "/en"
-                  ? "Vi gennemgår hele jeres digitale kunderejse fra A til Z"
-                  : "We'll review your entire digital customer journey from A to Z"}
+                  ? "We'll review your entire digital customer journey from A to Z"
+                  : "Vi gennemgår hele jeres digitale kunderejse fra A til Z"}
               </p>
             </div>
             <div className="flex items-center gap-[10px] text-gray-600 font-[500]">
@@ -163,7 +163,7 @@ export default function Cta() {
                 : "      Vigtigt: Du er kvalificeret til at anmode om en gratis marketingsanalyse, hvis du er i stand til at bruge +10.000kr./måned betalt annoncering."}
             </p>
           </div>
-          <div className="w-[100%]">
+          <div className="w-[100%] mde:hidden">
             <Slider
               width="500px"
               duration={30}
@@ -278,7 +278,7 @@ export default function Cta() {
                 {currentPath === "/en" ? "Comments" : "Kommentarer"}
               </p>
               <input
-                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500"
+                className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500 ctaOne:pb-[40px]"
                 placeholder={currentPath === "/en" ? "Comments" : "Kommentarer"}
                 value={data?.notes}
                 onChange={(e) => setData({ ...data, notes: e.target.value })}
@@ -288,7 +288,11 @@ export default function Cta() {
               type="submit"
               className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]"
             >
-              {submitting ? "Anmoder..." : "Anmod om analysen"}
+              {submitting
+                ? "Anmoder..."
+                : currentPath === "/en"
+                ? "Book the analysis"
+                : "Anmod om analysen"}
             </button>
           </form>
         </div>

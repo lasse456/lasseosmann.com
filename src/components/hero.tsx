@@ -11,7 +11,7 @@ export default function Hero() {
         background:
           "linear-gradient(90deg, rgba(249,254,255,1) 0%, rgba(231,251,255,1) 49%, rgba(243,253,255,1) 100%)",
       }}
-      className="bubble-hero heroback bg-blue-400 z-[0] py-[80px] h-[80vh] relative overflow-hidden ctaOne:h-full ctaOne:py-[100px]"
+      className="bubble-hero heroback bg-blue-400 z-[0] py-[80px] h-[80vh] relative overflow-hidden ctaOne:h-full ctaOne:py-[100px] ctaOne:pt-[60px]"
     >
       <Script src="/js/bubbles.js" />
       <div className="w-[90%] mx-auto max-w-5xl flex flex-col gap-[30px] justify-center items-center">
@@ -50,10 +50,13 @@ export default function Hero() {
           </a>
         </div>
         <div className="flex mb-[50px] flex-wrap items-center justify-center gap-8 mt-4 md:mb-0">
-          <img src="./partners/google.png" className="h-[50px]" />
-          <img src="./partners/klaviyo.png" className="h-[50px]" />
-          <img src="./partners/meta.png" className="h-[50px]" />
-          <img src="./partners/shopify-v2.png" className="h-[50px]" />
+          <img src="./partners/google.png" className="h-[30px] md:h-[50px]" />
+          <img src="./partners/klaviyo.png" className="h-[30px] md:h-[50px]" />
+          <img src="./partners/meta.png" className="h-[30px] md:h-[50px]" />
+          <img
+            src="./partners/shopify-v2.png"
+            className="h-[40px] md:h-[50px]"
+          />
         </div>
       </div>
     </section>

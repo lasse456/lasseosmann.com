@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * A speed-improved perlin and simplex noise algorithms for 2D.
@@ -17,524 +17,548 @@
  */
 
 (function (global) {
-    var module = global.noise = {};
+  var module = (global.noise = {});
 
-    function Grad(x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+  function Grad(x, y, z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+
+  Grad.prototype.dot2 = function (x, y) {
+    return this.x * x + this.y * y;
+  };
+
+  Grad.prototype.dot3 = function (x, y, z) {
+    return this.x * x + this.y * y + this.z * z;
+  };
+
+  var grad3 = [
+    new Grad(1, 1, 0),
+    new Grad(-1, 1, 0),
+    new Grad(1, -1, 0),
+    new Grad(-1, -1, 0),
+    new Grad(1, 0, 1),
+    new Grad(-1, 0, 1),
+    new Grad(1, 0, -1),
+    new Grad(-1, 0, -1),
+    new Grad(0, 1, 1),
+    new Grad(0, -1, 1),
+    new Grad(0, 1, -1),
+    new Grad(0, -1, -1),
+  ];
+
+  var p = [
+    151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140,
+    36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120,
+    234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33,
+    88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71,
+    134, 139, 48, 27, 166, 77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133,
+    230, 220, 105, 92, 41, 55, 46, 245, 40, 244, 102, 143, 54, 65, 25, 63, 161,
+    1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196, 135, 130,
+    116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250,
+    124, 123, 5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227,
+    47, 16, 58, 17, 182, 189, 28, 42, 223, 183, 170, 213, 119, 248, 152, 2, 44,
+    154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9, 129, 22, 39, 253, 19, 98,
+    108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228, 251, 34,
+    242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14,
+    239, 107, 49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121,
+    50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243,
+    141, 128, 195, 78, 66, 215, 61, 156, 180,
+  ];
+  // To remove the need for index wrapping, double the permutation table length
+  var perm = new Array(512);
+  var gradP = new Array(512);
+
+  // This isn't a very good seeding function, but it works ok. It supports 2^16
+  // different seed values. Write something better if you need more seeds.
+  module.seed = function (seed) {
+    if (seed > 0 && seed < 1) {
+      // Scale the seed out
+      seed *= 65536;
     }
 
-    Grad.prototype.dot2 = function (x, y) {
-        return this.x * x + this.y * y;
-    };
+    seed = Math.floor(seed);
+    if (seed < 256) {
+      seed |= seed << 8;
+    }
 
-    Grad.prototype.dot3 = function (x, y, z) {
-        return this.x * x + this.y * y + this.z * z;
-    };
+    for (var i = 0; i < 256; i++) {
+      var v;
+      if (i & 1) {
+        v = p[i] ^ (seed & 255);
+      } else {
+        v = p[i] ^ ((seed >> 8) & 255);
+      }
 
-    var grad3 = [new Grad(1, 1, 0), new Grad(-1, 1, 0), new Grad(1, -1, 0), new Grad(-1, -1, 0),
-        new Grad(1, 0, 1), new Grad(-1, 0, 1), new Grad(1, 0, -1), new Grad(-1, 0, -1),
-        new Grad(0, 1, 1), new Grad(0, -1, 1), new Grad(0, 1, -1), new Grad(0, -1, -1)];
+      perm[i] = perm[i + 256] = v;
+      gradP[i] = gradP[i + 256] = grad3[v % 12];
+    }
+  };
 
-    var p = [151, 160, 137, 91, 90, 15,
-        131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23,
-        190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33,
-        88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71, 134, 139, 48, 27, 166,
-        77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133, 230, 220, 105, 92, 41, 55, 46, 245, 40, 244,
-        102, 143, 54, 65, 25, 63, 161, 1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196,
-        135, 130, 116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250, 124, 123,
-        5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227, 47, 16, 58, 17, 182, 189, 28, 42,
-        223, 183, 170, 213, 119, 248, 152, 2, 44, 154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9,
-        129, 22, 39, 253, 19, 98, 108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228,
-        251, 34, 242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14, 239, 107,
-        49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121, 50, 45, 127, 4, 150, 254,
-        138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195, 78, 66, 215, 61, 156, 180];
-    // To remove the need for index wrapping, double the permutation table length
-    var perm = new Array(512);
-    var gradP = new Array(512);
+  module.seed(0);
 
-    // This isn't a very good seeding function, but it works ok. It supports 2^16
-    // different seed values. Write something better if you need more seeds.
-    module.seed = function (seed) {
-        if (seed > 0 && seed < 1) {
-            // Scale the seed out
-            seed *= 65536;
-        }
-
-        seed = Math.floor(seed);
-        if (seed < 256) {
-            seed |= seed << 8;
-        }
-
-        for (var i = 0; i < 256; i++) {
-            var v;
-            if (i & 1) {
-                v = p[i] ^ (seed & 255);
-            } else {
-                v = p[i] ^ ((seed >> 8) & 255);
-            }
-
-            perm[i] = perm[i + 256] = v;
-            gradP[i] = gradP[i + 256] = grad3[v % 12];
-        }
-    };
-
-    module.seed(0);
-
-    /*
+  /*
     for(var i=0; i<256; i++) {
       perm[i] = perm[i + 256] = p[i];
       gradP[i] = gradP[i + 256] = grad3[perm[i] % 12];
     }*/
 
-    // Skewing and unskewing factors for 2, 3, and 4 dimensions
-    var F2 = 0.5 * (Math.sqrt(3) - 1);
-    var G2 = (3 - Math.sqrt(3)) / 6;
+  // Skewing and unskewing factors for 2, 3, and 4 dimensions
+  var F2 = 0.5 * (Math.sqrt(3) - 1);
+  var G2 = (3 - Math.sqrt(3)) / 6;
 
-    var F3 = 1 / 3;
-    var G3 = 1 / 6;
+  var F3 = 1 / 3;
+  var G3 = 1 / 6;
 
-    // 2D simplex noise
-    module.simplex2 = function (xin, yin) {
-        var n0, n1, n2; // Noise contributions from the three corners
-        // Skew the input space to determine which simplex cell we're in
-        var s = (xin + yin) * F2; // Hairy factor for 2D
-        var i = Math.floor(xin + s);
-        var j = Math.floor(yin + s);
-        var t = (i + j) * G2;
-        var x0 = xin - i + t; // The x,y distances from the cell origin, unskewed.
-        var y0 = yin - j + t;
-        // For the 2D case, the simplex shape is an equilateral triangle.
-        // Determine which simplex we are in.
-        var i1, j1; // Offsets for second (middle) corner of simplex in (i,j) coords
-        if (x0 > y0) { // lower triangle, XY order: (0,0)->(1,0)->(1,1)
-            i1 = 1;
-            j1 = 0;
-        } else {    // upper triangle, YX order: (0,0)->(0,1)->(1,1)
-            i1 = 0;
-            j1 = 1;
-        }
-        // A step of (1,0) in (i,j) means a step of (1-c,-c) in (x,y), and
-        // a step of (0,1) in (i,j) means a step of (-c,1-c) in (x,y), where
-        // c = (3-sqrt(3))/6
-        var x1 = x0 - i1 + G2; // Offsets for middle corner in (x,y) unskewed coords
-        var y1 = y0 - j1 + G2;
-        var x2 = x0 - 1 + 2 * G2; // Offsets for last corner in (x,y) unskewed coords
-        var y2 = y0 - 1 + 2 * G2;
-        // Work out the hashed gradient indices of the three simplex corners
-        i &= 255;
-        j &= 255;
-        var gi0 = gradP[i + perm[j]];
-        var gi1 = gradP[i + i1 + perm[j + j1]];
-        var gi2 = gradP[i + 1 + perm[j + 1]];
-        // Calculate the contribution from the three corners
-        var t0 = 0.5 - x0 * x0 - y0 * y0;
-        if (t0 < 0) {
-            n0 = 0;
-        } else {
-            t0 *= t0;
-            n0 = t0 * t0 * gi0.dot2(x0, y0);  // (x,y) of grad3 used for 2D gradient
-        }
-        var t1 = 0.5 - x1 * x1 - y1 * y1;
-        if (t1 < 0) {
-            n1 = 0;
-        } else {
-            t1 *= t1;
-            n1 = t1 * t1 * gi1.dot2(x1, y1);
-        }
-        var t2 = 0.5 - x2 * x2 - y2 * y2;
-        if (t2 < 0) {
-            n2 = 0;
-        } else {
-            t2 *= t2;
-            n2 = t2 * t2 * gi2.dot2(x2, y2);
-        }
-        // Add contributions from each corner to get the final noise value.
-        // The result is scaled to return values in the interval [-1,1].
-        return 70 * (n0 + n1 + n2);
-    };
-
-    // 3D simplex noise
-    module.simplex3 = function (xin, yin, zin) {
-        var n0, n1, n2, n3; // Noise contributions from the four corners
-
-        // Skew the input space to determine which simplex cell we're in
-        var s = (xin + yin + zin) * F3; // Hairy factor for 2D
-        var i = Math.floor(xin + s);
-        var j = Math.floor(yin + s);
-        var k = Math.floor(zin + s);
-
-        var t = (i + j + k) * G3;
-        var x0 = xin - i + t; // The x,y distances from the cell origin, unskewed.
-        var y0 = yin - j + t;
-        var z0 = zin - k + t;
-
-        // For the 3D case, the simplex shape is a slightly irregular tetrahedron.
-        // Determine which simplex we are in.
-        var i1, j1, k1; // Offsets for second corner of simplex in (i,j,k) coords
-        var i2, j2, k2; // Offsets for third corner of simplex in (i,j,k) coords
-        if (x0 >= y0) {
-            if (y0 >= z0) {
-                i1 = 1;
-                j1 = 0;
-                k1 = 0;
-                i2 = 1;
-                j2 = 1;
-                k2 = 0;
-            } else if (x0 >= z0) {
-                i1 = 1;
-                j1 = 0;
-                k1 = 0;
-                i2 = 1;
-                j2 = 0;
-                k2 = 1;
-            } else {
-                i1 = 0;
-                j1 = 0;
-                k1 = 1;
-                i2 = 1;
-                j2 = 0;
-                k2 = 1;
-            }
-        } else {
-            if (y0 < z0) {
-                i1 = 0;
-                j1 = 0;
-                k1 = 1;
-                i2 = 0;
-                j2 = 1;
-                k2 = 1;
-            } else if (x0 < z0) {
-                i1 = 0;
-                j1 = 1;
-                k1 = 0;
-                i2 = 0;
-                j2 = 1;
-                k2 = 1;
-            } else {
-                i1 = 0;
-                j1 = 1;
-                k1 = 0;
-                i2 = 1;
-                j2 = 1;
-                k2 = 0;
-            }
-        }
-        // A step of (1,0,0) in (i,j,k) means a step of (1-c,-c,-c) in (x,y,z),
-        // a step of (0,1,0) in (i,j,k) means a step of (-c,1-c,-c) in (x,y,z), and
-        // a step of (0,0,1) in (i,j,k) means a step of (-c,-c,1-c) in (x,y,z), where
-        // c = 1/6.
-        var x1 = x0 - i1 + G3; // Offsets for second corner
-        var y1 = y0 - j1 + G3;
-        var z1 = z0 - k1 + G3;
-
-        var x2 = x0 - i2 + 2 * G3; // Offsets for third corner
-        var y2 = y0 - j2 + 2 * G3;
-        var z2 = z0 - k2 + 2 * G3;
-
-        var x3 = x0 - 1 + 3 * G3; // Offsets for fourth corner
-        var y3 = y0 - 1 + 3 * G3;
-        var z3 = z0 - 1 + 3 * G3;
-
-        // Work out the hashed gradient indices of the four simplex corners
-        i &= 255;
-        j &= 255;
-        k &= 255;
-        var gi0 = gradP[i + perm[j + perm[k]]];
-        var gi1 = gradP[i + i1 + perm[j + j1 + perm[k + k1]]];
-        var gi2 = gradP[i + i2 + perm[j + j2 + perm[k + k2]]];
-        var gi3 = gradP[i + 1 + perm[j + 1 + perm[k + 1]]];
-
-        // Calculate the contribution from the four corners
-        var t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
-        if (t0 < 0) {
-            n0 = 0;
-        } else {
-            t0 *= t0;
-            n0 = t0 * t0 * gi0.dot3(x0, y0, z0);  // (x,y) of grad3 used for 2D gradient
-        }
-        var t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
-        if (t1 < 0) {
-            n1 = 0;
-        } else {
-            t1 *= t1;
-            n1 = t1 * t1 * gi1.dot3(x1, y1, z1);
-        }
-        var t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;
-        if (t2 < 0) {
-            n2 = 0;
-        } else {
-            t2 *= t2;
-            n2 = t2 * t2 * gi2.dot3(x2, y2, z2);
-        }
-        var t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;
-        if (t3 < 0) {
-            n3 = 0;
-        } else {
-            t3 *= t3;
-            n3 = t3 * t3 * gi3.dot3(x3, y3, z3);
-        }
-        // Add contributions from each corner to get the final noise value.
-        // The result is scaled to return values in the interval [-1,1].
-        return 32 * (n0 + n1 + n2 + n3);
-
-    };
-
-    // ##### Perlin noise stuff
-
-    function fade(t) {
-        return t * t * t * (t * (t * 6 - 15) + 10);
+  // 2D simplex noise
+  module.simplex2 = function (xin, yin) {
+    var n0, n1, n2; // Noise contributions from the three corners
+    // Skew the input space to determine which simplex cell we're in
+    var s = (xin + yin) * F2; // Hairy factor for 2D
+    var i = Math.floor(xin + s);
+    var j = Math.floor(yin + s);
+    var t = (i + j) * G2;
+    var x0 = xin - i + t; // The x,y distances from the cell origin, unskewed.
+    var y0 = yin - j + t;
+    // For the 2D case, the simplex shape is an equilateral triangle.
+    // Determine which simplex we are in.
+    var i1, j1; // Offsets for second (middle) corner of simplex in (i,j) coords
+    if (x0 > y0) {
+      // lower triangle, XY order: (0,0)->(1,0)->(1,1)
+      i1 = 1;
+      j1 = 0;
+    } else {
+      // upper triangle, YX order: (0,0)->(0,1)->(1,1)
+      i1 = 0;
+      j1 = 1;
     }
-
-    function lerp(a, b, t) {
-        return (1 - t) * a + t * b;
+    // A step of (1,0) in (i,j) means a step of (1-c,-c) in (x,y), and
+    // a step of (0,1) in (i,j) means a step of (-c,1-c) in (x,y), where
+    // c = (3-sqrt(3))/6
+    var x1 = x0 - i1 + G2; // Offsets for middle corner in (x,y) unskewed coords
+    var y1 = y0 - j1 + G2;
+    var x2 = x0 - 1 + 2 * G2; // Offsets for last corner in (x,y) unskewed coords
+    var y2 = y0 - 1 + 2 * G2;
+    // Work out the hashed gradient indices of the three simplex corners
+    i &= 255;
+    j &= 255;
+    var gi0 = gradP[i + perm[j]];
+    var gi1 = gradP[i + i1 + perm[j + j1]];
+    var gi2 = gradP[i + 1 + perm[j + 1]];
+    // Calculate the contribution from the three corners
+    var t0 = 0.5 - x0 * x0 - y0 * y0;
+    if (t0 < 0) {
+      n0 = 0;
+    } else {
+      t0 *= t0;
+      n0 = t0 * t0 * gi0.dot2(x0, y0); // (x,y) of grad3 used for 2D gradient
     }
+    var t1 = 0.5 - x1 * x1 - y1 * y1;
+    if (t1 < 0) {
+      n1 = 0;
+    } else {
+      t1 *= t1;
+      n1 = t1 * t1 * gi1.dot2(x1, y1);
+    }
+    var t2 = 0.5 - x2 * x2 - y2 * y2;
+    if (t2 < 0) {
+      n2 = 0;
+    } else {
+      t2 *= t2;
+      n2 = t2 * t2 * gi2.dot2(x2, y2);
+    }
+    // Add contributions from each corner to get the final noise value.
+    // The result is scaled to return values in the interval [-1,1].
+    return 70 * (n0 + n1 + n2);
+  };
 
-    // 2D Perlin Noise
-    module.perlin2 = function (x, y) {
-        // Find unit grid cell containing point
-        var X = Math.floor(x), Y = Math.floor(y);
-        // Get relative xy coordinates of point within that cell
-        x = x - X;
-        y = y - Y;
-        // Wrap the integer cells at 255 (smaller integer period can be introduced here)
-        X = X & 255;
-        Y = Y & 255;
+  // 3D simplex noise
+  module.simplex3 = function (xin, yin, zin) {
+    var n0, n1, n2, n3; // Noise contributions from the four corners
 
-        // Calculate noise contributions from each of the four corners
-        var n00 = gradP[X + perm[Y]].dot2(x, y);
-        var n01 = gradP[X + perm[Y + 1]].dot2(x, y - 1);
-        var n10 = gradP[X + 1 + perm[Y]].dot2(x - 1, y);
-        var n11 = gradP[X + 1 + perm[Y + 1]].dot2(x - 1, y - 1);
+    // Skew the input space to determine which simplex cell we're in
+    var s = (xin + yin + zin) * F3; // Hairy factor for 2D
+    var i = Math.floor(xin + s);
+    var j = Math.floor(yin + s);
+    var k = Math.floor(zin + s);
 
-        // Compute the fade curve value for x
-        var u = fade(x);
+    var t = (i + j + k) * G3;
+    var x0 = xin - i + t; // The x,y distances from the cell origin, unskewed.
+    var y0 = yin - j + t;
+    var z0 = zin - k + t;
 
-        // Interpolate the four results
-        return lerp(
-            lerp(n00, n10, u),
-            lerp(n01, n11, u),
-            fade(y));
-    };
+    // For the 3D case, the simplex shape is a slightly irregular tetrahedron.
+    // Determine which simplex we are in.
+    var i1, j1, k1; // Offsets for second corner of simplex in (i,j,k) coords
+    var i2, j2, k2; // Offsets for third corner of simplex in (i,j,k) coords
+    if (x0 >= y0) {
+      if (y0 >= z0) {
+        i1 = 1;
+        j1 = 0;
+        k1 = 0;
+        i2 = 1;
+        j2 = 1;
+        k2 = 0;
+      } else if (x0 >= z0) {
+        i1 = 1;
+        j1 = 0;
+        k1 = 0;
+        i2 = 1;
+        j2 = 0;
+        k2 = 1;
+      } else {
+        i1 = 0;
+        j1 = 0;
+        k1 = 1;
+        i2 = 1;
+        j2 = 0;
+        k2 = 1;
+      }
+    } else {
+      if (y0 < z0) {
+        i1 = 0;
+        j1 = 0;
+        k1 = 1;
+        i2 = 0;
+        j2 = 1;
+        k2 = 1;
+      } else if (x0 < z0) {
+        i1 = 0;
+        j1 = 1;
+        k1 = 0;
+        i2 = 0;
+        j2 = 1;
+        k2 = 1;
+      } else {
+        i1 = 0;
+        j1 = 1;
+        k1 = 0;
+        i2 = 1;
+        j2 = 1;
+        k2 = 0;
+      }
+    }
+    // A step of (1,0,0) in (i,j,k) means a step of (1-c,-c,-c) in (x,y,z),
+    // a step of (0,1,0) in (i,j,k) means a step of (-c,1-c,-c) in (x,y,z), and
+    // a step of (0,0,1) in (i,j,k) means a step of (-c,-c,1-c) in (x,y,z), where
+    // c = 1/6.
+    var x1 = x0 - i1 + G3; // Offsets for second corner
+    var y1 = y0 - j1 + G3;
+    var z1 = z0 - k1 + G3;
 
-    // 3D Perlin Noise
-    module.perlin3 = function (x, y, z) {
-        // Find unit grid cell containing point
-        var X = Math.floor(x), Y = Math.floor(y), Z = Math.floor(z);
-        // Get relative xyz coordinates of point within that cell
-        x = x - X;
-        y = y - Y;
-        z = z - Z;
-        // Wrap the integer cells at 255 (smaller integer period can be introduced here)
-        X = X & 255;
-        Y = Y & 255;
-        Z = Z & 255;
+    var x2 = x0 - i2 + 2 * G3; // Offsets for third corner
+    var y2 = y0 - j2 + 2 * G3;
+    var z2 = z0 - k2 + 2 * G3;
 
-        // Calculate noise contributions from each of the eight corners
-        var n000 = gradP[X + perm[Y + perm[Z]]].dot3(x, y, z);
-        var n001 = gradP[X + perm[Y + perm[Z + 1]]].dot3(x, y, z - 1);
-        var n010 = gradP[X + perm[Y + 1 + perm[Z]]].dot3(x, y - 1, z);
-        var n011 = gradP[X + perm[Y + 1 + perm[Z + 1]]].dot3(x, y - 1, z - 1);
-        var n100 = gradP[X + 1 + perm[Y + perm[Z]]].dot3(x - 1, y, z);
-        var n101 = gradP[X + 1 + perm[Y + perm[Z + 1]]].dot3(x - 1, y, z - 1);
-        var n110 = gradP[X + 1 + perm[Y + 1 + perm[Z]]].dot3(x - 1, y - 1, z);
-        var n111 = gradP[X + 1 + perm[Y + 1 + perm[Z + 1]]].dot3(x - 1, y - 1, z - 1);
+    var x3 = x0 - 1 + 3 * G3; // Offsets for fourth corner
+    var y3 = y0 - 1 + 3 * G3;
+    var z3 = z0 - 1 + 3 * G3;
 
-        // Compute the fade curve value for x, y, z
-        var u = fade(x);
-        var v = fade(y);
-        var w = fade(z);
+    // Work out the hashed gradient indices of the four simplex corners
+    i &= 255;
+    j &= 255;
+    k &= 255;
+    var gi0 = gradP[i + perm[j + perm[k]]];
+    var gi1 = gradP[i + i1 + perm[j + j1 + perm[k + k1]]];
+    var gi2 = gradP[i + i2 + perm[j + j2 + perm[k + k2]]];
+    var gi3 = gradP[i + 1 + perm[j + 1 + perm[k + 1]]];
 
-        // Interpolate
-        return lerp(
-            lerp(
-                lerp(n000, n100, u),
-                lerp(n001, n101, u), w),
-            lerp(
-                lerp(n010, n110, u),
-                lerp(n011, n111, u), w),
-            v);
-    };
+    // Calculate the contribution from the four corners
+    var t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
+    if (t0 < 0) {
+      n0 = 0;
+    } else {
+      t0 *= t0;
+      n0 = t0 * t0 * gi0.dot3(x0, y0, z0); // (x,y) of grad3 used for 2D gradient
+    }
+    var t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
+    if (t1 < 0) {
+      n1 = 0;
+    } else {
+      t1 *= t1;
+      n1 = t1 * t1 * gi1.dot3(x1, y1, z1);
+    }
+    var t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;
+    if (t2 < 0) {
+      n2 = 0;
+    } else {
+      t2 *= t2;
+      n2 = t2 * t2 * gi2.dot3(x2, y2, z2);
+    }
+    var t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;
+    if (t3 < 0) {
+      n3 = 0;
+    } else {
+      t3 *= t3;
+      n3 = t3 * t3 * gi3.dot3(x3, y3, z3);
+    }
+    // Add contributions from each corner to get the final noise value.
+    // The result is scaled to return values in the interval [-1,1].
+    return 32 * (n0 + n1 + n2 + n3);
+  };
 
+  // ##### Perlin noise stuff
+
+  function fade(t) {
+    return t * t * t * (t * (t * 6 - 15) + 10);
+  }
+
+  function lerp(a, b, t) {
+    return (1 - t) * a + t * b;
+  }
+
+  // 2D Perlin Noise
+  module.perlin2 = function (x, y) {
+    // Find unit grid cell containing point
+    var X = Math.floor(x),
+      Y = Math.floor(y);
+    // Get relative xy coordinates of point within that cell
+    x = x - X;
+    y = y - Y;
+    // Wrap the integer cells at 255 (smaller integer period can be introduced here)
+    X = X & 255;
+    Y = Y & 255;
+
+    // Calculate noise contributions from each of the four corners
+    var n00 = gradP[X + perm[Y]].dot2(x, y);
+    var n01 = gradP[X + perm[Y + 1]].dot2(x, y - 1);
+    var n10 = gradP[X + 1 + perm[Y]].dot2(x - 1, y);
+    var n11 = gradP[X + 1 + perm[Y + 1]].dot2(x - 1, y - 1);
+
+    // Compute the fade curve value for x
+    var u = fade(x);
+
+    // Interpolate the four results
+    return lerp(lerp(n00, n10, u), lerp(n01, n11, u), fade(y));
+  };
+
+  // 3D Perlin Noise
+  module.perlin3 = function (x, y, z) {
+    // Find unit grid cell containing point
+    var X = Math.floor(x),
+      Y = Math.floor(y),
+      Z = Math.floor(z);
+    // Get relative xyz coordinates of point within that cell
+    x = x - X;
+    y = y - Y;
+    z = z - Z;
+    // Wrap the integer cells at 255 (smaller integer period can be introduced here)
+    X = X & 255;
+    Y = Y & 255;
+    Z = Z & 255;
+
+    // Calculate noise contributions from each of the eight corners
+    var n000 = gradP[X + perm[Y + perm[Z]]].dot3(x, y, z);
+    var n001 = gradP[X + perm[Y + perm[Z + 1]]].dot3(x, y, z - 1);
+    var n010 = gradP[X + perm[Y + 1 + perm[Z]]].dot3(x, y - 1, z);
+    var n011 = gradP[X + perm[Y + 1 + perm[Z + 1]]].dot3(x, y - 1, z - 1);
+    var n100 = gradP[X + 1 + perm[Y + perm[Z]]].dot3(x - 1, y, z);
+    var n101 = gradP[X + 1 + perm[Y + perm[Z + 1]]].dot3(x - 1, y, z - 1);
+    var n110 = gradP[X + 1 + perm[Y + 1 + perm[Z]]].dot3(x - 1, y - 1, z);
+    var n111 = gradP[X + 1 + perm[Y + 1 + perm[Z + 1]]].dot3(
+      x - 1,
+      y - 1,
+      z - 1
+    );
+
+    // Compute the fade curve value for x, y, z
+    var u = fade(x);
+    var v = fade(y);
+    var w = fade(z);
+
+    // Interpolate
+    return lerp(
+      lerp(lerp(n000, n100, u), lerp(n001, n101, u), w),
+      lerp(lerp(n010, n110, u), lerp(n011, n111, u), w),
+      v
+    );
+  };
 })(this);
 
 (function () {
-    const bubblesEl = document.querySelector('div.bubbles');
+  const bubblesEl = document.querySelector("div.bubbles");
 
-    let bubbles;
-    let CANVAS_WIDTH = 0;
-    let DIRECTION = window.innerWidth < 1024 ? 'x' : 'y';
-    const SCROLL_SPEED = 0.3;
-    const NOISE_SPEED = 0.004;
-    const NOISE_AMOUNT = 5;
+  let bubbles;
+  let CANVAS_WIDTH = 0;
+  let DIRECTION = window.innerWidth < 1024 ? "x" : "y";
+  const SCROLL_SPEED = 0.3;
+  const NOISE_SPEED = 0.004;
+  const NOISE_AMOUNT = 5;
 
-    function getBubbleSpec(specs, increment, direction, margin) {
-        let idx = -1;
-        let offset = 0;
+  function getBubbleSpec(specs, increment, direction, margin) {
+    let idx = -1;
+    let offset = 0;
 
-        
-        let images = [
-            { image: "./balloons/google.png" },
-            { image: "./balloons/meta.png" },
-            { image: "./balloons/pinterest.png" },
-            { image: "./balloons/shopify.png" },
-            { image: "./balloons/snapchat.png" },
-            { image: "./balloons/tiktok.png" },
-        ]
+    let images = [
+      { image: "./balloons/google.png" },
+      { image: "./balloons/meta.png" },
+      { image: "./balloons/pinterest.png" },
+      { image: "./balloons/shopify.png" },
+      { image: "./balloons/snapchat.png" },
+      { image: "./balloons/tiktok.png" },
+      { image: "./klaviyo.png" },
+    ];
 
-        images = [
-            ...images,
-            ...images,
-            ...images,
-            ...images,
-            ...images,
-            ...images,
-        ]
+    images = [...images, ...images, ...images, ...images, ...images, ...images];
 
-        const bubbleSpecs = images.map((image) => {
+    const bubbleSpecs = images.map((image) => {
+      if (specs[idx + 1]) {
+        idx += 1;
+      } else {
+        idx = 0;
+        offset += increment;
+      }
 
-            if (specs[idx + 1]) {
-                idx += 1;
-            } else {
-                idx = 0;
-                offset += increment;
-            }
-
-            return { ...image, ...specs[idx], [direction]: specs[idx][direction] + offset };
-        });
-
-        CANVAS_WIDTH = bubbleSpecs[bubbleSpecs.length - 1][direction] + margin;
-
-        return bubbleSpecs;
-    }
-
-    const mobileSpecs = getBubbleSpec([
-        { s: .8, x: -40, y: 73 },
-        { s: .93, x: 47, y: 0 },
-        { s: .66, x: 56, y: 102 },
-        { s: .56, x: 144, y: 14 },
-        { s: .73, x: 171, y: 116 },
-        { s: .73, x: 230, y: 4 },
-        { s: .7, x: 279, y: 101 },
-        { s: .76, x: 326, y: 23 },
-    ], 455, 'x', -100);
-
-    const desktopSpecs = getBubbleSpec([
-        { s: 1.5, x: 218, y: 100 },
-        { s: 1.5, x: 6, y: 282 },
-        { s: 1.3, x: 254, y: 357 },
-        { s: .8, x: 79, y: 496 },
-        { s: .8, x: 307, y: 595 },
-        { s: 1.4, x: 91, y: 694 },
-        { s: 1.1, x: -200, y: 75, end: true },
-        { s: 1.3, x: -360, y: 209, end: true },
-        { s: 1.3, x: -28, y: 260, end: true },
-        { s: 1.2, x: -235, y: 387, end: true },
-        { s: 1.5, x: 28, y: 501, end: true },
-        { s: .8, x: -214, y: 578, end: true },
-        { s: .7, x: -84, y: 668, end: true },
-        { s: 1.1, x: -363, y: 723, end: true },
-    ], 850, 'y', 300);
-
-    class Bubbles {
-        constructor(specs, direction) {
-            this.bubbles = [];
-
-            specs.forEach((spec, index) => {
-                this.bubbles.push(new Bubble(index, spec, direction));
-            });
-
-            requestAnimationFrame(this.update.bind(this));
-        }
-
-        update() {
-            this.bubbles.forEach(bubble => bubble.update());
-            this.raf = requestAnimationFrame(this.update.bind(this));
-        }
-
-        remove() {
-            this.bubbles.forEach(bubble => bubble.remove());
-        }
-    }
-
-    class Bubble {
-        constructor(index, { x, y, s = 1, end, image }, direction) {
-            this.index = index;
-            this.x = x;
-            this.y = y;
-            this.end = end || false;
-            this.scale = s;
-            this.direction = direction;
-
-            this.noiseSeedX = Math.floor(Math.random() * 64000);
-            this.noiseSeedY = Math.floor(Math.random() * 64000);
-
-            this.el = document.createElement('span');
-            const img = document.createElement('img');
-            img.src = image;
-            if (this.end) this.el.className = 'end';
-            this.el.appendChild(img);
-
-            bubblesEl.appendChild(this.el);
-        }
-
-        update() {
-            this.noiseSeedX += NOISE_SPEED;
-            this.noiseSeedY += NOISE_SPEED;
-            let randomX = noise.simplex2(this.noiseSeedX, 0);
-            let randomY = noise.simplex2(this.noiseSeedY, 0);
-
-            this[this.direction] -= SCROLL_SPEED;
-
-            this.xWithNoise = this.x + (randomX * NOISE_AMOUNT);
-            this.yWithNoise = this.y + (randomY * NOISE_AMOUNT);
-
-            if (this[this.direction] < -200) this[this.direction] = CANVAS_WIDTH;
-
-            this.el.style.transform = `translate(${ this.xWithNoise }px, ${ this.yWithNoise }px) scale(${ this.scale })`;
-        }
-
-        remove() {
-            this.el.parentNode.removeChild(this.el);
-        }
-    }
-
-    // For perlin noise
-    noise.seed(Math.floor(Math.random() * 64000));
-
-    bubbles = window.innerWidth < 1024 ? new Bubbles(mobileSpecs, DIRECTION) : new Bubbles(desktopSpecs, DIRECTION);
-
-    window.addEventListener('resize', function () {
-
-        if (window.innerWidth < 1024) {
-            if (DIRECTION !== 'x') {
-                DIRECTION = 'x';
-                bubbles.remove();
-                bubbles = new Bubbles(mobileSpecs, DIRECTION);
-            }
-        } else {
-            if (DIRECTION !== 'y') {
-                DIRECTION = 'y';
-                bubbles.remove();
-                bubbles = new Bubbles(desktopSpecs, DIRECTION);
-            }
-        }
-
+      return {
+        ...image,
+        ...specs[idx],
+        [direction]: specs[idx][direction] + offset,
+      };
     });
 
+    CANVAS_WIDTH = bubbleSpecs[bubbleSpecs.length - 1][direction] + margin;
+
+    return bubbleSpecs;
+  }
+
+  const mobileSpecs = getBubbleSpec(
+    [
+      { s: 0.8, x: -40, y: 73 },
+      { s: 0.93, x: 47, y: 0 },
+      { s: 0.66, x: 56, y: 102 },
+      { s: 0.56, x: 144, y: 14 },
+      { s: 0.73, x: 171, y: 116 },
+      { s: 0.73, x: 230, y: 4 },
+      { s: 0.7, x: 279, y: 101 },
+      { s: 0.76, x: 326, y: 23 },
+    ],
+    455,
+    "x",
+    -100
+  );
+
+  const desktopSpecs = getBubbleSpec(
+    [
+      { s: 1.5, x: 218, y: 100 },
+      { s: 1.5, x: 6, y: 282 },
+      { s: 1.3, x: 254, y: 357 },
+      { s: 0.8, x: 79, y: 496 },
+      { s: 0.8, x: 307, y: 595 },
+      { s: 1.4, x: 91, y: 694 },
+      { s: 1.1, x: -200, y: 75, end: true },
+      { s: 1.3, x: -360, y: 209, end: true },
+      { s: 1.3, x: -28, y: 260, end: true },
+      { s: 1.2, x: -235, y: 387, end: true },
+      { s: 1.5, x: 28, y: 501, end: true },
+      { s: 0.8, x: -214, y: 578, end: true },
+      { s: 0.7, x: -84, y: 668, end: true },
+      { s: 1.1, x: -363, y: 723, end: true },
+    ],
+    850,
+    "y",
+    300
+  );
+
+  class Bubbles {
+    constructor(specs, direction) {
+      this.bubbles = [];
+
+      specs.forEach((spec, index) => {
+        this.bubbles.push(new Bubble(index, spec, direction));
+      });
+
+      requestAnimationFrame(this.update.bind(this));
+    }
+
+    update() {
+      this.bubbles.forEach((bubble) => bubble.update());
+      this.raf = requestAnimationFrame(this.update.bind(this));
+    }
+
+    remove() {
+      this.bubbles.forEach((bubble) => bubble.remove());
+    }
+  }
+
+  class Bubble {
+    constructor(index, { x, y, s = 1, end, image }, direction) {
+      this.index = index;
+      this.x = x;
+      this.y = y;
+      this.end = end || false;
+      this.scale = s;
+      this.direction = direction;
+
+      this.noiseSeedX = Math.floor(Math.random() * 64000);
+      this.noiseSeedY = Math.floor(Math.random() * 64000);
+
+      this.el = document.createElement("span");
+      const img = document.createElement("img");
+      img.src = image;
+      if (this.end) this.el.className = "end";
+      this.el.appendChild(img);
+
+      bubblesEl.appendChild(this.el);
+    }
+
+    update() {
+      this.noiseSeedX += NOISE_SPEED;
+      this.noiseSeedY += NOISE_SPEED;
+      let randomX = noise.simplex2(this.noiseSeedX, 0);
+      let randomY = noise.simplex2(this.noiseSeedY, 0);
+
+      this[this.direction] -= SCROLL_SPEED;
+
+      this.xWithNoise = this.x + randomX * NOISE_AMOUNT;
+      this.yWithNoise = this.y + randomY * NOISE_AMOUNT;
+
+      if (this[this.direction] < -200) this[this.direction] = CANVAS_WIDTH;
+
+      this.el.style.transform = `translate(${this.xWithNoise}px, ${this.yWithNoise}px) scale(${this.scale})`;
+    }
+
+    remove() {
+      this.el.parentNode.removeChild(this.el);
+    }
+  }
+
+  // For perlin noise
+  noise.seed(Math.floor(Math.random() * 64000));
+
+  bubbles =
+    window.innerWidth < 1024
+      ? new Bubbles(mobileSpecs, DIRECTION)
+      : new Bubbles(desktopSpecs, DIRECTION);
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth < 1024) {
+      if (DIRECTION !== "x") {
+        DIRECTION = "x";
+        bubbles.remove();
+        bubbles = new Bubbles(mobileSpecs, DIRECTION);
+      }
+    } else {
+      if (DIRECTION !== "y") {
+        DIRECTION = "y";
+        bubbles.remove();
+        bubbles = new Bubbles(desktopSpecs, DIRECTION);
+      }
+    }
+  });
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('#bubble-next').addEventListener('click', function () {
-        let startingPoint = this.closest("section").nextElementSibling;
-        let targetPoint = startingPoint.closest("section");
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("#bubble-next").addEventListener("click", function () {
+    let startingPoint = this.closest("section").nextElementSibling;
+    let targetPoint = startingPoint.closest("section");
 
-        let targetScrollTop = window.pageYOffset + startingPoint.getBoundingClientRect().top - 100;
+    let targetScrollTop =
+      window.pageYOffset + startingPoint.getBoundingClientRect().top - 100;
 
-        window.scrollTo({
-            top: targetScrollTop,
-            behavior: 'smooth'
-        });
+    window.scrollTo({
+      top: targetScrollTop,
+      behavior: "smooth",
     });
+  });
 });

@@ -1,7 +1,10 @@
 import { ScrollAnimation } from "./Animations/ScrollAnimation";
 import Counter from "./counter";
+import { useRouter } from "next/router";
 
 export default function Stats() {
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
   return (
     <section className="py-[100px] pt-[160px] bg-white">
       <div className="w-[90%] mx-auto max-w-main">
@@ -12,7 +15,8 @@ export default function Stats() {
                 <Counter endValue={100} percentage={true} />
               </span>
               <p className="text-[20px] text-center text-gray-600 w-[300px] leading-[30px]">
-                Performance<br></br> baseret
+                {currentPath === "/en" ? "Performance" : "Performance"}
+                <br></br> {currentPath === "/en" ? "based" : "baseret"}
               </p>
             </div>
           </div>
@@ -23,7 +27,9 @@ export default function Stats() {
               </span>
               <div>
                 <p className="text-[20px] text-center text-gray-600 w-[300px] leading-[30px]">
-                  Gennemsnitlig vækst i profit på 3 måneder
+                  {currentPath === "/en"
+                    ? "Average profit growth in 3 months"
+                    : "Gennemsnitlig vækst i profit på 3 måneder"}
                 </p>
               </div>
             </div>
@@ -34,7 +40,9 @@ export default function Stats() {
                 <Counter endValue={14} percentage={false} />
               </span>
               <p className="text-[20px] text-center text-gray-600 w-[300px] leading-[30px]">
-                Gennemsnitlig månedlig samarbejdsperiode
+                {currentPath === "/en"
+                  ? "Average monthly collaboration period"
+                  : "Gennemsnitlig månedlig samarbejdsperiode"}
               </p>
             </div>
           </div>

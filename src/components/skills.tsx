@@ -14,7 +14,7 @@ export default function Skills() {
           <h1 className="text-sectionheading font-[600] text-main ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
             {currentPath === "/en"
               ? "We dominate the entire e-commerce"
-              : "Vi dominerer hele e-commerce kunderejsen"}{" "}
+              : "Vi dominerer hele e-commerce"}{" "}
             <span className="text-[#0071e3]">
               {currentPath === "/en" ? "customer journey" : "kunderejsen"}
             </span>{" "}

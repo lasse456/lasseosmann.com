@@ -6,306 +6,6 @@ import SectionStarter from "./sectionstarter";
 import Slider from "react-infinite-logo-slider";
 import { useRouter } from "next/router";
 
-const casesData = [
-  {
-    media: "/cases/castillo/castillo.mp4",
-    brand: "/cases/castillo//castillo.png",
-    description:
-      "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[100px]">
-            <Counter endValue={4322} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          Omsætning
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[30px]">
-            <Counter endValue={2.4} />
-          </span>
-          x
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          POAS
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px]" src="/tiktok.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img
-            className="w-[30px] h-[30px] object-cover"
-            src="/adwords.png"
-          ></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-  {
-    media: "/cases/skandi/skandi.mp4",
-    brand: "/cases/skandi//skandi.png",
-    description:
-      "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[50px]">
-            <Counter endValue={74} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          Profit
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          -
-          <span className="w-[50px]">
-            <Counter endValue={21} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          CPA
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-  {
-    media: "/cases/ankerstjerne/ankerstjerne.mp4",
-    brand: "/cases/ankerstjerne/ankerstjerne.png",
-    description:
-      "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[100px]">
-            <Counter endValue={8820} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          Omsætning
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          -
-          <span className="w-[50px]">
-            <Counter endValue={31} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          CAC
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px]" src="/tiktok.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img
-            className="w-[30px] h-[30px] object-cover"
-            src="/adwords.png"
-          ></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img
-            className="w-[30px] h-[30px] object-cover"
-            src="/pinterest.png"
-          ></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-  {
-    media: "/cases/denomo/denomo.mp4",
-    brand: "/cases/denomo/denomo.png",
-    description:
-      "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[50px]">
-            <Counter endValue={72} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          POAS
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          -
-          <span className="w-[50px]">
-            <Counter endValue={29} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          CPA
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px]" src="/klaviyo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-  {
-    media: "/cases/marina/marina.mp4",
-    brand: "/cases/marina/marina.png",
-    description:
-      "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[50px]">
-            <Counter endValue={316} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          Omsætning
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          -
-          <span className="w-[50px]">
-            <Counter endValue={52} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          CAC
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px]" src="/adwords.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-  {
-    media: "/cases/gelblast/gelblast.mp4",
-    brand: "/cases/gelblast/gelblast.png",
-    description:
-      "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
-    results: [
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          +
-          <span className="w-[50px]">
-            <Counter endValue={520} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          Omsætning
-        </p>
-      </div>,
-      <div key={1} className="flex flex-col items-center text-center">
-        <h1 className="mb-[4px] font-[600] text-main flex">
-          -
-          <span className="w-[50px]">
-            <Counter endValue={64} />
-          </span>
-          %
-        </h1>
-        <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
-          CAC
-        </p>
-      </div>,
-    ],
-    channels: [
-      <div key={1} className="flex items-center justify-center">
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
-          <img className="w-[30px]" src="/metalogo.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px]" src="/tiktok.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img
-            className="w-[30px] h-[30px] object-cover"
-            src="/adwords.png"
-          ></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
-        </div>
-        <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
-          <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
-        </div>
-      </div>,
-    ],
-  },
-];
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -316,10 +16,1204 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import useMediaQuery from "@/hooks/use-media-query";
 
 export default function CaseSwiper() {
-  const router = useRouter();
-  const currentPath = router.pathname.slice(0, 3);
   const swiperRef = useRef<SwiperRef>(null);
   const { isMobile, isTablet, isDesktop } = useMediaQuery();
+  const router = useRouter();
+  const currentPath = router.pathname.slice(0, 3);
+
+  const casesData = [
+    {
+      media: "/cases/castillo/castillo.mp4",
+      brand: "/cases/castillo//castillo.png",
+      description:
+        "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={4322} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[30px]">
+              <Counter endValue={2.4} />
+            </span>
+            x
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/skandi/skandi.mp4",
+      brand: "/cases/skandi//skandi.png",
+      description:
+        "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={74} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            Profit
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={21} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      brand: "/cases/ankerstjerne/ankerstjerne.png",
+      description:
+        "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={8820} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={31} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/pinterest.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/denomo/denomo.mp4",
+      brand: "/cases/denomo/denomo.png",
+      description:
+        "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={72} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={29} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/marina/marina.mp4",
+      brand: "/cases/marina/marina.png",
+      description:
+        "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={316} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={52} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/adwords.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/gelblast/gelblast.mp4",
+      brand: "/cases/gelblast/gelblast.png",
+      description:
+        "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={520} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={64} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/castillo/castillo.mp4",
+      brand: "/cases/castillo//castillo.png",
+      description:
+        "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={4322} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[30px]">
+              <Counter endValue={2.4} />
+            </span>
+            x
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/skandi/skandi.mp4",
+      brand: "/cases/skandi//skandi.png",
+      description:
+        "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={74} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            Profit
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={21} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      brand: "/cases/ankerstjerne/ankerstjerne.png",
+      description:
+        "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={8820} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={31} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/pinterest.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/denomo/denomo.mp4",
+      brand: "/cases/denomo/denomo.png",
+      description:
+        "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={72} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={29} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/marina/marina.mp4",
+      brand: "/cases/marina/marina.png",
+      description:
+        "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={316} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={52} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/adwords.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/gelblast/gelblast.mp4",
+      brand: "/cases/gelblast/gelblast.png",
+      description:
+        "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={520} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={64} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+  ];
+
+  const englishCaseData = [
+    {
+      media: "/cases/castillo/castillo.mp4",
+      brand: "/cases/castillo//castillo.png",
+      description:
+        "We have significantly grown Callisto Jewellery since we started working together 15 months ago. We manage their entire digital customer journey in both Denmark and Sweden.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={4322} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[30px]">
+              <Counter endValue={2.4} />
+            </span>
+            x
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/skandi/skandi.mp4",
+      brand: "/cases/skandi//skandi.png",
+      description:
+        "One of the leading fashion and furniture webshops in Norway. We grew SKANDI's profits by 74% through Meta advertising and data-driven content production.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={74} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            Profit
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={21} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      brand: "/cases/ankerstjerne/ankerstjerne.png",
+      description:
+        "We've helped the award-winning brand Dr. Ankerstjerne become one of the fastest-growing e-commerce ventures in Scandinavia and taken them to new markets.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={8820} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={31} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/pinterest.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/denomo/denomo.mp4",
+      brand: "/cases/denomo/denomo.png",
+      description:
+        "Prominent in the interior and furniture market, we took over the case from one of Denmark's larger agencies, achieving a 72% increase in POAS.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={72} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={29} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/marina/marina.mp4",
+      brand: "/cases/marina/marina.png",
+      description:
+        "Awarded as the best organic skincare brand in Scandinavia and currently present in six markets. We oversee their complete digital customer journey across multiple markets.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={316} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={52} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/adwords.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/gelblast/gelblast.mp4",
+      brand: "/cases/gelblast/gelblast.png",
+      description:
+        "Scandinavia's largest webshop for Gelblasters. We've been there from the start and scaled them +520% by managing marketing across the entire customer journey.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={520} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={64} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/castillo/castillo.mp4",
+      brand: "/cases/castillo//castillo.png",
+      description:
+        "We have significantly grown Callisto Jewellery since we started working together 15 months ago. We manage their entire digital customer journey in both Denmark and Sweden.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={4322} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[30px]">
+              <Counter endValue={2.4} />
+            </span>
+            x
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/skandi/skandi.mp4",
+      brand: "/cases/skandi//skandi.png",
+      description:
+        "One of the leading fashion and furniture webshops in Norway. We grew SKANDI's profits by 74% through Meta advertising and data-driven content production.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={74} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            Profit
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={21} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      brand: "/cases/ankerstjerne/ankerstjerne.png",
+      description:
+        "We've helped the award-winning brand Dr. Ankerstjerne become one of the fastest-growing e-commerce ventures in Scandinavia and taken them to new markets.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[100px]">
+              <Counter endValue={8820} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={31} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/pinterest.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/denomo/denomo.mp4",
+      brand: "/cases/denomo/denomo.png",
+      description:
+        "Prominent in the interior and furniture market, we took over the case from one of Denmark's larger agencies, achieving a 72% increase in POAS.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={72} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            POAS
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={29} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CPA
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/marina/marina.mp4",
+      brand: "/cases/marina/marina.png",
+      description:
+        "Awarded as the best organic skincare brand in Scandinavia and currently present in six markets. We oversee their complete digital customer journey across multiple markets.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={316} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={52} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/adwords.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+    {
+      media: "/cases/gelblast/gelblast.mp4",
+      brand: "/cases/gelblast/gelblast.png",
+      description:
+        "Scandinavia's largest webshop for Gelblasters. We've been there from the start and scaled them +520% by managing marketing across the entire customer journey.",
+      results: [
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            +
+            <span className="w-[50px]">
+              <Counter endValue={520} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            {currentPath === "/en" ? "Revenue" : "Omsætning"}
+          </p>
+        </div>,
+        <div key={1} className="flex flex-col items-center text-center">
+          <h1 className="mb-[4px] font-[600] text-main flex">
+            -
+            <span className="w-[50px]">
+              <Counter endValue={64} />
+            </span>
+            %
+          </h1>
+          <p className="text-[16px] bg-[#0071e3] font-[500] rounded-[100px] w-[100px]">
+            CAC
+          </p>
+        </div>,
+      ],
+      channels: [
+        <div key={1} className="flex items-center justify-center">
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block">
+            <img className="w-[30px]" src="/metalogo.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px]" src="/tiktok.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img
+              className="w-[30px] h-[30px] object-cover"
+              src="/adwords.png"
+            ></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/snapchat.png"></img>
+          </div>
+          <div className="mb-[40px] border-[1px] p-[10px] bg-white rounded-[50px] inline-block ml-[-20px]">
+            <img className="w-[30px] rounded-[50px]" src="/klaviyo.png"></img>
+          </div>
+        </div>,
+      ],
+    },
+  ];
 
   function onArrowClick(direction: "prev" | "next") {
     if (swiperRef.current) {
@@ -381,11 +1275,17 @@ export default function CaseSwiper() {
             spaceBetween={20}
             className="mySwiper"
           >
-            {casesData.map((v, index) => (
-              <SwiperSlide key={index}>
-                <CaseCard object={v} background={"/worst.mp4"} />
-              </SwiperSlide>
-            ))}
+            {currentPath === "/en"
+              ? englishCaseData.map((v, index) => (
+                  <SwiperSlide key={index}>
+                    <CaseCard object={v} background={"/worst.mp4"} />
+                  </SwiperSlide>
+                ))
+              : casesData.map((v, index) => (
+                  <SwiperSlide key={index}>
+                    <CaseCard object={v} background={"/worst.mp4"} />
+                  </SwiperSlide>
+                ))}
           </Swiper>
         </div>
       </section>
@@ -428,17 +1328,20 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           </div>
         </div>
       </div>
-
-      <div className="bg-white">
-        <div className="w-[80%] mx-auto flex text-white justify-center gap-[40px] text-[30px]">
-          {object.results.map((v: any) => v)}
+      <div className="flex flex-col justify-between">
+        <div className="bg-white">
+          <div className="w-[80%] mx-auto flex text-white justify-center gap-[40px] text-[30px]">
+            {object.results.map((v: any) => v)}
+          </div>
         </div>
-      </div>
-      <div className="p-[20px] bg-white rounded-b-main py-[50px] pt-[24px] pb-[0px]">
-        <p className="text-main w-[90%] mx-auto mb-[20px] font-[500] text-center">
-          {object.description}
-        </p>
-        {object.channels}
+        <div className="p-[20px] bg-white py-[50px] pt-[24px] pb-[0px]">
+          <p className="text-main w-[90%] mx-auto mb-[20px] font-[500] text-center">
+            {object.description}
+          </p>
+        </div>
+        <div className="bg-white rounded-b-main py-[50px] pt-[24px] pb-[0px]">
+          {object.channels}
+        </div>
       </div>
     </div>
   );
