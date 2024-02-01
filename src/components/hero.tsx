@@ -34,6 +34,8 @@ export default function Hero() {
               : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"}
           </h2>
         </div>
+        <div className="w-full overflow-hidden bubbles" />
+
         <div className="flex items-center justify-center">
           <a
             href="#marketingsanalyse"
@@ -54,7 +56,6 @@ export default function Hero() {
           <img src="./partners/shopify-v2.png" className="h-[50px]" />
         </div>
       </div>
-      <div className="overflow-hidden bubbles" />
     </section>
   );
 }
