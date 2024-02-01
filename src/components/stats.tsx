@@ -15,8 +15,8 @@ export default function Stats() {
                 <Counter endValue={100} percentage={true} />
               </span>
               <p className="text-[20px] text-center text-gray-600 w-[300px] leading-[30px]">
-                {currentPath === "/en" ? "Performance" : "Performance"}
-                <br></br> {currentPath === "/en" ? "based" : "baseret"}
+                {currentPath === "/en" ? "Performance" : "Performance"}{" "}
+                {currentPath === "/en" ? "based" : "baseret"}
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function Stats() {
           <div className="font-[600] leading-[76px]">
             <div className="mb-[30px]">
               <span className="flex items-center justify-center mb-[30px]">
-                <Counter endValue={14} percentage={false} />
+                <Counter endValue={18} percentage={false} />
               </span>
               <p className="text-[20px] text-center text-gray-600 w-[300px] leading-[30px]">
                 {currentPath === "/en"
