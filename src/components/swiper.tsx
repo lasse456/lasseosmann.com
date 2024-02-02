@@ -109,7 +109,7 @@ const reviewData = [
     heading: "Kan stærkt anbefales!",
     description:
       "Jeg har haft en webshop, som Gustav og hans team har hjulpet med skalere til 2 nye markeder. Omsætningen på vores lokale markedet er steget med over 350% på 5 måneder. COAD har min stærkeste anbefaling.",
-    position: "Co-Founder Leve.",
+    position: "Co-Founder",
     founder: "/nophoto.png",
     name: "Peter Jensen",
   },
@@ -220,7 +220,7 @@ const englishReviewData = [
     heading: "Kan stærkt anbefales!",
     description:
       "I've had an online shop that Gustav and his team have helped scale to 2 new markets. Revenue in our local market has increased by over 350% in 5 months. COAD has my strongest recommendation.",
-    position: "Co-Founder Leve.",
+    position: "Co-Founder",
     founder: "/nophoto.png",
     name: "Peter Jensen",
   },

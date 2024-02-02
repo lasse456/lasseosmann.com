@@ -28,7 +28,9 @@ export default function Index() {
       <Element name="team">
         <Team />
       </Element>
-      <Cta />
+      <Element name="cta">
+        <Cta />
+      </Element>
     </Layout>
   );
 }

@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { ChevronRight } from "lucide-react";
 import { useRouter } from "next/router";
+import { Link, Element } from "react-scroll";
 
 export default function Hero() {
   const router = useRouter();
@@ -37,17 +38,17 @@ export default function Hero() {
         </div>
 
         <div className="flex items-center justify-center">
-          <a
-            href="#marketingsanalyse"
-            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors rounded-lg bg-[#0071e3]"
+          <Link
+            to="cta"
+            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
+            smooth={true}
+            duration={10}
           >
-            <p className="text-lg font-[600] text-white">
-              {currentPath === "/en"
-                ? "Get a free marketing analysis"
-                : "Få en gratis marketinganalyse"}
-            </p>
+            {currentPath === "/en"
+              ? "Get a free marketing analysis"
+              : "Få en gratis marketinganalyse"}
             <ChevronRight size={24} color="white" />
-          </a>
+          </Link>
         </div>
         <div className="flex mb-[50px] flex-wrap items-center justify-center gap-8 mt-4 md:mb-0">
           <img src="./partners/google.png" className="h-[30px] md:h-[50px]" />

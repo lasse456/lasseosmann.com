@@ -226,7 +226,7 @@ export default function CaseSwiper() {
         <div key={1} className="flex flex-col items-center text-center">
           <h1 className="mb-[4px] font-[600] text-main flex">
             +
-            <span className="w-[50px]">
+            <span className="w-[60px] mr-[0px] mr-[10px]">
               <Counter endValue={316} />
             </span>
             %
@@ -274,7 +274,7 @@ export default function CaseSwiper() {
         <div key={1} className="flex flex-col items-center text-center">
           <h1 className="mb-[4px] font-[600] text-main flex">
             +
-            <span className="w-[50px]">
+            <span className="w-[50px] mr-[10px]">
               <Counter endValue={520} />
             </span>
             %
@@ -523,7 +523,7 @@ export default function CaseSwiper() {
         <div key={1} className="flex flex-col items-center text-center">
           <h1 className="mb-[4px] font-[600] text-main flex">
             +
-            <span className="w-[50px]">
+            <span className="w-[50px] mr-[10px]">
               <Counter endValue={316} />
             </span>
             %
@@ -571,7 +571,7 @@ export default function CaseSwiper() {
         <div key={1} className="flex flex-col items-center text-center">
           <h1 className="mb-[4px] font-[600] text-main flex">
             +
-            <span className="w-[50px]">
+            <span className="w-[50px] mr-[10px]">
               <Counter endValue={520} />
             </span>
             %

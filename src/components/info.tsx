@@ -1,5 +1,7 @@
 import SectionStarter from "./sectionstarter";
 import { useRouter } from "next/router";
+import { Link, Element } from "react-scroll";
+import { ChevronRight } from "lucide-react";
 
 export default function Info() {
   const router = useRouter();
@@ -87,11 +89,17 @@ export default function Info() {
               resultater og er ikke bundet af strenge aftaler.
             </p>
           )}
-          <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500] w-[300px]">
+          <Link
+            to="cta"
+            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer w-[400px] text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
+            smooth={true}
+            duration={10}
+          >
             {currentPath === "/en"
               ? "Get a free marketing analysis"
               : "Få en gratis marketinganalyse"}
-          </button>
+            <ChevronRight size={24} color="white" />
+          </Link>
         </div>
         <div className="flex flex-col justify-center">
           <img

@@ -1,7 +1,7 @@
 import { ScrollAnimation } from "../Animations/ScrollAnimation";
 import { Link, Element } from "react-scroll";
 import { useRouter } from "next/router";
-
+import { ChevronRight } from "lucide-react";
 export default function Footer() {
   const router = useRouter();
   const currentPath = router.pathname.slice(0, 3);
@@ -13,11 +13,17 @@ export default function Footer() {
             <Link href={"/"} className="text-[24px] font-[600] text-main">
               <img className="w-[100px] mb-[40px]" src="/logo.png"></img>
             </Link>
-            <button className="rounded-[8px] bg-[#0071e3] text-white p-button02 font-[500]">
+            <Link
+              to="cta"
+              className="flex w-[80%] items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer  text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
+              smooth={true}
+              duration={10}
+            >
               {currentPath === "/en"
                 ? "Get a free marketing analysis"
                 : "Få en gratis marketinganalyse"}
-            </button>
+              <ChevronRight size={24} color="white" />
+            </Link>
           </div>
           <div className="flex justify-between gap-[130px] ctaOne:flex-col">
             <div>

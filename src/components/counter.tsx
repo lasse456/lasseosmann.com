@@ -14,7 +14,7 @@ export default function Counter(props: any) {
   return (
     <VisibilitySensor onChange={onVisibilityChange}>
       <div>
-        <CountUp end={isVisible ? props.endValue : 0} />
+        <CountUp separator="." end={isVisible ? props.endValue : 0} />
         {props.percentage ? "%" : null}
       </div>
     </VisibilitySensor>
