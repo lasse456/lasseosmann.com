@@ -101,8 +101,8 @@ export default function Info() {
             <ChevronRight size={24} color="white" />
           </Link>
         </div>
-        <div className="flex flex-col justify-center">
-        <video controls width="600" height="400">
+        <div className="flex flex-col justify items-center w-[70%] rounded-main ml-auto skillsOne:mx-auto skillsOne:mt-[100px] skillsOne:w-[90%]">
+        <video className="ml-auto rounded-main skillsOne:mx-auto" controls width="600" height="100%">
         <source src={currentPath === "/en" ? "/videos/englishvid.mp4":"/videos/danishvid.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
