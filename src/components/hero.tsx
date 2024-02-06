@@ -33,7 +33,7 @@ export default function Hero() {
           <h2 className="max-w-2xl mx-auto font-normal leading-normal text-center text-md md:text-xl text-main">
             {currentPath === "/en"
               ? "With a long-term holistic approach, we focus solely on growing your profits. We manage the entire digital customer journey"
-              : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse"}
+              : "Med en langsigtet holistisk tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse."}
           </h2>
         </div>
 

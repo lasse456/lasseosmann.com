@@ -46,7 +46,7 @@ const reviewData = [
     heading: "Kan stærkt anbefales!",
     description:
       "Vi har i en periode benyttet COAD i forbindelse med SoMe-markedsføring og agter at fortsætte med det. COAD er lette at samarbejde med, hurtige, har rimelige priser og har skaffet os rigtigt gode resultater. Inden COAD samarbejdede vi en længere periode med et par væsentligt større digitale bureauer, om hvem vi desværre må sige det diametralt modsatte.",
-    position: "CEO UNIVERSADVOKATER",
+    position: "CEO",
     founder: "/reviews/jørgen.png",
     name: "Jørgen Pedersen",
   },
@@ -157,7 +157,7 @@ const englishReviewData = [
     heading: "Kan stærkt anbefales!",
     description:
       "We have for some time used COAD for our SoMe marketing and intend to continue to do so. COAD is easy to work with, fast, has reasonable prices, and has achieved really good results. Before COAD, we collaborated for a long period with a couple of significantly larger digital agencies, about whom we, unfortunately, have to say the complete opposite.",
-    position: "CEO UNIVERSADVOKATER",
+    position: "CEO",
     founder: "/reviews/jørgen.png",
     name: "Jørgen Pedersen",
   },

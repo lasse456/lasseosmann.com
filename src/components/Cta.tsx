@@ -120,7 +120,7 @@ export default function Cta() {
               <div className="w-[40px]">
                 <CheckCircle className="text-[#0071e3]" />
               </div>
-              <p>
+              <p className="w-[80%]">
                 {currentPath === "/en"
                   ? "We'll review your entire digital customer journey from A to Z"
                   : "Vi gennemgår hele jeres digitale kunderejse fra A til Z"}
@@ -130,7 +130,7 @@ export default function Cta() {
               <div className="w-[40px]">
                 <CheckCircle className="text-[#0071e3]" />
               </div>
-              <p>
+              <p className="w-[80%]">
                 {currentPath === "/en"
                   ? "Analyze your Paid Social, E-mail Marketing, Google ads, and website"
                   : "Analyse af jeres Paid social, E-mail marketing, Google ads og hjemmeside"}
@@ -140,7 +140,7 @@ export default function Cta() {
               <div className="w-[40px]">
                 <CheckCircle className="text-[#0071e3]" />
               </div>
-              <p>
+              <p className="w-[80%]">
                 {currentPath === "/en"
                   ? "Including an assessment of your growth potential"
                   : "Inklusiv en vurdering af jeres vækspotientale"}
@@ -150,7 +150,7 @@ export default function Cta() {
               <div className="w-[40px]">
                 <CheckCircle className="text-[#0071e3]" />
               </div>
-              <p>
+              <p className="w-[80%]">
                 {currentPath === "/en"
                   ? "You get concrete actions you can implement to improve performance"
                   : "Du får konkrete tiltag du kan implementere for at forbedre performance"}
@@ -161,7 +161,7 @@ export default function Cta() {
                 <CheckCircle className="text-[#0071e3]" />
               </div>
 
-              <p>
+              <p className="w-[80%]">
                 {currentPath === "/en"
                   ? "BONUS: Overview of your profit and calculation of break-even ROAS."
                   : "BONUS: Oversigt over din profit og beregning af break-even ROAS."}
@@ -205,6 +205,7 @@ export default function Cta() {
               <div className="w-full border-blue-500">
                 <p className="mb-[12px]">
                   {currentPath === "/en" ? "Full name" : "Fulde navn"}
+                  <span className="text-red-500 ml-[4px]">*</span>
                 </p>
                 <input
                   required
@@ -217,7 +218,7 @@ export default function Cta() {
                 ></input>
               </div>
               <div className="w-full">
-                <p className="mb-[12px]">E-mail</p>
+                <p className="mb-[12px]">E-mail<span className="text-red-500 ml-[4px]">*</span></p>
                 <input
                   required
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
@@ -231,6 +232,7 @@ export default function Cta() {
             <div>
               <p className="mb-[12px]">
                 {currentPath === "/en" ? "Company name" : "Virksomhed"}
+                <span className="text-red-500 ml-[4px]">*</span>
               </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
@@ -243,6 +245,7 @@ export default function Cta() {
               <div className="w-full">
                 <p className="mb-[12px]">
                   {currentPath === "/en" ? "Phone number" : "Telefonnummer"}
+                  <span className="text-red-500 ml-[4px]">*</span>
                 </p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
@@ -257,6 +260,7 @@ export default function Cta() {
               <div className="w-full">
                 <p className="mb-[12px]">
                   {currentPath === "/en" ? "Website link" : "Hjemmeside link"}
+                  <span className="text-red-500 ml-[4px]">*</span>
                 </p>
                 <input
                   className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
@@ -273,6 +277,7 @@ export default function Cta() {
                 {currentPath === "/en"
                   ? "Monthly ad-spend"
                   : "Annonceringsforbrug på månedlig basis"}
+                  <span className="text-red-500 ml-[4px]">*</span>
               </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] rounded-main border-blue-500"
@@ -286,6 +291,7 @@ export default function Cta() {
             <div>
               <p className="mb-[12px]">
                 {currentPath === "/en" ? "Comments" : "Kommentarer"}
+             
               </p>
               <input
                 className="bg-[#f7f7fc] border-[1px] w-full p-[14px] pb-[100px] rounded-main border-blue-500 ctaOne:pb-[40px]"

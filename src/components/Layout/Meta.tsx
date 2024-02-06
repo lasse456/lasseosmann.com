@@ -4,7 +4,7 @@ const Meta = ({
   title = "COAD - Performance based agency",
   keywords = "Vi skaber brancheførende resultater for e-commerce brands.",
   description = "Vi skaber brancheførende resultater for e-commerce brands.",
-  icon = "/gustav.jpg",
+  icon = "/seo/favicon.ico",
   banner = "/seo/banner.png",
   url = "https://coad.dk",
 }: {

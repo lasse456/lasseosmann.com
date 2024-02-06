@@ -15,14 +15,14 @@ export default function Footer() {
             </Link>
             <Link
               to="cta"
-              className="flex w-[80%] items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer  text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
+              className="flex w-[100%] text-[14px] items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer font-[600] text-white rounded-lg bg-[#0071e3]"
               smooth={true}
               duration={10}
             >
               {currentPath === "/en"
                 ? "Get a free marketing analysis"
                 : "Få en gratis marketinganalyse"}
-              <ChevronRight size={24} color="white" />
+              
             </Link>
           </div>
           <div className="flex justify-between gap-[130px] ctaOne:flex-col">
@@ -35,7 +35,7 @@ export default function Footer() {
               <p className="text-gray-600">
                 {currentPath === "/en"
                   ? "With a long-term holistic approach, we focus solely on growing your profits. We manage the entire digital customer journey."
-                  : "Med en langsigtet holistiske tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse."}
+                  : "Med en langsigtet holistisk tilgang har vi udelukkende fokus på at vækste din profit. Vi varetager hele den digitale kunderejse."}
               </p>
             </div>
             <div className="flex gap-[160px]">

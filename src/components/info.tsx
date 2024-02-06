@@ -57,7 +57,7 @@ export default function Info() {
           <h1 className="text-sectionheading font-[600] text-main mb-[40px] leading-[60px] ctaOne:text-[40px] ctaOne:leading-[50px] ctaOne:mb-[14px]">
             {currentPath === "/en"
               ? "For e-commerce brands looking for the"
-              : "For e-commerces der søger den"}{" "}
+              : "For e-commerce brands der søger den"}{" "}
             <span className="text-[#0071e3]">
               {currentPath === "/en"
                 ? "best growth partner"
@@ -102,10 +102,10 @@ export default function Info() {
           </Link>
         </div>
         <div className="flex flex-col justify-center">
-          <img
-            src="/ads.jpg"
-            className="object-cover h-[80%] select-none rounded-main"
-          ></img>
+        <video controls width="600" height="400">
+        <source src={currentPath === "/en" ? "/videos/englishvid.mp4":"/videos/danishvid.mp4"} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
         </div>
       </div>
     </section>
