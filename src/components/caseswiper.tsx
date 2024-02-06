@@ -1304,6 +1304,7 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
           loop
           playsInline
           width="600"
+          controlsList="nodownload"
         >
           <source src={object.media} type="video/mp4" />
         </video>
