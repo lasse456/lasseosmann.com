@@ -5,7 +5,7 @@ import Counter from "./counter";
 import SectionStarter from "./sectionstarter";
 import Slider from "react-infinite-logo-slider";
 import { useRouter } from "next/router";
-
+import { Suspense } from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -23,7 +23,7 @@ export default function CaseSwiper() {
 
   const casesData = [
     {
-      media: "/cases/castillo/castillo.mp4",
+      media: "/cases/castillo/castillo.gif",
       brand: "/cases/castillo//castillo.png",
       description:
         "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
@@ -77,7 +77,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/skandi/skandi.mp4",
+      media: "/cases/skandi/skandi.gif",
       brand: "/cases/skandi//skandi.png",
       description:
         "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
@@ -116,7 +116,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      media: "/cases/ankerstjerne/ankerstjerne.gif",
       brand: "/cases/ankerstjerne/ankerstjerne.png",
       description:
         "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
@@ -176,7 +176,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/denomo/denomo.mp4",
+      media: "/cases/denomo/denomo.gif",
       brand: "/cases/denomo/denomo.png",
       description:
         "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
@@ -218,7 +218,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/marina/marina.mp4",
+      media: "/cases/marina/marina.gif",
       brand: "/cases/marina/marina.png",
       description:
         "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
@@ -266,7 +266,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/gelblast/gelblast.mp4",
+      media: "/cases/gelblast/gelblast.gif",
       brand: "/cases/gelblast/gelblast.png",
       description:
         "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
@@ -320,7 +320,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/castillo/castillo.mp4",
+      media: "/cases/castillo/castillo.gif",
       brand: "/cases/castillo//castillo.png",
       description:
         "Vi har vækstet Callisto Jewellery kraftigt siden vi startede samarbejdet for 15 måneder siden. Vi står for hele deres digitale kunderejse i både Danmark og Sverige.",
@@ -374,7 +374,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/skandi/skandi.mp4",
+      media: "/cases/skandi/skandi.gif",
       brand: "/cases/skandi//skandi.png",
       description:
         "En af de førende webshops inden for mode og møbler i Norge. Vi vækstede SKANDI’s profit med 74% gennem annoncering på Meta og datadrevet content produktion.",
@@ -413,7 +413,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      media: "/cases/ankerstjerne/ankerstjerne.gif",
       brand: "/cases/ankerstjerne/ankerstjerne.png",
       description:
         "Vi har hjulpet det prisvindende brand Dr.Ankerstjerne til at blive en af de hurtigst voksende webshops i Skandinavien. Og taget dem til nye markeder.",
@@ -473,7 +473,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/denomo/denomo.mp4",
+      media: "/cases/denomo/denomo.gif",
       brand: "/cases/denomo/denomo.png",
       description:
         "Større interiør og møbel webshop. Vi overtog casen fra et af Danmarks større bureauer og skalerede POAS med 72%. Senere i rejsen har vi hjulpet Denomo ind i et nyt marked.",
@@ -515,7 +515,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/marina/marina.mp4",
+      media: "/cases/marina/marina.gif",
       brand: "/cases/marina/marina.png",
       description:
         "Kåret som det bedste økologiske hudplejemærke i Skandinavien og befinder sig på 6 markeder. Vi står for hele deres digitale kunderejse i et større udvalg af markeder.",
@@ -563,7 +563,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/gelblast/gelblast.mp4",
+      media: "/cases/gelblast/gelblast.gif",
       brand: "/cases/gelblast/gelblast.png",
       description:
         "Skandinaviens største webshop inden for Gelblasters. Vi har været med fra start og vækstet dem +520% ved at håndtere marketing på tværs af hele kunde rejsen.",
@@ -620,7 +620,7 @@ export default function CaseSwiper() {
 
   const englishCaseData = [
     {
-      media: "/cases/castillo/castillo.mp4",
+      media: "/cases/castillo/castillo.gif",
       brand: "/cases/castillo//castillo.png",
       description:
         "We have significantly grown Callisto Jewellery since we started working together 15 months ago. We manage their entire digital customer journey in both Denmark and Sweden.",
@@ -674,7 +674,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/skandi/skandi.mp4",
+      media: "/cases/skandi/skandi.gif",
       brand: "/cases/skandi//skandi.png",
       description:
         "One of the leading fashion and furniture webshops in Norway. We grew SKANDI's profits by 74% through Meta advertising and data-driven content production.",
@@ -713,7 +713,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      media: "/cases/ankerstjerne/ankerstjerne.gif",
       brand: "/cases/ankerstjerne/ankerstjerne.png",
       description:
         "We've helped the award-winning brand Dr. Ankerstjerne become one of the fastest-growing e-commerce ventures in Scandinavia and taken them to new markets.",
@@ -773,7 +773,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/denomo/denomo.mp4",
+      media: "/cases/denomo/denomo.gif",
       brand: "/cases/denomo/denomo.png",
       description:
         "Prominent in the interior and furniture market, we took over the case from one of Denmark's larger agencies, achieving a 72% increase in POAS.",
@@ -815,7 +815,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/marina/marina.mp4",
+      media: "/cases/marina/marina.gif",
       brand: "/cases/marina/marina.png",
       description:
         "Awarded as the best organic skincare brand in Scandinavia and currently present in six markets. We oversee their complete digital customer journey across multiple markets.",
@@ -863,7 +863,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/gelblast/gelblast.mp4",
+      media: "/cases/gelblast/gelblast.gif",
       brand: "/cases/gelblast/gelblast.png",
       description:
         "Scandinavia's largest webshop for Gelblasters. We've been there from the start and scaled them +520% by managing marketing across the entire customer journey.",
@@ -917,7 +917,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/castillo/castillo.mp4",
+      media: "/cases/castillo/castillo.gif",
       brand: "/cases/castillo//castillo.png",
       description:
         "We have significantly grown Callisto Jewellery since we started working together 15 months ago. We manage their entire digital customer journey in both Denmark and Sweden.",
@@ -971,7 +971,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/skandi/skandi.mp4",
+      media: "/cases/skandi/skandi.gif",
       brand: "/cases/skandi//skandi.png",
       description:
         "One of the leading fashion and furniture webshops in Norway. We grew SKANDI's profits by 74% through Meta advertising and data-driven content production.",
@@ -1010,7 +1010,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/ankerstjerne/ankerstjerne.mp4",
+      media: "/cases/ankerstjerne/ankerstjerne.gif",
       brand: "/cases/ankerstjerne/ankerstjerne.png",
       description:
         "We've helped the award-winning brand Dr. Ankerstjerne become one of the fastest-growing e-commerce ventures in Scandinavia and taken them to new markets.",
@@ -1070,7 +1070,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/denomo/denomo.mp4",
+      media: "/cases/denomo/denomo.gif",
       brand: "/cases/denomo/denomo.png",
       description:
         "Prominent in the interior and furniture market, we took over the case from one of Denmark's larger agencies, achieving a 72% increase in POAS.",
@@ -1112,7 +1112,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/marina/marina.mp4",
+      media: "/cases/marina/marina.gif",
       brand: "/cases/marina/marina.png",
       description:
         "Awarded as the best organic skincare brand in Scandinavia and currently present in six markets. We oversee their complete digital customer journey across multiple markets.",
@@ -1160,7 +1160,7 @@ export default function CaseSwiper() {
       ],
     },
     {
-      media: "/cases/gelblast/gelblast.mp4",
+      media: "/cases/gelblast/gelblast.gif",
       brand: "/cases/gelblast/gelblast.png",
       description:
         "Scandinavia's largest webshop for Gelblasters. We've been there from the start and scaled them +520% by managing marketing across the entire customer journey.",
@@ -1297,17 +1297,9 @@ const CaseCard = ({ object, background }: { object: any; background: any }) => {
   return (
     <div>
       <div className="relative p-[10px]">
-        <video
-          className="pointer-events-none rounded-main bg-[linear-gradient(rgba(5,29,64,0),rgba(5,29,64,0))]"
-          autoPlay
-          muted
-          loop
-          playsInline
-          width="600"
-          controlsList="nodownload"
-        >
-          <source src={object.media} type="video/mp4" />
-        </video>
+
+        <img src={object.media}></img>
+
 
         <div
           style={{
