@@ -47,7 +47,7 @@ const reviewData = [
 const englishReviewData = [
   {
     image: "/trust.svg",
-    heading: "Rigtig tilfreds med samarbejdet",
+    heading: "Really satisfied!",
     description:
       "Really satisfied with our collaboration with COAD. Very professional and great at making the ads reflect our values. A big recommendation from us.",
     position: "Co-Founder Leve.",
@@ -57,7 +57,7 @@ const englishReviewData = [
 
   {
     image: "/trust.svg",
-    heading: "Seriøse og tillidsfulde!",
+    heading: "Serious and trustworthy",
     description:
       "We are working with Coad as we experience a serious approach to marketing. Coad is brilliant at testing and analyzing our advertising. By this, we ensure that we can constantly follow current trends on social media",
     position: "CEO.",
