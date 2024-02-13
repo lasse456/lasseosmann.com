@@ -15,6 +15,10 @@ export default function Layout({
   return (
     <div className="flex flex-col justify-between min-h-screen">
       <div>
+      <Script
+          data-domain="coad.dk"
+          strategy="lazyOnload"
+        />
         <Meta />
         <Navbar page={PAGES.HOME} />
         <div>
