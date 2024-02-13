@@ -44,6 +44,46 @@ const reviewData = [
   },
 ];
 
+const englishReviewData = [
+  {
+    image: "/trust.svg",
+    heading: "Rigtig tilfreds med samarbejdet",
+    description:
+      "Really satisfied with our collaboration with COAD. Very professional and great at making the ads reflect our values. A big recommendation from us.",
+    position: "Co-Founder Leve.",
+    founder: "/reviews/emma.png",
+    name: "Emma",
+  },
+
+  {
+    image: "/trust.svg",
+    heading: "Seriøse og tillidsfulde!",
+    description:
+      "We are working with Coad as we experience a serious approach to marketing. Coad is brilliant at testing and analyzing our advertising. By this, we ensure that we can constantly follow current trends on social media",
+    position: "CEO.",
+    founder: "/reviews/kern.png",
+    name: "Kern",
+  },
+  {
+    image: "/trust.svg",
+    heading: "Very helpful!",
+    description:
+      "We’ve had the pleasure to work with COAD and Gustav for a while now and we see great results on our marketing. He is very helpful, honest and solution-oriented. I can highly recommend using COAD’s services",
+    position: "CMO Skandi",
+    founder: "/reviews/monica.png",
+    name: "Monica",
+  },
+  {
+    image: "/trust.svg",
+    heading: "Recommended at the best!",
+    description:
+      "We are very pleased with our cooperation with Coad. Our revenue has increased by +8000% since we started the collaboration. Coad are professional and provides far better and closer follow-up than we have previously experienced with other marketing agencies. The close dialogue ensures that the ads reflect our values. Highly recommended.",
+    position: "CEO Dr. Ankerstjerne",
+    founder: "/reviews/stine.png",
+    name: "Stine",
+  },
+];
+
 export type ContactFormData = {
   fullName: string;
   email: string;
@@ -173,7 +213,21 @@ export default function Cta() {
                 : "      Vigtigt: Du er kvalificeret til at anmode om en gratis marketingsanalyse, hvis du er i stand til at bruge +10.000kr./måned betalt annoncering."}
             </p>
           </div>
-          <div className="w-[100%] mde:hidden">
+          {currentPath === "/en" ? <div className="w-[100%] mde:hidden">
+            <Slider
+              width="500px"
+              duration={30}
+              pauseOnHover={true}
+              blurBorders={true}
+              blurBoderColor={"#fff"}
+            >
+              {englishReviewData.map((v) => (
+                <Slider.Slide key={v}>
+                  <ReviewCard object={v} />
+                </Slider.Slide>
+              ))}
+            </Slider>
+          </div>:          <div className="w-[100%] mde:hidden">
             <Slider
               width="500px"
               duration={30}
@@ -187,7 +241,7 @@ export default function Cta() {
                 </Slider.Slide>
               ))}
             </Slider>
-          </div>
+          </div>}
         </div>
       </div>
       <div className="max-w-main bg-[#f7f7fc] py-[100px]">
