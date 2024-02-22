@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="flex items-center justify-center">
           <Link
             to="cta"
-            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
+            className="flex items-center justify-center gap-2 p-4 px-8 transition-colors cursor-pointer text-[14px] md:text-lg font-[600] text-white rounded-lg bg-[#0071e3]"
             smooth={true}
             duration={10}
           >
