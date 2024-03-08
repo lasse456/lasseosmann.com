@@ -34,10 +34,21 @@ HEY is a fresh approach to turning email into something you want to use, not som
 ONCE is a return to software products, away from services, monthly subscriptions, and shared data. Software you can own with source code you can read and change. Our first offering is Campfire, super simple group chat for a one-time price.</p>
     
     <h1 className="text-[30px] font-[600] text-gray-800 mb-[70px]">Products I&apos;m working on 💼</h1>
-    <Link href={"/toolbird"} className="flex gap-[20px]">
+    <Link href={"/toolbird"} className="flex gap-[40px] mb-[80px]">
         <img className="w-[80px] h-[80px] object-cover rounded-full" src="/projects/toolbird.svg"></img>
         <div>
             <h1 className="font-[500] text-gray-800 text-[22px] mb-[10px]">ToolBird</h1>
+            <p className="text-gray-600 font-[400]">
+            The all-in-one toolkit for your SaaS business
+            <br></br><br></br>
+            ONCE is a return to software products, away from services, monthly subscriptions, and shared data. Software you can own with source code you can read and change. Our first offering is Campfire, super simple group chat for a one-time price.
+            </p>
+        </div>
+    </Link>
+    <Link href={"/toolbird"} className="flex gap-[40px]">
+        <img className="w-[80px] h-[80px] object-cover rounded-full" src="/projects/toolbird.svg"></img>
+        <div>
+            <h1 className="font-[500] text-gray-800 text-[22px] mb-[10px]">SaaS Community</h1>
             <p className="text-gray-600 font-[400]">
             The all-in-one toolkit for your SaaS business
             <br></br><br></br>
