@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function ToolBird() {
   return (
     <Layout>
-      <img className="w-[80px] rounded-full mb-[30px]" src="/lasse.png"></img>
+      <img className="w-[80px] rounded-full mb-[30px]" src="/lasse.webp"></img>
       <h1 className="text-[46px] font-[600] text-gray-800 mb-[10px]">Hello, I&apos;m Lasse 👋</h1>
       <p className="font-[400] text-[20px] text-gray-600 mb-[30px]">A self-taught 17-year old software developer and digital product designer from Denmark</p>
       <div className="flex items-center gap-[14px] mb-[70px]">
