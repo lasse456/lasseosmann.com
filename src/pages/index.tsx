@@ -45,10 +45,21 @@ ONCE is a return to software products, away from services, monthly subscriptions
             </p>
         </div>
     </Link>
-    <Link href={"/toolbird"} className="flex gap-[40px]">
+    <Link href={"/toolbird"} className="flex gap-[40px] mb-[80px]">
         <img className="w-[80px] h-[80px] object-cover rounded-full" src="/projects/toolbird.svg"></img>
         <div>
             <h1 className="font-[500] text-gray-800 text-[22px] mb-[10px]">SaaS Community</h1>
+            <p className="text-gray-600 font-[400]">
+            The all-in-one toolkit for your SaaS business
+            <br></br><br></br>
+            ONCE is a return to software products, away from services, monthly subscriptions, and shared data. Software you can own with source code you can read and change. Our first offering is Campfire, super simple group chat for a one-time price.
+            </p>
+        </div>
+    </Link>
+    <Link href={"/toolbird"} className="flex gap-[40px] mb-[80px]">
+        <img className="w-[80px] h-[80px] object-cover rounded-full" src="/projects/toolbird.svg"></img>
+        <div>
+            <h1 className="font-[500] text-gray-800 text-[22px] mb-[10px]">Gazella Team</h1>
             <p className="text-gray-600 font-[400]">
             The all-in-one toolkit for your SaaS business
             <br></br><br></br>
