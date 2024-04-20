@@ -102,7 +102,7 @@ export default function Info() {
           </Link>
         </div>
         <div className="flex flex-col justify items-center w-[70%] rounded-main ml-auto skillsOne:mx-auto skillsOne:mt-[100px] skillsOne:w-[90%]">
-        <video className="ml-auto rounded-main skillsOne:mx-auto" controls width="600" height="100%" poster="/thumb.png">
+        <video className="ml-auto rounded-main skillsOne:mx-auto" controls width="600" height="100%" poster={currentPath === "/en" ? "/thumbs/thumben.png":"/thumbs/thumbdk.png"}>
         <source src={currentPath === "/en" ? "/videos/englishvid.mp4":"/videos/danishvid.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
