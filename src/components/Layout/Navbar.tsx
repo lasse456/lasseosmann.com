@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Online from "../online";
-import Language from "../language";
 import { Menu, X } from "lucide-react";
 import { Link, Element } from "react-scroll";
 import { useRouter } from "next/router";
@@ -104,7 +102,6 @@ export default function Navbar({ page }: { page: PAGES }) {
             </Link>
           </div>
           <div className="mde:hidden">
-            <Language />
           </div>
           <div
             onClick={() => setMenuClicked(true)}
@@ -158,7 +155,6 @@ export default function Navbar({ page }: { page: PAGES }) {
               </Link>
             </div>
             <div className="inline-block">
-              <Language />
             </div>
           </div>
         </div>
